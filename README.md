@@ -6,7 +6,7 @@ This repository contains all the exercises and assessments of the UC Data Bases,
 <p align = "center" >
   <img 
        title = "FEUP logo"
-       src = "FEUP_Logo.png" 
+       src = ".Images/FEUP_Logo.png" 
        alt = "FEUP Logo" 
        />
 </p>
