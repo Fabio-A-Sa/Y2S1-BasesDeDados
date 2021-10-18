@@ -1,12 +1,12 @@
 # Bases de Dados (BD) - Year 2, Semester 1 (Y2S1)
 
-This repository contains all the exercises and assessments of the UC Programming, taught by [Michel Ferreira](https://sigarra.up.pt/fcup/pt/func_geral.formview?p_codigo=241603) and [Carla Lopes](https://sigarra.up.pt/feup/pt/func_geral.formview?p_codigo=467117) at [Integrated Master in Informatics and Computing Engineering](https://sigarra.up.pt/feup/pt/cur_geral.cur_view?pv_curso_id=742) [MIEIC] at the [Faculty of Engineering of the University of Porto](https://sigarra.up.pt/feup/pt/web_page.Inicial) [FEUP]. <br/>
+This repository contains all the exercises and assessments of the UC Data Bases, taught by [Michel Ferreira](https://sigarra.up.pt/fcup/pt/func_geral.formview?p_codigo=241603) and [Carla Lopes](https://sigarra.up.pt/feup/pt/func_geral.formview?p_codigo=467117) at [Integrated Master in Informatics and Computing Engineering](https://sigarra.up.pt/feup/pt/cur_geral.cur_view?pv_curso_id=742) [MIEIC] at the [Faculty of Engineering of the University of Porto](https://sigarra.up.pt/feup/pt/web_page.Inicial) [FEUP]. <br/>
 
 <br/>
 <p align = "center" >
   <img 
        title = "FEUP logo"
-       src = ".\Images\FEUP_Logo.png" 
+       src = "FEUP_Logo.png" 
        alt = "FEUP Logo" 
        />
 </p>
