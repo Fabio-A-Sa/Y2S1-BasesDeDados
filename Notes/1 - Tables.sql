@@ -32,6 +32,10 @@ INSERT INTO Person VALUES (123, "Joana", "Aveiro", 'F', "2002-07-09");
 
 .schema Person
 
--- To view collumn' name 
+-- To view all collumns name in header's table
 
 .header on
+
+-- To view formated data
+
+.mode column
