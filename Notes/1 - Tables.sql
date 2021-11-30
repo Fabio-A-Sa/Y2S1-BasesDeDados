@@ -12,3 +12,7 @@ CREATE TABLE Person (
 
 DROP TABLE Person;              -- Remove
 DROP TABLE IF EXISTS Person;    -- Remove if it's in current directory
+
+-- Add and remove columns/atributes
+
+ALTER TABLE Person ADD 
