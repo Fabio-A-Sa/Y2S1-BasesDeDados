@@ -15,4 +15,5 @@ DROP TABLE IF EXISTS Person;    -- Remove if it's in current directory
 
 -- Add and remove columns/atributes
 
-ALTER TABLE Person ADD 
+ALTER TABLE Person ADD country VARCHAR(255); -- Add atribute/collumn country
+ALTER TABLE Person REMOVE country;           -- Remove atribute/collumn country
