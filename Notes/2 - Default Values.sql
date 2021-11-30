@@ -7,3 +7,6 @@ CREATE TABLE Person (
     gender CHAR(1) DEFAULT 'X',             -- for default, X
     birthday DATE DEFAULT now,              -- for default, date.now
 );
+
+-- Note:
+-- The default default value is NULL
