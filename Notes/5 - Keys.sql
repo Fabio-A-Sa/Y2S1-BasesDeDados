@@ -1,7 +1,7 @@
 -- Create a table with primaryKey
 
 CREATE TABLE Person (
-    id INTEGER PRIMARY KEY,            -- Primary Key, not Null              
+    id INTEGER PRIMARY KEY,             -- Primary Key, not Null              
     name CHAR(30) DEFAULT "Unknown",
     adress VARCHAR(255),
     gender CHAR(1) DEFAULT '?',  
