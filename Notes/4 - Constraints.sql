@@ -1,9 +1,9 @@
 -- Create a table with constraints
 
 CREATE TABLE Person (
-    id INTEGER,            -- Integer type
-    name CHAR(30),         -- Immutable char array
-    adress VARCHAR(255),   -- Muttable char array
-    gender CHAR(1),        -- Char value
-    birthday DATE,         -- String text, in format "YYYY-MM-DD"
+    id INTEGER NOT NULL,                    -- In the insertion, if id == NULL, gives an error    
+    name CHAR(30) DEFAULT "Unknown",        -- In the insertion, if name == NULL, name == "Unknown"
+    adress VARCHAR(255),
+    gender CHAR(1),  
+    birthday DATE,
 );
