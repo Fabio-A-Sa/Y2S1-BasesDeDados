@@ -17,3 +17,11 @@ DROP TABLE IF EXISTS Person;    -- Remove if it's in current directory
 
 ALTER TABLE Person ADD country VARCHAR(255); -- Add atribute/collumn country
 ALTER TABLE Person REMOVE country;           -- Remove atribute/collumn country
+
+-- To view all tables in current dataBase
+
+.tables
+
+-- To view schema of certain table
+
+.shema Person
