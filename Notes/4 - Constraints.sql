@@ -28,8 +28,8 @@ CREATE TABLE Faculty (
     id INTEGER AUTOINCREMENT,
     name VARCHAR(10),
     city CHAR(100),
-    CHECK (name <> 'ISEP' OR city == 'COIMBRA')
+    CHECK (name <> 'ISEP' AND city == 'COIMBRA')
 )
 
 INSERT INTO Faculty values ('ISEP', 'PORTO')        -- Gives an error, check violation
-INSERT INTO Faculty values ('FEUP', 'COIMBRA')      -- Gives an error, check violation
+INSERT INTO Faculty values ('FEUP', 'COIMBRA')      -- Correct
