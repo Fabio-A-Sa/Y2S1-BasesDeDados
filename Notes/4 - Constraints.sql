@@ -41,4 +41,5 @@ CREATE TABLE Faculty (
     name VARCHAR(10) CONSTRAINT NameNotNull NOT NULL,   -- If gives an error, show NameNotNull message
     city CHAR(100) CONSTRAINT CityNotNull NOT NULL,     -- If gives an error, show CityNotNull message
     CHECK (name <> 'ISEP' AND city == 'COIMBRA')
+    CONSTRAINT FacultyPKError PRIMARY KEY (id)          -- If gives an error, show FacultyPKError message
 )
