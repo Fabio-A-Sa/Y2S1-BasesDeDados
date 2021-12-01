@@ -13,11 +13,15 @@ CREATE TABLE College (
 );
 
 CREATE TABLE Apply (
-    sID INTEGER REFERENCES Student(sID),            -- Student's primary key
-    sName CHAR(10) REFERENCES College(sName),       -- College's primary key
+    sID INTEGER REFERENCES Student(sID) ON UPDATE CASCADE ON DELETE SET NULL,            -- Student's primary key
+    sName CHAR(10) REFERENCES College(sName) ON UPDATE CASCADE ON DELETE SET NULL,       -- College's primary key
     PRIMARY KEY (sID, sName)                        -- Aplly has a primary key too
 )
 
 -- Note
 -- if Student has (sID, sName) for Primary Key, Apply will have
 -- FOREING KEY (sID, sName) REFERENCES Student(sID, sName);
+
+-- Note
+-- if Apply is updated id, Student will be updated too
+-- if Apply is deleted sName, 
