@@ -18,3 +18,6 @@ CREATE TABLE Apply (
     PRIMARY KEY (sID, sName)                        -- Aplly has a primary key too
 )
 
+-- Note
+-- if Student has (sID, sName) for Primary Key, Apply will have
+-- FOREING KEY (sID, sName) REFERENCES Student(sID, sName);

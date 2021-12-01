@@ -39,3 +39,7 @@ INSERT INTO Person VALUES (123, "Joana", "Aveiro", 'F', "2002-07-09");
 -- To view formated data
 
 .mode column
+
+-- To enable Foreing Keys
+
+PRAGMA foreign_keys = ON;
