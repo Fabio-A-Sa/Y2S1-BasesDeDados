@@ -18,5 +18,6 @@ CREATE TABLE Person (
     gender CHAR(1) DEFAULT '?',  
     birthday DATE,
     phone VARCHAR(14),
-    UNIQUE (adress, phone)                  -- Allows unique values in tuples, and allows NULL values
+    UNIQUE (adress, phone)                  -- Allows unique subTuples and NULL
+    UNIQUE (name, birthdate)                -- Allows unique subTuples and NULL
 );
