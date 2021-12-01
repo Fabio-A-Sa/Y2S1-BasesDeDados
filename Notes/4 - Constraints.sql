@@ -21,3 +21,15 @@ CREATE TABLE Person (
     UNIQUE (adress, phone)                  -- Allows unique subTuples and NULL
     UNIQUE (name, birthdate)                -- Allows unique subTuples and NULL
 );
+
+-- Check constraints
+
+CREATE TABLE Faculty (
+    id INTEGER AUTOINCREMENT,
+    name VARCHAR(10),
+    city CHAR(100),
+    CHECK (name <> 'ISEP' OR city == 'COIMBRA')
+)
+
+INSERT INTO Faculty values ('ISEP', 'PORTO')        -- Gives an error, check violation
+INSERT INTO Faculty values ('FEUP', 'COIMBRA')      -- Gives an error, check violation
