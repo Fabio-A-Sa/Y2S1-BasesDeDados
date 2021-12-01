@@ -31,5 +31,14 @@ CREATE TABLE Faculty (
     CHECK (name <> 'ISEP' AND city == 'COIMBRA')
 )
 
-INSERT INTO Faculty values ('ISEP', 'PORTO')        -- Gives an error, check violation
-INSERT INTO Faculty values ('FEUP', 'COIMBRA')      -- Correct
+INSERT INTO Faculty values ('ISEP', 'PORTO')            -- Gives an error, check violation
+INSERT INTO Faculty values ('FEUP', 'COIMBRA')          -- Correct
+
+-- Include constraints name -> Good practise
+
+CREATE TABLE Faculty (
+    id INTEGER AUTOINCREMENT,
+    name VARCHAR(10) CONSTRAINT NameNotNull NOT NULL,   -- If gives an error, show NameNotNull message
+    city CHAR(100) CONSTRAINT CityNotNull NOT NULL,     -- If gives an error, show CityNotNull message
+    CHECK (name <> 'ISEP' AND city == 'COIMBRA')
+)
