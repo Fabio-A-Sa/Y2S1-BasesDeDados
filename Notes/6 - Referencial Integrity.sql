@@ -13,6 +13,8 @@ CREATE TABLE College (
 );
 
 CREATE TABLE Apply (
-    sID INTEGER,            -- Student's primary key
-    sName CHAR(10)          -- College's primary key
+    sID INTEGER REFERENCES Student(sID),            -- Student's primary key
+    sName CHAR(10) REFERENCES College(sName),       -- College's primary key
+    PRIMARY KEY (sID, sName)                        -- Aplly has a primary key too
 )
+
