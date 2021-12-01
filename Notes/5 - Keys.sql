@@ -25,3 +25,6 @@ INSERT INTO Faculty (name, city) VALUES ("FEUP", "Porto");                      
 INSERT INTO Faculty (name, city) VALUES ("UM", "Braga");                        -- id = 1
 INSERT INTO Faculty (name, city) VALUES ("FEUP", "Porto");                      -- id = 2
 INSERT INTO Faculty (id, name, city) VALUES (1, "IPCA", "Braga")                -- Gives an error, UNIQUE violation
+
+-- Note
+-- If exists an integer ID, ID is an alias of ROWID (implicit primary key)
