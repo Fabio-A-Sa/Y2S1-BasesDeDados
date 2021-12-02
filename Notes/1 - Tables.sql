@@ -10,7 +10,6 @@ CREATE TABLE Person (
 
 -- Remove a table
 
-DROP TABLE myTable;              -- Remove
 DROP TABLE IF EXISTS myTable;    -- Remove if it's in current directory
 
 -- Add and remove columns/atributes
