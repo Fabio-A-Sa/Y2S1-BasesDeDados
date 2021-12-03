@@ -3,11 +3,11 @@
 DROP TABLE IF EXISTS Person;
 
 CREATE TABLE Person (
-    id INTEGER,            -- Integer type
-    name CHAR(30),         -- Immutable char array
-    address CHAR(255),   -- Muttable char array
-    gender CHAR(1),        -- Char value
-    birthday DATE          -- String text, in format "YYYY-MM-DD"
+    id INTEGER,             -- Integer type
+    name CHAR(30),          -- Immutable char array
+    address CHAR(255),      -- Muttable char array
+    gender CHAR(1),         -- Char value
+    birthday DATE           -- String text, in format "YYYY-MM-DD"
 );
 
 -- Remove a table
@@ -16,8 +16,8 @@ DROP TABLE IF EXISTS myTable;    -- Remove if it's in current directory
 
 -- Add and remove columns/atributes
 
-ALTER TABLE Person ADD country VARCHAR(255); -- Add atribute/collumn country
-ALTER TABLE Person DROP country;           -- Remove atribute/collumn country
+ALTER TABLE Person ADD country VARCHAR(255);  -- Add atribute/collumn country
+ALTER TABLE Person DROP country;              -- Remove atribute/collumn country
 
 -- Insert data tuples
 
