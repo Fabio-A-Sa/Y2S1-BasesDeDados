@@ -21,9 +21,9 @@ ALTER TABLE Person DROP country;              -- Remove atribute/collumn country
 
 -- Insert data tuples
 
-INSERT INTO Person VALUES (123, "Fabio", "Oporto", 'M', "2002-07-10");
-INSERT INTO Person VALUES (4375, "Catarina", "Lisbon", 'F', "2002-11-07");
-INSERT INTO Person VALUES (123, "Joana", "Aveiro", 'F', "2002-07-09");
+INSERT INTO Person (id, name, address, gender, birthday) VALUES (123, "Fabio", "Oporto", 'M', "2002-07-10");
+INSERT INTO Person (id, name, address, gender, birthday) VALUES (4375, "Catarina", "Lisbon", 'F', "2002-11-07");
+INSERT INTO Person (id, name, address, gender, birthday) VALUES (123, "Joana", "Aveiro", 'F', "2002-07-09");
 
 -- To view all tables in current dataBase
 
