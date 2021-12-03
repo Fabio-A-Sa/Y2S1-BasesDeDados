@@ -3,9 +3,9 @@
 DROP TABLE IF EXISTS Person;
 
 CREATE TABLE Person (
-    id INTEGER DEFAULT -1,                                      -- -1, error  
-    name CHAR(30) DEFAULT "UNKNOWN",                            -- for default, Unknown 
-    address VARCHAR(255) DEFAULT "Oporto",                       -- for default, Oporto
+    id INTEGER,                                      -- -1, error  
+    name CHAR(10) DEFAULT 'UNKNOWN',                            -- for default, Unknown 
+    address CHAR(255) DEFAULT 'Oporto',                       -- for default, Oporto
     gender CHAR(1) DEFAULT 'X',                                 -- for default, X
     birthday DATE DEFAULT '2021-11-30',                                  -- for default, date.now
 );
