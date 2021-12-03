@@ -1,4 +1,4 @@
--- Create a table with default values, if insertion NULL
+-- Create a table with default values
 
 DROP TABLE IF EXISTS Person;
 
