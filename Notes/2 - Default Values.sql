@@ -1,5 +1,7 @@
 -- Create a table with default values, if insertion NULL
 
+DROP TABLE IF EXISTS Person;
+
 CREATE TABLE Person (
     id INTEGER DEFAULT -1,                                      -- -1, error  
     name CHAR(30) DEFAULT "UNKNOWN",                            -- for default, Unknown 
