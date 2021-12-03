@@ -1,7 +1,6 @@
 -- Create a table
 
-PRAGMA foreign_keys = ON;
-BEGIN TRANSACTION;
+DROP TABLE IF EXISTS Person;
 
 CREATE TABLE Person (
     id INTEGER,            -- Integer type
@@ -18,7 +17,7 @@ DROP TABLE IF EXISTS myTable;    -- Remove if it's in current directory
 -- Add and remove columns/atributes
 
 ALTER TABLE Person ADD country VARCHAR(255); -- Add atribute/collumn country
-ALTER TABLE Person REMOVE country;           -- Remove atribute/collumn country
+ALTER TABLE Person DROP country;           -- Remove atribute/collumn country
 
 -- Insert data tuples
 
