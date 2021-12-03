@@ -1,5 +1,8 @@
 -- Create a table
 
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+
 CREATE TABLE Person (
     id INTEGER,            -- Integer type
     name CHAR(30),         -- Immutable char array
