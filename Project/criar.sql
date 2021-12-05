@@ -89,7 +89,7 @@ CREATE TABLE Horario (
                                                         diaSemana = "TERCA-FEIRA" OR 
                                                         diaSemana = "QUARTA-FEIRA" OR 
                                                         diaSemana = "QUINTA-FEIRA" OR 
-                                                        diaSemana = "SEXTA-FEIRA" OR   ) ),
+                                                        diaSemana = "SEXTA-FEIRA"   ) ),
     UNIQUE (diaSemana, horaInicio, horaFinal)
 );
 
