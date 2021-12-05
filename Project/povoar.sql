@@ -1,7 +1,6 @@
 PRAGMA foreign_keys = on;
 BEGIN TRANSACTION;
 
--- Table: Pessoa
 INSERT INTO Pessoa (
                        idPessoa,
                        nome,
@@ -58,7 +57,34 @@ INSERT INTO Pessoa (
                        19,
                        456123789
                    );
+
+INSERT INTO Cartao (
+                        idCartao,
+                        numero,
+                        saldo,
+                        dataAdesao
+                        )
+                        VALUES (
+                            9,
+                            44,
+                            15,
+                            '2015-10-25'
+                    );
                    
+
+-- Table: Cliente
+INSERT INTO Cliente (
+                        idPessoa,
+                        idCartao,
+                        maiorIdade
+                    )
+                    VALUES (
+                        1,
+                        9,
+                        0
+                    );
+
+
 -- Table: Funcionario
 INSERT INTO Funcionario (
                             idPessoa,
@@ -78,15 +104,6 @@ INSERT INTO Funcionario (
                             900
                         );    
 
-------------------------
-INSERT INTO Gerente (
-                        idFuncionario,
-                        anosServico
-                     )
-                     VALUES (
-                        3,
-                        5
-                        );
 --------------------------
 INSERT INTO NaoGerente (
                         idFuncionario,
@@ -97,43 +114,16 @@ INSERT INTO NaoGerente (
                             'armazem'
                             );
 
-INSERT INTO Cartao (
-                        idCartao,
-                        numero,
-                        saldo,
-                        dataAdesao
-                        )
-                        VALUES (
-                            9,
-                            44,
-                            15,
-                            '2015-10-25'
-                            );
-
-
--- Table: Cliente
-INSERT INTO Cliente (
-                        idPessoa,
-                        idCartao,
-                        maiorIdade
-                    )
-                    VALUES (
-                        1,
-                        9,
-                        0
-                    );
-
---------------------                                                               
-INSERT INTO Armazem (
-                        idArmazem,
-                        telefone,
-                        local
-                    )
-                    VALUES (
-                        8,
-                        785412632,
-                        'Rua das Travessas, Porto'
+------------------------
+INSERT INTO Gerente (
+                        idFuncionario,
+                        anosServico
+                     )
+                     VALUES (
+                        3,
+                        5
                         );
+--------------------                                                               
 
 -- Table: Horario
 INSERT INTO Horario (
