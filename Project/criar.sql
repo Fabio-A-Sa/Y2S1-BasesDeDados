@@ -9,5 +9,8 @@ DROP TABLE IF EXISTS NaoGerente;
 -- Criar as novas tabelas, com restrições
 
 CREATE TABLE Funcionario (
-    
-)
+    idPessoa CONSTRAINT idPessoaPK PRIMARY KEY REFERENCES Pessoa(idPessoa),
+    salario INTEGER CONSTRAINT salarioNotNegative CHECK (salario >= 0)
+    numId INTEGER CONSTRAINT numIdNotNull NOT NULL
+);
+
