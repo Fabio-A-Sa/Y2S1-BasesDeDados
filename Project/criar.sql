@@ -40,7 +40,7 @@ CREATE TABLE Funcionario (
 DROP TABLE IF EXISTS NaoGerente;
 
 CREATE TABLE NaoGerente (
-    idFuncionario CONSTRAINT ErroNaoGerenteIdFuncionario PRIMARY KEY REFERENCES Pessoa (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
+    idFuncionario INTEGER CONSTRAINT ErroNaoGerenteIdFuncionario PRIMARY KEY REFERENCES Pessoa (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
     funcao TEXT
 );
 
@@ -74,7 +74,7 @@ DROP TABLE IF EXISTS Utensilio;
 
 CREATE TABLE Utensilio (
     idProduto INTEGER CONSTRAINT ErroUtensilioIdProduto PRIMARY KEY REFERENCES Produto (idProduto) ON UPDATE CASCADE ON DELETE CASCADE,
-    nome INTEGER CONSTRAINT ErroUtensilioNome NOT NULL 
+    nome CHAR(30) CONSTRAINT ErroUtensilioNome NOT NULL 
 );
 
 DROP TABLE IF EXISTS Horario;
@@ -83,13 +83,13 @@ CREATE TABLE Horario (
     idHorario INTEGER PRIMARY KEY,
     horaInicio TIME CONSTRAINT ErroHorarioInicio NOT NULL,
     horaFinal TIME CONSTRAINT ErroHorarioFinal NOT NULL,
-    diaSemana TEXT CONSTRAINT ErroHorarioDia CHECK ( (diaSemana = "SEGUNDA-FEIRA" OR 
-                            diaSemana = "TERCA-FEIRA" OR 
-                            diaSemana = "QUARTA-FEIRA" OR 
-                            diaSemana = "QUINTA-FEIRA" OR 
-                            diaSemana = "SEXTA-FEIRA" OR 
-                            diaSemana = "SABADO" OR 
-                            diaSemana = "DOMINGO" ) ),
+    diaSemana TEXT CONSTRAINT ErroHorarioDia CHECK ( (  diaSemana = "SABADO" OR
+                                                        diaSemana = "DOMINGO" OR
+                                                        diaSemana = "SEGUNDA-FEIRA" OR 
+                                                        diaSemana = "TERCA-FEIRA" OR 
+                                                        diaSemana = "QUARTA-FEIRA" OR 
+                                                        diaSemana = "QUINTA-FEIRA" OR 
+                                                        diaSemana = "SEXTA-FEIRA" OR   ) ),
     UNIQUE (diaSemana, horaInicio, horaFinal)
 );
 
@@ -99,7 +99,7 @@ CREATE TABLE Armazem (
     idArmazem INTEGER PRIMARY KEY,
     telefone INTEGER CONSTRAINT ErroArmazemTelefone NOT NULL,
     local TEXT CONSTRAINT ErroArmazemLocal NOT NULL,
-    UNIQUE(telefone, local)
+    UNIQUE (telefone, local)
 );
 
 DROP TABLE IF EXISTS Stock;
