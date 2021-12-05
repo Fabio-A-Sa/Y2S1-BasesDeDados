@@ -59,6 +59,82 @@ INSERT INTO Pessoa (
                        456123789
                    );
                    
+-- Table: Funcionario
+INSERT INTO Funcionario (
+                            idPessoa,
+                            salario
+                        )
+                        VALUES (
+                            2,
+                            712.9
+                        );
+                        
+INSERT INTO Funcionario (
+                            idPessoa,
+                            salario
+                        )
+                        VALUES (
+                            3,
+                            900
+                        );    
+
+------------------------
+INSERT INTO Gerente (
+                        idFuncionario,
+                        anosServico
+                     )
+                     VALUES (
+                        3,
+                        5
+                        );
+--------------------------
+INSERT INTO NaoGerente (
+                        idFuncionario,
+                        funcao
+                        )
+                        VALUES (
+                            2,
+                            'armazem'
+                            );
+
+INSERT INTO Cartao (
+                        idCartao,
+                        numero,
+                        saldo,
+                        dataAdesao
+                        )
+                        VALUES (
+                            9,
+                            44,
+                            15,
+                            '2015-10-25'
+                            );
+
+
+-- Table: Cliente
+INSERT INTO Cliente (
+                        idPessoa,
+                        idCartao,
+                        maiorIdade
+                    )
+                    VALUES (
+                        1,
+                        9,
+                        0
+                    );
+
+--------------------                                                               
+INSERT INTO Armazem (
+                        idArmazem,
+                        telefone,
+                        local
+                    )
+                    VALUES (
+                        8,
+                        785412632,
+                        'Rua das Travessas, Porto'
+                        );
+
 -- Table: Horario
 INSERT INTO Horario (
                         idHorario,
@@ -84,38 +160,7 @@ INSERT INTO Horario (
                         'TERCA-FEIRA',
                         '10:30',
                         '13:15'
-                    );
-
--- Table: Funcionario
-INSERT INTO Funcionario (
-                            idPessoa,
-                            salario
-                        )
-                        VALUES (
-                            2,
-                            712.9
-                        );
-                        
-INSERT INTO Funcionario (
-                            idPessoa,
-                            salario
-                        )
-                        VALUES (
-                            3,
-                            900
-                        );                        
-
--- Table: Cliente
-INSERT INTO Cliente (
-                        idPessoa,
-                        idCartao,
-                        maiorIdade
-                    )
-                    VALUES (
-                        1,
-                        9,
-                        0
-                    );
+                    );                    
 
 -- Table: HorarioFuncionario
 INSERT INTO HorarioFuncionario (
@@ -136,30 +181,6 @@ INSERT INTO HorarioFuncionario (
                             7
                         );
                         
--- Table: Stock
-INSERT INTO Stock (
-                      idArmazem,
-                      idProduto,
-                      quantidade
-                  )
-                  VALUES (
-                      8,
-                      4,
-                      25
-                  );
-
-INSERT INTO Stock (
-                      idArmazem,
-                      idProduto,
-                      quantidade
-                  )
-                  VALUES (
-                      8,
-                      5,
-                      1
-                  );
-
------------------
 INSERT INTO Produto (
                         idProduto,
                         preco
@@ -177,66 +198,6 @@ INSERT INTO Produto (
                         5,
                         100
                      );
-                    
---------------------                                                               
-INSERT INTO Armazem (
-                        idArmazem,
-                        telefone,
-                        local
-                    )
-                    VALUES (
-                        8,
-                        785412632,
-                        'Rua das Travessas, Porto'
-                        );
-
-------------------------
-INSERT INTO Gerente (
-                        idFuncionario,
-                        anosServico
-                     )
-                     VALUES (
-                        3,
-                        5
-                        );
---------------------------
-INSERT INTO NaoGerente (
-                        idFuncionario,
-                        funcao
-                        )
-                        VALUES (
-                            2,
-                            'armazem'
-                            );
-                            
---------------------------
-INSERT INTO Cartao (
-                        idCartao,
-                        numero,
-                        saldo,
-                        dataAdesao
-                        )
-                        VALUES (
-                            9,
-                            44,
-                            15,
-                            '2015-10-25'
-                            );
-
----------------------
-INSERT INTO Prova (
-                        idCliente,
-                        idVinho,
-                        acompanhamento,
-                        quantidade
-                        )
-                        VALUES (
-                            1,
-                            16,
-                            'queijo',
-                            2
-                            );
-
 
 -----------------------
 INSERT INTO Utensilio (
@@ -265,7 +226,47 @@ INSERT INTO Vinho (
                             12.5,
                             0.7
                             );
-       
+    
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            1,
+                            4,
+                            'queijo',
+                            2
+                            );
+
+
+-- Table: Stock
+INSERT INTO Stock (
+                      idArmazem,
+                      idProduto,
+                      quantidade
+                  )
+                  VALUES (
+                      8,
+                      4,
+                      25
+                  );
+
+INSERT INTO Stock (
+                      idArmazem,
+                      idProduto,
+                      quantidade
+                  )
+                  VALUES (
+                      8,
+                      5,
+                      1
+                  );
+
+                    
+----------------------
+--------------------
 ------------------------------------
 INSERT INTO Compra (
                         idCliente,
