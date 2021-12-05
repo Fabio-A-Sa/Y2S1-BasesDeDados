@@ -12,7 +12,7 @@ DROP TABLE IF EXISTS Gerente;
 DROP TABLE IF EXISTS NaoGerente;
 DROP TABLE IF EXISTS Cartao;
 DROP TABLE IF EXISTS Prova;
-DROP TABLE IF EXISTS Utensilios;
+DROP TABLE IF EXISTS Utensilio;
 DROP TABLE IF EXISTS Vinho;
 DROP TABLE IF EXISTS Compra;
 
@@ -43,9 +43,9 @@ CREATE TABLE Stock (
 
 CREATE TABLE Horario (
     idHorario INTEGER PRIMARY KEY,
-    horaInicio TIME NOT NULL,
-    horaFinal TIME NOT NULL,
-    diaSemana TEXT CHECK ( (diaSemana = "SEGUNDA-FEIRA" OR 
+    horaInicio TIME CONSTRAINT ErroHorarioInicio NOT NULL,
+    horaFinal TIME CONSTRAINT ErroHorarioFinal NOT NULL,
+    diaSemana TEXT CONSTRAINT ErroHorarioDia CHECK ( (diaSemana = "SEGUNDA-FEIRA" OR 
                             diaSemana = "TERCA-FEIRA" OR 
                             diaSemana = "QUARTA-FEIRA" OR 
                             diaSemana = "QUINTA-FEIRA" OR 
@@ -56,31 +56,61 @@ CREATE TABLE Horario (
 );
 
 CREATE TABLE HorarioFuncionario (
-    idFuncionario INTEGER REFERENCES Funcionario (idFuncionario) ON UPDATE CASCADE ON DELETE CASCADE,
-    idHorario INTEGER REFERENCES Horario (idHorario) ON UPDATE CASCADE ON DELETE CASCADE,
+    idFuncionario INTEGER CONSTRAINT ErroHorarioFuncionarioIdFuncionario REFERENCES Funcionario (idFuncionario) ON UPDATE CASCADE ON DELETE CASCADE,
+    idHorario INTEGER CONSTRAINT ErroHorarioFuncionarioIdHorario REFERENCES Horario (idHorario) ON UPDATE CASCADE ON DELETE CASCADE,
     PRIMARY KEY (idFuncionario, idHorario)
 );
 
 CREATE TABLE Funcionario (
-    idPessoa INTEGER PRIMARY KEY REFERENCES Pessoa (idPessoa) ON DELETE CASCADE ON UPDATE CASCADE,
-    salario INTEGER CHECK (salario >= 0)
+    idPessoa INTEGER CONSTRAINT ErroFuncionarioIdPessoa PRIMARY KEY REFERENCES Pessoa (idPessoa) ON DELETE CASCADE ON UPDATE CASCADE,
+    salario INTEGER CONSTRAINT ErroFuncionarioSalario CHECK (salario >= 0)
 );
 
 CREATE TABLE Cliente (
-    idPessoa INTEGER PRIMARY KEY REFERENCES Pessoa (idPessoa) ON DELETE CASCADE ON UPDATE CASCADE,
-    maioridade BOOL NOT NULL
+    idPessoa INTEGER CONSTRAINT ErroClienteIdPessoa PRIMARY KEY REFERENCES Pessoa (idPessoa) ON DELETE CASCADE ON UPDATE CASCADE,
+    maioridade BOOL CONSTRAINT ErroClienteMaioridade NOT NULL
 );
 
 CREATE TABLE Produto (
     idProduto INTEGER PRIMARY KEY,
-    preco INTEGER CONSTRAINT precoNotNegative CHECK (preco >= 0)
+    preco INTEGER CONSTRAINT ErroProdutoPreco CHECK (preco >= 0)
 );
 
 CREATE TABLE Gerente (
-    idFuncionario CONSTRAINT idFuncionarioPK PRIMARY KEY REFERENCES Funcionario (idFuncionario) ON DELETE CASCADE ON UPDATE CASCADE,
-    anosServico CONSTRAINT anosServicoSupQuatro CHECK (anosServico > 4)
+    idFuncionario CONSTRAINT ErroGerenteIdFuncionario PRIMARY KEY REFERENCES Funcionario (idFuncionario) ON DELETE CASCADE ON UPDATE CASCADE,
+    anosServico CONSTRAINT ErroGerenteIdAnosServico CHECK (anosServico > 4)
 );
 
 CREATE TABLE NaoGerente (
-    idFuncionario CONSTRAINT idFuncionarioPK PRIMARY KEY REFERENCES Funcionario (idFuncionario) ON UPDATE CASCADE ON DELETE CASCADE
+    idFuncionario CONSTRAINT ErroNaoGerenteIdFuncionario PRIMARY KEY REFERENCES Funcionario (idFuncionario) ON UPDATE CASCADE ON DELETE CASCADE,
+    funcao TEXT
+);
+
+CREATE TABLE Cartao (
+    idCartao INTEGER PRIMARY KEY,
+    dataAdesao DATE CONSTRAINT ErroCartaoDataAdesao NOT NULL,
+    saldo INTEGER CONSTRAINT ErroCartaoSaldo CHECK (saldo>=0),
+    numero INTEGER CONSTRAINT ErroCartaoNumero CHECK (numero>0)
+);
+
+CREATE TABLE Prova (
+    quantidade INTEGER CONSTRAINT ErroProvaQuantidade CHECK (quantidade<=5),
+    idCliente INTEGER CONSTRAINT ErroProvaIdCliente REFERENCES Cliente (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
+    idVinho INTEGER CONSTRAINT ErroProvaIdVinho REFERENCES Vinho (idProduto) ON UPDATE CASCADE ON DELETE CASCADE,
+    PRIMARY KEY (idCliente, idVinho)
+);
+
+CREATE TABLE Utensilio (
+    idProduto INTEGER CONSTRAINT ErroUtensilioIdProduto PRIMARY KEY REFERENCES Produto (idProduto) ON UPDATE CASCADE ON DELETE CASCADE,
+    nome INTEGER CONSTRAINT ErroUtensilioNome NOT NULL 
+);
+
+CREATE TABLE Vinho (
+    idProduto INTEGER CONSTRAINT ErroVinhoIdProduto PRIMARY KEY REFERENCES Produto (idProduto) ON UPDATE CASCADE ON DELETE CASCADE,
+    tipo TEXT CONSTRAINT ErroVinhoTipo NOT NULL,
+    regiao TEXT CONSTRAINT ErroVinhoRegiao NOT NULL,
+    anoProducao INTEGER CONSTRAINT ErroVinhoAnoProducao NOT NULL,
+    teorAlcool FLOAT CONSTRAINT ErroVinhoTeorAlcool NOT NULL,
+    capacidadeGarrafa FLOAT CONSTRAINT ErroVinhoCapacidadeGarrafa NOT NULL, 
+    UNIQUE (tipo, regiao, anoProducao, teorAlcool, capacidadeGarrafa)
 );
