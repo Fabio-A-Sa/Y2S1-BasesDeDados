@@ -269,4 +269,4 @@ INSERT INTO Compra (
                             0
                             );
                             
-COMMIT TRANSACTION;
+COMMIT TRANSACTION; 
