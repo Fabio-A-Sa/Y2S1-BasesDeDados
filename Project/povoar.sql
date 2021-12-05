@@ -125,6 +125,53 @@ INSERT INTO Gerente (
                         );
 --------------------                                                               
 
+INSERT INTO Produto (
+                        idProduto,
+                        preco
+                    )
+                    VALUES (
+                        4,
+                        10
+                     );
+                     
+INSERT INTO Produto (
+                        idProduto,
+                        preco
+                    )
+                    VALUES (
+                        5,
+                        100
+                     );
+                                     
+-----------------------
+INSERT INTO Vinho ( 
+                        idProduto,
+                        tipo,
+                        regiao,
+                        anoProducao,
+                        teorAlcool,
+                        capacidadeGarrafa     
+                        )
+                        VALUES (     
+                            4,
+                            'Branco',
+                            'Douro',
+                            2000,
+                            12.5,
+                            0.7
+                            );
+
+-----------------------
+INSERT INTO Utensilio (
+                        idProduto,
+                        nome
+                        )
+                        VALUES (
+                            5,
+                            'Decantador'
+                            );
+                                 
+
 -- Table: Horario
 INSERT INTO Horario (
                         idHorario,
@@ -152,83 +199,16 @@ INSERT INTO Horario (
                         '13:15'
                     );                    
 
--- Table: HorarioFuncionario
-INSERT INTO HorarioFuncionario (
-                            idFuncionario,
-                            idHorario
-                        )
-                        VALUES (
-                            2,
-                            6
-                        );
-                        
-INSERT INTO HorarioFuncionario (
-                            idFuncionario,
-                            idHorario
-                        )
-                        VALUES (
-                            3,
-                            7
-                        );
-                        
-INSERT INTO Produto (
-                        idProduto,
-                        preco
+INSERT INTO Armazem (
+                        idArmazem,
+                        telefone,
+                        local
                     )
                     VALUES (
-                        4,
-                        10
-                     );
-                     
-INSERT INTO Produto (
-                        idProduto,
-                        preco
-                    )
-                    VALUES (
-                        5,
-                        100
-                     );
-
------------------------
-INSERT INTO Utensilio (
-                        idProduto,
-                        nome
-                        )
-                        VALUES (
-                            5,
-                            'Decantador'
-                            );
-                                                                      
------------------------
-INSERT INTO Vinho ( 
-                        idProduto,
-                        tipo,
-                        regiao,
-                        anoProducao,
-                        teorAlcool,
-                        capacidadeGarrafa     
-                        )
-                        VALUES (     
-                            4,
-                            'Branco',
-                            'Douro',
-                            2000,
-                            12.5,
-                            0.7
-                            );
-    
-INSERT INTO Prova (
-                        idCliente,
-                        idVinho,
-                        acompanhamento,
-                        quantidade
-                        )
-                        VALUES (
-                            1,
-                            4,
-                            'queijo',
-                            2
-                            );
+                        8,
+                        785412632,
+                        'Rua das Travessas, Porto'
+                        );
 
 
 -- Table: Stock
@@ -253,6 +233,41 @@ INSERT INTO Stock (
                       5,
                       1
                   );
+
+
+-- Table: HorarioFuncionario
+INSERT INTO HorarioFuncionario (
+                            idFuncionario,
+                            idHorario
+                        )
+                        VALUES (
+                            2,
+                            6
+                        );
+                        
+INSERT INTO HorarioFuncionario (
+                            idFuncionario,
+                            idHorario
+                        )
+                        VALUES (
+                            3,
+                            7
+                        );
+                        
+    
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            1,
+                            4,
+                            'queijo',
+                            2
+                            );
+
 
                     
 ----------------------
