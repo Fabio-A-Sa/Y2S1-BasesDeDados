@@ -270,4 +270,3 @@ INSERT INTO Compra (
                             );
                             
 COMMIT TRANSACTION;
-PRAGMA foreign_keys = on;
