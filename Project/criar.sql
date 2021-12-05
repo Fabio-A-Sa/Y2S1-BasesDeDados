@@ -20,24 +20,24 @@ DROP TABLE IF EXISTS Compra;
 
 CREATE TABLE Pessoa (
     idPessoa INTEGER PRIMARY KEY,
-    nome CHAR(30) NOT NULL,
-    dataNascimento DATE NOT NULL,
-    telefone INTEGER NOT NULL,
-    idade INTEGER NOT NULL,
-    nif INTEGER NOT NULL  
+    nome CHAR(30) CONSTRAINT ErroPessoaNome NOT NULL,
+    dataNascimento DATE CONSTRAINT ErroPessoaData NOT NULL,
+    telefone INTEGER CONSTRAINT ErroPessoaTelefone NULL,
+    idade INTEGER CONSTRAINT ErroPessoaIdade NOT NULL,
+    nif INTEGER CONSTRAINT ErroPessoaNif NULL  
 );
 
 CREATE TABLE Armazem (
-    idArmazem PRIMARY KEY,
-    telefone INTEGER,
-    local TEXT,
+    idArmazem INTEGER PRIMARY KEY,
+    telefone INTEGER CONSTRAINT ErroArmazemTelefone NOT NULL,
+    local TEXT CONSTRAINT ErroArmazemLocal NOT NULL,
     UNIQUE(telefone, local)
 );
 
 CREATE TABLE Stock (
-    idArmazem INTEGER REFERENCES Armazem (idArmazem) ON DELETE CASCADE ON UPDATE CASCADE,
-    idProduto INTEGER REFERENCES Produto (idProduto) ON DELETE CASCADE ON UPDATE CASCADE,
-    quantidade INTEGER CHECK (quantidade > 0),
+    idArmazem INTEGER CONSTRAINT ErroStockIdArmazem REFERENCES Armazem (idArmazem) ON DELETE CASCADE ON UPDATE CASCADE,
+    idProduto INTEGER CONSTRAINT ErroStockIdProduto REFERENCES Produto (idProduto) ON DELETE CASCADE ON UPDATE CASCADE,
+    quantidade INTEGER CONSTRAINT ErroStockQuantidade CHECK (quantidade > 0),
     PRIMARY KEY (idArmazem, idProduto)
 );
 
@@ -56,24 +56,24 @@ CREATE TABLE Horario (
 );
 
 CREATE TABLE HorarioFuncionario (
-    idFuncionario REFERENCES Funcionario (idFuncionario) ON UPDATE CASCADE ON DELETE CASCADE,
-    idHorario REFERENCES Horario (idHorario) ON UPDATE CASCADE ON DELETE CASCADE,
+    idFuncionario INTEGER REFERENCES Funcionario (idFuncionario) ON UPDATE CASCADE ON DELETE CASCADE,
+    idHorario INTEGER REFERENCES Horario (idHorario) ON UPDATE CASCADE ON DELETE CASCADE,
     PRIMARY KEY (idFuncionario, idHorario)
 );
 
 CREATE TABLE Funcionario (
-    idPessoa PRIMARY KEY REFERENCES Pessoa (idPessoa) ON DELETE CASCADE ON UPDATE CASCADE,
-    salario CHECK (salario >= 0)
+    idPessoa INTEGER PRIMARY KEY REFERENCES Pessoa (idPessoa) ON DELETE CASCADE ON UPDATE CASCADE,
+    salario INTEGER CHECK (salario >= 0)
 );
 
 CREATE TABLE Cliente (
-    idPessoa INTEGER CONSTRAINT idPessoaPK PRIMARY KEY REFERENCES Pessoa(idPessoa) ON DELETE CASCADE ON UPDATE CASCADE,
-    maioridade CONSTRAINT maioridadeNotNull NOT NULL
+    idPessoa INTEGER PRIMARY KEY REFERENCES Pessoa (idPessoa) ON DELETE CASCADE ON UPDATE CASCADE,
+    maioridade BOOL NOT NULL
 );
 
 CREATE TABLE Produto (
-    idProduto PRIMARY KEY,
-    preco CONSTRAINT precoNotNegative CHECK (preco >= 0)
+    idProduto INTEGER PRIMARY KEY,
+    preco INTEGER CONSTRAINT precoNotNegative CHECK (preco >= 0)
 );
 
 CREATE TABLE Gerente (
