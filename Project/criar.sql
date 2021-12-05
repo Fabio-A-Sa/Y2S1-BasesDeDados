@@ -133,6 +133,7 @@ CREATE TABLE Compra (
     idCliente INTEGER CONSTRAINT ErroCompraIdCliente REFERENCES Cliente (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
     data DATE CONSTRAINT ErroCompraData NOT NULL,
     preco INTEGER CONSTRAINT ErroCompraPreco CHECK (preco>=0),
+    quantidade INTEGER CONSTRAINT ErroComparaQuantidade CHECK (quantidade>0),
     PRIMARY KEY (idCliente, idProduto)
 );
 
