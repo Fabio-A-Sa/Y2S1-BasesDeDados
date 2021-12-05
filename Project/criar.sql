@@ -7,10 +7,10 @@ CREATE TABLE Pessoa (
     idPessoa INTEGER PRIMARY KEY,
     nome CHAR(30) CONSTRAINT ErroPessoaNome NOT NULL,
     dataNascimento DATE CONSTRAINT ErroPessoaData NOT NULL,
-    morada TEXT CONSTRAINT ErroPessoaMorada NOT NULL,
-    telefone INTEGER CONSTRAINT ErroPessoaTelefone NOT NULL,
-    idade INTEGER CONSTRAINT ErroPessoaIdade NOT NULL,
-    nif INTEGER CONSTRAINT ErroPessoaNif NOT NULL  
+    morada TEXT,
+    telefone INTEGER,
+    idade INTEGER CONSTRAINT ErroPessoaIdade CHECK (idade >= 0),
+    nif INTEGER
 );
 
 DROP TABLE IF EXISTS Cartao;
@@ -18,8 +18,8 @@ DROP TABLE IF EXISTS Cartao;
 CREATE TABLE Cartao (
     idCartao INTEGER PRIMARY KEY,
     dataAdesao DATE CONSTRAINT ErroCartaoDataAdesao NOT NULL,
-    saldo INTEGER CONSTRAINT ErroCartaoSaldo CHECK (saldo>=0),
-    numero INTEGER CONSTRAINT ErroCartaoNumero CHECK (numero>0)
+    saldo INTEGER CONSTRAINT ErroCartaoSaldo CHECK (saldo >= 0),
+    numero INTEGER CONSTRAINT ErroCartaoNumero CHECK (numero > 0)
 );
 
 DROP TABLE IF EXISTS Cliente;
@@ -58,8 +58,6 @@ CREATE TABLE Produto (
     preco INTEGER CONSTRAINT ErroProdutoPreco CHECK (preco >= 0)
 );
 
-DROP TABLE IF EXISTS Utensilio;
-
 DROP TABLE IF EXISTS Vinho;
 
 CREATE TABLE Vinho (
@@ -72,18 +70,11 @@ CREATE TABLE Vinho (
     UNIQUE (tipo, regiao, anoProducao, teorAlcool, capacidadeGarrafa)
 );
 
+DROP TABLE IF EXISTS Utensilio;
+
 CREATE TABLE Utensilio (
     idProduto INTEGER CONSTRAINT ErroUtensilioIdProduto PRIMARY KEY REFERENCES Produto (idProduto) ON UPDATE CASCADE ON DELETE CASCADE,
     nome INTEGER CONSTRAINT ErroUtensilioNome NOT NULL 
-);
-
-DROP TABLE IF EXISTS Armazem;
-
-CREATE TABLE Armazem (
-    idArmazem INTEGER PRIMARY KEY,
-    telefone INTEGER CONSTRAINT ErroArmazemTelefone NOT NULL,
-    local TEXT CONSTRAINT ErroArmazemLocal NOT NULL,
-    UNIQUE(telefone, local)
 );
 
 DROP TABLE IF EXISTS Horario;
@@ -100,6 +91,24 @@ CREATE TABLE Horario (
                             diaSemana = "SABADO" OR 
                             diaSemana = "DOMINGO" ) ),
     UNIQUE (diaSemana, horaInicio, horaFinal)
+);
+
+DROP TABLE IF EXISTS Armazem;
+
+CREATE TABLE Armazem (
+    idArmazem INTEGER PRIMARY KEY,
+    telefone INTEGER CONSTRAINT ErroArmazemTelefone NOT NULL,
+    local TEXT CONSTRAINT ErroArmazemLocal NOT NULL,
+    UNIQUE(telefone, local)
+);
+
+DROP TABLE IF EXISTS Stock;
+
+CREATE TABLE Stock (
+    idArmazem INTEGER CONSTRAINT ErroStockIdArmazem REFERENCES Armazem (idArmazem) ON DELETE CASCADE ON UPDATE CASCADE,
+    idProduto INTEGER CONSTRAINT ErroStockIdProduto REFERENCES Produto (idProduto) ON DELETE CASCADE ON UPDATE CASCADE,
+    quantidade INTEGER CONSTRAINT ErroStockQuantidade CHECK (quantidade > 0),
+    PRIMARY KEY (idArmazem, idProduto)
 );
 
 DROP TABLE IF EXISTS HorarioFuncionario;
@@ -120,15 +129,6 @@ CREATE TABLE Prova (
     PRIMARY KEY (idCliente, idVinho)
 );
 
-DROP TABLE IF EXISTS Stock;
-
-CREATE TABLE Stock (
-    idArmazem INTEGER CONSTRAINT ErroStockIdArmazem REFERENCES Armazem (idArmazem) ON DELETE CASCADE ON UPDATE CASCADE,
-    idProduto INTEGER CONSTRAINT ErroStockIdProduto REFERENCES Produto (idProduto) ON DELETE CASCADE ON UPDATE CASCADE,
-    quantidade INTEGER CONSTRAINT ErroStockQuantidade CHECK (quantidade > 0),
-    PRIMARY KEY (idArmazem, idProduto)
-);
-
 DROP TABLE IF EXISTS Compra;
 
 CREATE TABLE Compra (
@@ -142,4 +142,3 @@ CREATE TABLE Compra (
 );
 
 COMMIT TRANSACTION;
-PRAGMA foreign_keys = ON;
