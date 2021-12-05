@@ -1,4 +1,4 @@
-PRAGMA foreign_keys = on;
+PRAGMA foreign_keys = ON;
 BEGIN TRANSACTION;
 
 INSERT INTO Pessoa (
