@@ -71,8 +71,6 @@ INSERT INTO Cartao (
                             '2015-10-25'
                     );
                    
-
--- Table: Cliente
 INSERT INTO Cliente (
                         idPessoa,
                         idCartao,
@@ -84,8 +82,6 @@ INSERT INTO Cliente (
                         0
                     );
 
-
--- Table: Funcionario
 INSERT INTO Funcionario (
                             idPessoa,
                             salario
@@ -104,7 +100,6 @@ INSERT INTO Funcionario (
                             900
                         );    
 
---------------------------
 INSERT INTO NaoGerente (
                         idFuncionario,
                         funcao
@@ -114,7 +109,6 @@ INSERT INTO NaoGerente (
                             'armazem'
                             );
 
-------------------------
 INSERT INTO Gerente (
                         idFuncionario,
                         anosServico
@@ -122,8 +116,7 @@ INSERT INTO Gerente (
                      VALUES (
                         3,
                         5
-                        );
---------------------                                                               
+                        );                                                          
 
 INSERT INTO Produto (
                         idProduto,
@@ -143,7 +136,6 @@ INSERT INTO Produto (
                         100
                      );
                                      
------------------------
 INSERT INTO Vinho ( 
                         idProduto,
                         tipo,
@@ -161,7 +153,6 @@ INSERT INTO Vinho (
                             0.7
                             );
 
------------------------
 INSERT INTO Utensilio (
                         idProduto,
                         nome
@@ -171,8 +162,6 @@ INSERT INTO Utensilio (
                             'Decantador'
                             );
                                  
-
--- Table: Horario
 INSERT INTO Horario (
                         idHorario,
                         diaSemana,
@@ -210,8 +199,6 @@ INSERT INTO Armazem (
                         'Rua das Travessas, Porto'
                         );
 
-
--- Table: Stock
 INSERT INTO Stock (
                       idArmazem,
                       idProduto,
@@ -234,8 +221,6 @@ INSERT INTO Stock (
                       1
                   );
 
-
--- Table: HorarioFuncionario
 INSERT INTO HorarioFuncionario (
                             idFuncionario,
                             idHorario
@@ -253,8 +238,7 @@ INSERT INTO HorarioFuncionario (
                             3,
                             7
                         );
-                        
-    
+
 INSERT INTO Prova (
                         idCliente,
                         idVinho,
@@ -268,11 +252,6 @@ INSERT INTO Prova (
                             2
                             );
 
-
-                    
-----------------------
---------------------
-------------------------------------
 INSERT INTO Compra (
                         idCliente,
                         idProduto,
@@ -290,7 +269,5 @@ INSERT INTO Compra (
                             0
                             );
                             
-
-                 
 COMMIT TRANSACTION;
 PRAGMA foreign_keys = on;
