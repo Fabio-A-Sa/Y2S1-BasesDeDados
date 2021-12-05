@@ -37,6 +37,13 @@ CREATE TABLE Funcionario (
     salario INTEGER CONSTRAINT ErroFuncionarioSalario CHECK (salario >= 0)
 );
 
+DROP TABLE IF EXISTS NaoGerente;
+
+CREATE TABLE NaoGerente (
+    idFuncionario CONSTRAINT ErroNaoGerenteIdFuncionario PRIMARY KEY REFERENCES Pessoa (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
+    funcao TEXT
+);
+
 DROP TABLE IF EXISTS Gerente;
 
 CREATE TABLE Gerente (
@@ -44,11 +51,30 @@ CREATE TABLE Gerente (
     anosServico CONSTRAINT ErroGerenteIdAnosServico CHECK (anosServico > 4)
 );
 
-DROP TABLE IF EXISTS NaoGerente;
+DROP TABLE IF EXISTS Produto;
 
-CREATE TABLE NaoGerente (
-    idFuncionario CONSTRAINT ErroNaoGerenteIdFuncionario PRIMARY KEY REFERENCES Pessoa (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
-    funcao TEXT
+CREATE TABLE Produto (
+    idProduto INTEGER PRIMARY KEY,
+    preco INTEGER CONSTRAINT ErroProdutoPreco CHECK (preco >= 0)
+);
+
+DROP TABLE IF EXISTS Utensilio;
+
+DROP TABLE IF EXISTS Vinho;
+
+CREATE TABLE Vinho (
+    idProduto INTEGER CONSTRAINT ErroVinhoIdProduto PRIMARY KEY REFERENCES Produto (idProduto) ON UPDATE CASCADE ON DELETE CASCADE,
+    tipo TEXT CONSTRAINT ErroVinhoTipo NOT NULL,
+    regiao TEXT CONSTRAINT ErroVinhoRegiao NOT NULL,
+    anoProducao INTEGER CONSTRAINT ErroVinhoAnoProducao NOT NULL,
+    teorAlcool FLOAT CONSTRAINT ErroVinhoTeorAlcool NOT NULL,
+    capacidadeGarrafa FLOAT CONSTRAINT ErroVinhoCapacidadeGarrafa NOT NULL, 
+    UNIQUE (tipo, regiao, anoProducao, teorAlcool, capacidadeGarrafa)
+);
+
+CREATE TABLE Utensilio (
+    idProduto INTEGER CONSTRAINT ErroUtensilioIdProduto PRIMARY KEY REFERENCES Produto (idProduto) ON UPDATE CASCADE ON DELETE CASCADE,
+    nome INTEGER CONSTRAINT ErroUtensilioNome NOT NULL 
 );
 
 DROP TABLE IF EXISTS Armazem;
@@ -82,32 +108,6 @@ CREATE TABLE HorarioFuncionario (
     idFuncionario INTEGER CONSTRAINT ErroHorarioFuncionarioIdFuncionario REFERENCES Funcionario (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
     idHorario INTEGER CONSTRAINT ErroHorarioFuncionarioIdHorario REFERENCES Horario (idHorario) ON UPDATE CASCADE ON DELETE CASCADE,
     PRIMARY KEY (idFuncionario, idHorario)
-);
-
-DROP TABLE IF EXISTS Produto;
-
-CREATE TABLE Produto (
-    idProduto INTEGER PRIMARY KEY,
-    preco INTEGER CONSTRAINT ErroProdutoPreco CHECK (preco >= 0)
-);
-
-DROP TABLE IF EXISTS Utensilio;
-
-CREATE TABLE Utensilio (
-    idProduto INTEGER CONSTRAINT ErroUtensilioIdProduto PRIMARY KEY REFERENCES Produto (idProduto) ON UPDATE CASCADE ON DELETE CASCADE,
-    nome INTEGER CONSTRAINT ErroUtensilioNome NOT NULL 
-);
-
-DROP TABLE IF EXISTS Vinho;
-
-CREATE TABLE Vinho (
-    idProduto INTEGER CONSTRAINT ErroVinhoIdProduto PRIMARY KEY REFERENCES Produto (idProduto) ON UPDATE CASCADE ON DELETE CASCADE,
-    tipo TEXT CONSTRAINT ErroVinhoTipo NOT NULL,
-    regiao TEXT CONSTRAINT ErroVinhoRegiao NOT NULL,
-    anoProducao INTEGER CONSTRAINT ErroVinhoAnoProducao NOT NULL,
-    teorAlcool FLOAT CONSTRAINT ErroVinhoTeorAlcool NOT NULL,
-    capacidadeGarrafa FLOAT CONSTRAINT ErroVinhoCapacidadeGarrafa NOT NULL, 
-    UNIQUE (tipo, regiao, anoProducao, teorAlcool, capacidadeGarrafa)
 );
 
 DROP TABLE IF EXISTS Prova;
