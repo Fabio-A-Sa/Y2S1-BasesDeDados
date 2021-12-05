@@ -20,7 +20,7 @@ CREATE TABLE Cliente (
 );
 
 CREATE TABLE Produto (
-    idProduto CONSTRAINT idProdutoPK PRIMARY KEY ON DELETE SET NULL ON UPDATE CASCADE,
+    idProduto PRIMARY KEY,
     preco CONSTRAINT precoNotNegative CHECK (preco >= 0)
 );
 
