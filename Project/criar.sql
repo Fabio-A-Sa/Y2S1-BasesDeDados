@@ -47,8 +47,8 @@ CREATE TABLE NaoGerente (
 DROP TABLE IF EXISTS Gerente;
 
 CREATE TABLE Gerente (
-    idFuncionario CONSTRAINT ErroGerenteIdFuncionario PRIMARY KEY REFERENCES Pessoa (idPessoa) ON DELETE CASCADE ON UPDATE CASCADE,
-    anosServico CONSTRAINT ErroGerenteIdAnosServico CHECK (anosServico > 4)
+    idFuncionario INTEGER CONSTRAINT ErroGerenteIdFuncionario PRIMARY KEY REFERENCES Pessoa (idPessoa) ON DELETE CASCADE ON UPDATE CASCADE,
+    anosServico INTEGER CONSTRAINT ErroGerenteIdAnosServico CHECK (anosServico > 4)
 );
 
 DROP TABLE IF EXISTS Produto;
