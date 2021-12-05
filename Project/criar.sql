@@ -122,10 +122,10 @@ CREATE TABLE HorarioFuncionario (
 DROP TABLE IF EXISTS Prova;
 
 CREATE TABLE Prova (
-    acompanhamento TEXT,
-    quantidade INTEGER CONSTRAINT ErroProvaQuantidade CHECK (quantidade<=5),
     idCliente INTEGER CONSTRAINT ErroProvaIdCliente REFERENCES Cliente (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
     idVinho INTEGER CONSTRAINT ErroProvaIdVinho REFERENCES Vinho (idProduto) ON UPDATE CASCADE ON DELETE CASCADE,
+    acompanhamento TEXT DEFAULT NULL,
+    quantidade INTEGER CONSTRAINT ErroProvaQuantidade CHECK (quantidade <= 5),
     PRIMARY KEY (idCliente, idVinho)
 );
 
@@ -136,8 +136,8 @@ CREATE TABLE Compra (
     idCliente INTEGER CONSTRAINT ErroCompraIdCliente REFERENCES Cliente (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
     data DATE CONSTRAINT ErroCompraData NOT NULL,
     desconto INTEGER,
-    preco INTEGER CONSTRAINT ErroCompraPreco CHECK (preco>0),
-    quantidade INTEGER CONSTRAINT ErroComparaQuantidade CHECK (quantidade>0),
+    preco INTEGER CONSTRAINT ErroCompraPreco CHECK (preco > 0),
+    quantidade INTEGER CONSTRAINT ErroComparaQuantidade CHECK (quantidade > 0),
     PRIMARY KEY (idCliente, idProduto)
 );
 
