@@ -132,12 +132,12 @@ CREATE TABLE Prova (
 DROP TABLE IF EXISTS Compra;
 
 CREATE TABLE Compra (
-    idProduto INTEGER CONSTRAINT ErroCompraIdProduto REFERENCES Produto (idProduto) ON UPDATE CASCADE ON DELETE CASCADE,
     idCliente INTEGER CONSTRAINT ErroCompraIdCliente REFERENCES Cliente (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
+    idProduto INTEGER CONSTRAINT ErroCompraIdProduto REFERENCES Produto (idProduto) ON UPDATE CASCADE ON DELETE CASCADE,
     data DATE CONSTRAINT ErroCompraData NOT NULL,
+    quantidade INTEGER CONSTRAINT ErroComparaQuantidade CHECK (quantidade > 0),
     desconto INTEGER,
     preco INTEGER CONSTRAINT ErroCompraPreco CHECK (preco > 0),
-    quantidade INTEGER CONSTRAINT ErroComparaQuantidade CHECK (quantidade > 0),
     PRIMARY KEY (idCliente, idProduto)
 );
 
