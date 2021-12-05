@@ -13,6 +13,23 @@ CREATE TABLE Pessoa (
     nif INTEGER CONSTRAINT ErroPessoaNif NOT NULL  
 );
 
+DROP TABLE IF EXISTS Cartao;
+
+CREATE TABLE Cartao (
+    idCartao INTEGER PRIMARY KEY,
+    dataAdesao DATE CONSTRAINT ErroCartaoDataAdesao NOT NULL,
+    saldo INTEGER CONSTRAINT ErroCartaoSaldo CHECK (saldo>=0),
+    numero INTEGER CONSTRAINT ErroCartaoNumero CHECK (numero>0)
+);
+
+DROP TABLE IF EXISTS Cliente;
+
+CREATE TABLE Cliente (
+    idPessoa INTEGER CONSTRAINT ErroClienteIdPessoa PRIMARY KEY REFERENCES Pessoa (idPessoa) ON DELETE CASCADE ON UPDATE CASCADE,
+    idCartao INTEGER CONSTRAINT ErroClienteIdCartao REFERENCES Cartao (idCartao) ON DELETE CASCADE ON UPDATE CASCADE DEFAULT NULL,
+    maioridade BOOL CONSTRAINT ErroClienteMaioridade NOT NULL
+);
+
 DROP TABLE IF EXISTS Funcionario;
 
 CREATE TABLE Funcionario (
@@ -32,14 +49,6 @@ DROP TABLE IF EXISTS NaoGerente;
 CREATE TABLE NaoGerente (
     idFuncionario CONSTRAINT ErroNaoGerenteIdFuncionario PRIMARY KEY REFERENCES Pessoa (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
     funcao TEXT
-);
-
-DROP TABLE IF EXISTS Cliente;
-
-CREATE TABLE Cliente (
-    idCartao INTEGER CONSTRAINT ErroClienteIdCartao REFERENCES Cartao (idCartao) ON DELETE CASCADE ON UPDATE CASCADE DEFAULT NULL,
-    idPessoa INTEGER CONSTRAINT ErroClienteIdPessoa PRIMARY KEY REFERENCES Pessoa (idPessoa) ON DELETE CASCADE ON UPDATE CASCADE,
-    maioridade BOOL CONSTRAINT ErroClienteMaioridade NOT NULL
 );
 
 DROP TABLE IF EXISTS Armazem;
@@ -99,15 +108,6 @@ CREATE TABLE Vinho (
     teorAlcool FLOAT CONSTRAINT ErroVinhoTeorAlcool NOT NULL,
     capacidadeGarrafa FLOAT CONSTRAINT ErroVinhoCapacidadeGarrafa NOT NULL, 
     UNIQUE (tipo, regiao, anoProducao, teorAlcool, capacidadeGarrafa)
-);
-
-DROP TABLE IF EXISTS Cartao;
-
-CREATE TABLE Cartao (
-    idCartao INTEGER PRIMARY KEY,
-    dataAdesao DATE CONSTRAINT ErroCartaoDataAdesao NOT NULL,
-    saldo INTEGER CONSTRAINT ErroCartaoSaldo CHECK (saldo>=0),
-    numero INTEGER CONSTRAINT ErroCartaoNumero CHECK (numero>0)
 );
 
 DROP TABLE IF EXISTS Prova;
