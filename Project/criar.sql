@@ -7,6 +7,7 @@ CREATE TABLE Pessoa (
     idPessoa INTEGER PRIMARY KEY,
     nome CHAR(30) CONSTRAINT ErroPessoaNome NOT NULL,
     dataNascimento DATE CONSTRAINT ErroPessoaData NOT NULL,
+    morada TEXT CONSTRAINT ErroPessoaMorada NOT NULL,
     telefone INTEGER CONSTRAINT ErroPessoaTelefone NULL,
     idade INTEGER CONSTRAINT ErroPessoaIdade NOT NULL,
     nif INTEGER CONSTRAINT ErroPessoaNif NULL  
@@ -36,6 +37,7 @@ CREATE TABLE NaoGerente (
 DROP TABLE IF EXISTS Cliente;
 
 CREATE TABLE Cliente (
+    idCartao INTEGER CONSTRAINT ErroClienteIdCartao REFERENCES Cartao (idCartao) ON DELETE CASCADE ON UPDATE CASCADE DEFAULT NULL,
     idPessoa INTEGER CONSTRAINT ErroClienteIdPessoa PRIMARY KEY REFERENCES Pessoa (idPessoa) ON DELETE CASCADE ON UPDATE CASCADE,
     maioridade BOOL CONSTRAINT ErroClienteMaioridade NOT NULL
 );
@@ -111,6 +113,7 @@ CREATE TABLE Cartao (
 DROP TABLE IF EXISTS Prova;
 
 CREATE TABLE Prova (
+    acompanhamento TEXT,
     quantidade INTEGER CONSTRAINT ErroProvaQuantidade CHECK (quantidade<=5),
     idCliente INTEGER CONSTRAINT ErroProvaIdCliente REFERENCES Cliente (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
     idVinho INTEGER CONSTRAINT ErroProvaIdVinho REFERENCES Vinho (idProduto) ON UPDATE CASCADE ON DELETE CASCADE,
@@ -132,7 +135,8 @@ CREATE TABLE Compra (
     idProduto INTEGER CONSTRAINT ErroCompraIdProduto REFERENCES Produto (idProduto) ON UPDATE CASCADE ON DELETE CASCADE,
     idCliente INTEGER CONSTRAINT ErroCompraIdCliente REFERENCES Cliente (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
     data DATE CONSTRAINT ErroCompraData NOT NULL,
-    preco INTEGER CONSTRAINT ErroCompraPreco CHECK (preco>=0),
+    desconto INTEGER,
+    preco INTEGER CONSTRAINT ErroCompraPreco CHECK (preco>0),
     quantidade INTEGER CONSTRAINT ErroComparaQuantidade CHECK (quantidade>0),
     PRIMARY KEY (idCliente, idProduto)
 );
