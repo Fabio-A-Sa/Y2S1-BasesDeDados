@@ -8,9 +8,9 @@ CREATE TABLE Pessoa (
     nome CHAR(30) CONSTRAINT ErroPessoaNome NOT NULL,
     dataNascimento DATE CONSTRAINT ErroPessoaData NOT NULL,
     morada TEXT CONSTRAINT ErroPessoaMorada NOT NULL,
-    telefone INTEGER CONSTRAINT ErroPessoaTelefone NULL,
+    telefone INTEGER CONSTRAINT ErroPessoaTelefone NOT NULL,
     idade INTEGER CONSTRAINT ErroPessoaIdade NOT NULL,
-    nif INTEGER CONSTRAINT ErroPessoaNif NULL  
+    nif INTEGER CONSTRAINT ErroPessoaNif NOT NULL  
 );
 
 DROP TABLE IF EXISTS Funcionario;
