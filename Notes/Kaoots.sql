@@ -11,4 +11,15 @@ CREATE TABLE Kaoots (
     CHECK (Acertadas <= Total)
 );
 
+INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-11-", , , );
+INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-11-", , , );
+INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-11-", , , );
+INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-11-", , , );
+INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-11-", , , );
+INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-11-", , , );
+INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-11-", , , );
+INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-11-", , , );
+INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-11-", , , );
+INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-11-", , , );
+
 COMMIT TRANSACTION;
