@@ -35,16 +35,16 @@ INSERT INTO Funcionario (idFuncionario, salario) VALUES (8594, 1129);
 
 -- Table Produto
 
-INSERT INTO Produto (idProduto, preco) VALUES (34);
-INSERT INTO Produto (idProduto, preco) VALUES (62);
-INSERT INTO Produto (idProduto, preco) VALUES (72);
-INSERT INTO Produto (idProduto, preco) VALUES (53);
-INSERT INTO Produto (idProduto, preco) VALUES (71);
-INSERT INTO Produto (idProduto, preco) VALUES (77);
-INSERT INTO Produto (idProduto, preco) VALUES (94);
-INSERT INTO Produto (idProduto, preco) VALUES ();
-INSERT INTO Produto (idProduto, preco) VALUES ();
-INSERT INTO Produto (idProduto, preco) VALUES ();
+INSERT INTO Produto (idProduto, preco) VALUES (34, 12);
+INSERT INTO Produto (idProduto, preco) VALUES (62, 9);
+INSERT INTO Produto (idProduto, preco) VALUES (72, 34);
+INSERT INTO Produto (idProduto, preco) VALUES (53, 5);
+INSERT INTO Produto (idProduto, preco) VALUES (71, 2);
+INSERT INTO Produto (idProduto, preco) VALUES (77, 31);
+INSERT INTO Produto (idProduto, preco) VALUES (94, 53);
+INSERT INTO Produto (idProduto, preco) VALUES (32, 42);
+INSERT INTO Produto (idProduto, preco) VALUES (75, 20);
+INSERT INTO Produto (idProduto, preco) VALUES (78, 7);
 
 -- Table Vinho
 
