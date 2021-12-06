@@ -1,2 +1,2 @@
-alias runSQL="winpty D:\\Programas\\SQLite\\sqlite3.exe"
+clear
 winpty D:\\Programas\\SQLite\\sqlite3.exe Kaoots.db
