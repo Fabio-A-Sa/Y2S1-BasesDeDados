@@ -27,11 +27,12 @@ INSERT INTO Funcionario (idFuncionario, salario) VALUES (8594, 1129);
 
 -- Table NaoGerente
 
-
+INSERT INTO NaoGerente (idFuncionario, funcao) VALUES (9812, "limpeza");
+INSERT INTO NaoGerente (idFuncionario, funcao) VALUES (7823, "armazem");
 
 -- Table Gerente
 
-
+INSERT INTO Gerente (idFuncionario, anosServico) VALUES (8594, 6);
 
 -- Table Produto
 
