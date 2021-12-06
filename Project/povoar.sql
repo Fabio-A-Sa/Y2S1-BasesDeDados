@@ -15,7 +15,7 @@ BEGIN TRANSACTION;
 
 -- Table Funcionario
 
-
+INSERT INTO Funcionario () VALUES ();
 
 -- Table NaoGerente
 
