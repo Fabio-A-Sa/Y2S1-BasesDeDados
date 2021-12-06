@@ -11,7 +11,13 @@ BEGIN TRANSACTION;
 
 -- Table Cliente
 
-INSERT INTO Cliente () VALUES ();
+INSERT INTO Cliente (idPessoa, maiorIdade) VALUES (3847, 1);
+INSERT INTO Cliente (idPessoa, idCartao, maiorIdade) VALUES (2356, 9, 1);
+INSERT INTO Cliente (idPessoa, maiorIdade) VALUES (6578, 1);
+INSERT INTO Cliente (idPessoa, idCartao, maiorIdade) VALUES (7657, 3, 1);
+INSERT INTO Cliente (idPessoa, maiorIdade) VALUES (8566, 1);
+INSERT INTO Cliente (idPessoa, idCartao, maiorIdade) VALUES (2354, 7, 1);
+INSERT INTO Cliente (idPessoa, maiorIdade) VALUES (5477, 1);
 
 -- Table Funcionario
 
