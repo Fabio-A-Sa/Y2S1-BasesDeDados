@@ -15,7 +15,9 @@ BEGIN TRANSACTION;
 
 -- Table Funcionario
 
-INSERT INTO Funcionario () VALUES ();
+INSERT INTO Funcionario (idFuncionario, salario) VALUES (9812, 872);
+INSERT INTO Funcionario (idFuncionario, salario) VALUES (7823, 689);
+INSERT INTO Funcionario (idFuncionario, salario) VALUES (8594, 1129);
 
 -- Table NaoGerente
 
