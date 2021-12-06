@@ -11,7 +11,7 @@ BEGIN TRANSACTION;
 
 -- Table Cliente
 
-
+INSERT INTO Cliente () VALUES ();
 
 -- Table Funcionario
 
