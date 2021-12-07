@@ -21,9 +21,9 @@ INSERT INTO Cliente (idPessoa, maiorIdade) VALUES (5477, 1);
 
 -- Table Funcionario
 
-INSERT INTO Funcionario (idFuncionario, salario) VALUES (9812, 872);
-INSERT INTO Funcionario (idFuncionario, salario) VALUES (7823, 689);
-INSERT INTO Funcionario (idFuncionario, salario) VALUES (8594, 1129);
+INSERT INTO Funcionario (idPessoa, salario) VALUES (9812, 872);
+INSERT INTO Funcionario (idPessoa, salario) VALUES (7823, 689);
+INSERT INTO Funcionario (idPessoa, salario) VALUES (8594, 1129);
 
 -- Table NaoGerente
 
