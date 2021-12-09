@@ -10,9 +10,9 @@
 
 PRAGMA foreign_keys = ON;
 
--- Drop table if exists
+-- Remove if it's in current directory
 
-DROP TABLE IF EXISTS Person;
+DROP TABLE IF EXISTS Person; 
 
 -- Create a table
 
@@ -24,9 +24,13 @@ CREATE TABLE Person (
     birthday DATE           -- String text, in format "YYYY-MM-DD"
 );
 
--- Remove a table
+-- To view all tables in current dataBase
 
-DROP TABLE IF EXISTS myTable;    -- Remove if it's in current directory
+.tables
+
+-- To view all schema of certain table
+
+.schema Person
 
 -- Add and remove columns/atributes
 
@@ -38,11 +42,3 @@ ALTER TABLE Person DROP country;              -- Remove atribute/collumn country
 INSERT INTO Person (id, name, address, gender, birthday) VALUES (123, "Fabio", "Oporto", 'M', "2002-07-10");
 INSERT INTO Person (id, name, address, gender, birthday) VALUES (4375, "Catarina", "Lisbon", 'F', "2002-11-07");
 INSERT INTO Person (id, name, address, gender, birthday) VALUES (123, "Joana", "Aveiro", 'F', "2002-07-09");
-
--- To view all tables in current dataBase
-
-.tables
-
--- To view schema of certain table
-
-.schema Person
