@@ -7,11 +7,55 @@ BEGIN TRANSACTION;
 
 -- Table Cartao
 
+INSERT INTO Cartao (
+                        idCartao,
+                        numero,
+                        saldo,
+                        dataAdesao
+                        )
+                        VALUES (
+                            9,
+                            24,
+                            20,
+                            '2015-10-25'
+                    );
 
+INSERT INTO Cartao (
+                        idCartao,
+                        numero,
+                        saldo,
+                        dataAdesao
+                        )
+                        VALUES (
+                            3,
+                            52,
+                            15,
+                            '2018-05-28'
+                    );
+
+INSERT INTO Cartao (
+                        idCartao,
+                        numero,
+                        saldo,
+                        dataAdesao
+                        )
+                        VALUES (
+                            7,
+                            71,
+                            8,
+                            '2020-08-05'
+                    );
 
 -- Table Cliente
 
-INSERT INTO Cliente (idPessoa, maiorIdade) VALUES (3847, 1);
+INSERT INTO Cliente (
+                        idPessoa, 
+                        maiorIdade
+                        ) VALUES (
+                            3847, 
+                            1
+                    );
+                    
 INSERT INTO Cliente (idPessoa, idCartao, maiorIdade) VALUES (2356, 9, 1);
 INSERT INTO Cliente (idPessoa, maiorIdade) VALUES (6578, 1);
 INSERT INTO Cliente (idPessoa, idCartao, maiorIdade) VALUES (7657, 3, 1);
