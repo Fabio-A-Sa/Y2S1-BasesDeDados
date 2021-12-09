@@ -10,5 +10,12 @@ SELECT name, address FROM Person WHERE birthDate-now < 20;  -- Select all person
 
 -- Sorting
 
-SELECT name FROM Person ORDER BY name;      -- Show all persons, sorting by names
-SELECT 
+SELECT name FROM Person ORDER BY name;      -- Show all persons, sorting by names (ascending)
+SELECT name FROM Person ORDER BY name ASC, gender DES;      -- Sorting by name and gender, if exists colision 
+
+-- Like operator
+
+SELECT * FROM PERSON WHERE name LIKE "%bi%";        -- Ex: Fabio
+SELECT * FROM PERSON WHERE name LIKE "%na";         -- Ex: Joana, Catarina
+SELECT * FROM PERSON WHERE name LIKE "Na%";         -- Ex: Nadia
+
