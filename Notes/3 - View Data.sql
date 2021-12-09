@@ -1,4 +1,4 @@
--- To run a query
+-- To view all atributes of a table (continuation in topic 7)
 
 SELECT * FROM Person;                                    -- Show all atributes and tuples from current table Person
 SELECT name, date('2021-11-30')-birthday from Person;    -- Show name | age in current table Person
