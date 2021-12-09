@@ -23,7 +23,7 @@ SELECT * FROM PERSON WHERE name LIKE "Na%";         -- Ex: Nadia
 -- Union operator
 
 SELECT Student.name FROM Student
-Union                                       -- Union without repetition (for default)
+Union                                       -- Union without repetition (for SQL default)
 SELECT Professor.name from Professor
 ORDER BY age DESC;
 
