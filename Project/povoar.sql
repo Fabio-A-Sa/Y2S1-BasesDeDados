@@ -148,12 +148,34 @@ INSERT INTO Funcionario (
 
 -- Table NaoGerente
 
-INSERT INTO NaoGerente (idFuncionario, funcao) VALUES (9812, "limpeza");
-INSERT INTO NaoGerente (idFuncionario, funcao) VALUES (7823, "armazem");
+INSERT INTO NaoGerente (
+                            idFuncionario, 
+                            funcao
+                            ) 
+                            VALUES (
+                                9812, 
+                                "limpeza"
+                        );
+
+INSERT INTO NaoGerente (
+                            idFuncionario, 
+                            funcao
+                            ) 
+                            VALUES (
+                                7823, 
+                                "armazem"
+                        );
 
 -- Table Gerente
 
-INSERT INTO Gerente (idFuncionario, anosServico) VALUES (8594, 6);
+INSERT INTO Gerente (
+                        idFuncionario, 
+                        anosServico
+                        ) 
+                        VALUES (
+                            8594, 
+                            6
+                    );
 
 -- Table Produto
 
