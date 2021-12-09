@@ -55,7 +55,7 @@ INSERT INTO Cliente (
                             3847, 
                             1
                     );
-                    
+
 INSERT INTO Cliente (idPessoa, idCartao, maiorIdade) VALUES (2356, 9, 1);
 INSERT INTO Cliente (idPessoa, maiorIdade) VALUES (6578, 1);
 INSERT INTO Cliente (idPessoa, idCartao, maiorIdade) VALUES (7657, 3, 1);
@@ -97,7 +97,32 @@ INSERT INTO Produto (idProduto, preco) VALUES (78, 7);
 
 -- Table Utensilio
 
+INSERT INTO Utensilio (
+                        idProduto,
+                        nome
+                        )
+                        VALUES (
+                            32,
+                            'Decantador'
+                        );
 
+INSERT INTO Utensilio (
+                        idProduto,
+                        nome
+                        )
+                        VALUES (
+                            75,
+                            'Saca-rolhas'
+                        );
+
+INSERT INTO Utensilio (
+                        idProduto,
+                        nome
+                        )
+                        VALUES (
+                            78,
+                            'Bomba de vácuo'
+                        );
 
 -- Table Horario
 
@@ -117,7 +142,122 @@ INSERT INTO Produto (idProduto, preco) VALUES (78, 7);
 
 -- Table Prova
 
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            8566,
+                            77,
+                            'queijo',
+                            2
+                            );
 
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            8566,
+                            94,
+                            'presunto',
+                            1
+                            );
+
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            8566,
+                            53,
+                            'presunto',
+                            1
+                            );
+
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            2354,
+                            62,
+                            'presunto',
+                            4
+                            );
+
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            2354,
+                            34,
+                            'queijo',
+                            1
+                            );
+
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            5477,
+                            62,
+                            'presunto',
+                            2
+                            );
+
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            5477,
+                            72,
+                            'queijo',
+                            1
+                            );
+
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            5477,
+                            53,
+                            'queijo',
+                            1
+                            );
+
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            5477,
+                            71,
+                            'presunto',
+                            1
+                            );
 
 -- Table Compra
 
