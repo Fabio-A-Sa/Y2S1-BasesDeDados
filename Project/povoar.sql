@@ -97,8 +97,25 @@ INSERT INTO Cliente (
                             1
                     );
                     
-INSERT INTO Cliente (idPessoa, idCartao, maiorIdade) VALUES (2354, 7, 1);
-INSERT INTO Cliente (idPessoa, maiorIdade) VALUES (5477, 1);
+INSERT INTO Cliente (
+                        idPessoa, 
+                        idCartao, 
+                        maiorIdade
+                        ) 
+                        VALUES (
+                            2354, 
+                            7, 
+                            1
+                    );
+
+INSERT INTO Cliente (
+                        idPessoa, 
+                        maiorIdade
+                        ) 
+                        VALUES (
+                            5477, 
+                            1
+                    );
 
 -- Table Funcionario
 
