@@ -11,11 +11,19 @@ SELECT name, address FROM Person WHERE birthDate-now < 20;  -- Select all person
 
 -- Sorting
 
-SELECT name FROM Person ORDER BY name;      -- Show all persons, sorting by names (ascending)
-SELECT name FROM Person ORDER BY name ASC, gender DES;      -- Sorting by name and gender, if exists colision 
+SELECT name FROM Person ORDER BY name;                      -- Show all persons, sorting by names (ascending)
+SELECT name FROM Person ORDER BY name ASC, gender DESC;     -- Sorting by name and gender, if exists colision 
 
 -- Like operator
 
 SELECT * FROM PERSON WHERE name LIKE "%bi%";        -- Ex: Fabio
 SELECT * FROM PERSON WHERE name LIKE "%na";         -- Ex: Joana, Catarina
 SELECT * FROM PERSON WHERE name LIKE "Na%";         -- Ex: Nadia
+
+-- Union operator
+
+SELECT Student.name FROM Student
+Union                                       -- Union without repetition (for default)
+SELECT Professor.name from Professor
+ORDER BY age DESC;
+
