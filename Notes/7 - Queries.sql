@@ -2,6 +2,7 @@
 
 SELECT * FROM Person;                               -- Show all data in Person's table
 SELECT name, birthDate-now as age FROM Person;      -- Show name | age in all tuples
+SELECT Person1.name, Person2.name FROM Person Person1, Person Person2 WHERE Person1.name > Person2.name;
 
 -- With conditions
 
@@ -18,4 +19,3 @@ SELECT name FROM Person ORDER BY name ASC, gender DES;      -- Sorting by name a
 SELECT * FROM PERSON WHERE name LIKE "%bi%";        -- Ex: Fabio
 SELECT * FROM PERSON WHERE name LIKE "%na";         -- Ex: Joana, Catarina
 SELECT * FROM PERSON WHERE name LIKE "Na%";         -- Ex: Nadia
-
