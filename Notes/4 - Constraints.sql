@@ -43,4 +43,3 @@ CREATE TABLE Faculty (
     CHECK (name <> 'ISEP' AND city == 'COIMBRA')
     CONSTRAINT FacultyPKError PRIMARY KEY (id)          -- If gives an error, show FacultyPKError message
 );
-
