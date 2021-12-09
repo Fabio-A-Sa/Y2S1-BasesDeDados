@@ -1,6 +1,20 @@
--- Create a table
+-- To view all collumns name in header's table
+
+.header on
+
+-- To view formated data
+
+.mode column
+
+-- To enable Foreing Keys
+
+PRAGMA foreign_keys = ON;
+
+-- 
 
 DROP TABLE IF EXISTS Person;
+
+-- Create a table
 
 CREATE TABLE Person (
     id INTEGER,             -- Integer type
@@ -32,15 +46,3 @@ INSERT INTO Person (id, name, address, gender, birthday) VALUES (123, "Joana", "
 -- To view schema of certain table
 
 .schema Person
-
--- To view all collumns name in header's table
-
-.header on
-
--- To view formated data
-
-.mode column
-
--- To enable Foreing Keys
-
-PRAGMA foreign_keys = ON;
