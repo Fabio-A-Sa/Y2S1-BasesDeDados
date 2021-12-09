@@ -93,7 +93,124 @@ INSERT INTO Produto (idProduto, preco) VALUES (78, 7);
 
 -- Table Vinho
 
+INSERT INTO Vinho ( 
+                        idProduto,
+                        tipo,
+                        regiao,
+                        anoProducao,
+                        teorAlcool,
+                        capacidadeGarrafa     
+                        )
+                        VALUES (     
+                            34,
+                            'Verde Branco',
+                            'Minho',
+                            2000,
+                            12.5,
+                            0.7
+                            );
 
+INSERT INTO Vinho ( 
+                        idProduto,
+                        tipo,
+                        regiao,
+                        anoProducao,
+                        teorAlcool,
+                        capacidadeGarrafa     
+                        )
+                        VALUES (     
+                            62,
+                            'Maduro Tinto',
+                            'Douro',
+                            2017,
+                            13,
+                            0.75
+                            );
+
+INSERT INTO Vinho ( 
+                        idProduto,
+                        tipo,
+                        regiao,
+                        anoProducao,
+                        teorAlcool,
+                        capacidadeGarrafa     
+                        )
+                        VALUES (     
+                            72,
+                            'Verde Tinto',
+                            'Bião',
+                            1999,
+                            13,
+                            0.75
+                            );
+
+INSERT INTO Vinho ( 
+                        idProduto,
+                        tipo,
+                        regiao,
+                        anoProducao,
+                        teorAlcool,
+                        capacidadeGarrafa     
+                        )
+                        VALUES (     
+                            53,
+                            'Maduro Branco',
+                            'Riga Tejo',
+                            2001,
+                            14,
+                            0.75
+                            );
+
+INSERT INTO Vinho ( 
+                        idProduto,
+                        tipo,
+                        regiao,
+                        anoProducao,
+                        teorAlcool,
+                        capacidadeGarrafa     
+                        )
+                        VALUES (     
+                            71,
+                            'Maduro Tinto',
+                            'Alentejo',
+                            1983,
+                            12.5,
+                            0.75
+                            );
+
+INSERT INTO Vinho ( 
+                        idProduto,
+                        tipo,
+                        regiao,
+                        anoProducao,
+                        teorAlcool,
+                        capacidadeGarrafa     
+                        )
+                        VALUES (     
+                            77,
+                            'Vinho do Porto Tawny',
+                            'Douro',
+                            2016,
+                            19.5,
+                            0.75
+                            );
+
+INSERT INTO Vinho ( 
+                        idProduto,
+                        tipo,
+                        regiao,
+                        anoProducao,
+                        teorAlcool,
+                        capacidadeGarrafa     
+                        )
+                        VALUES (     
+                            94,
+                            'Vinho do Porto Branco',
+                            'Douro',
+                            1999,
+                            19.5,
+                            0.75
+                            );
 
 -- Table Utensilio
 
