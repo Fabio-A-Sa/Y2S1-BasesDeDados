@@ -303,7 +303,7 @@ INSERT INTO Vinho (
                             2017,
                             13,
                             0.75
-                            );
+                    );
 
 INSERT INTO Vinho ( 
                         idProduto,
@@ -320,7 +320,7 @@ INSERT INTO Vinho (
                             1999,
                             13,
                             0.75
-                            );
+                    );
 
 INSERT INTO Vinho ( 
                         idProduto,
@@ -337,7 +337,7 @@ INSERT INTO Vinho (
                             2001,
                             14,
                             0.75
-                            );
+                    );
 
 INSERT INTO Vinho ( 
                         idProduto,
@@ -354,7 +354,7 @@ INSERT INTO Vinho (
                             1983,
                             12.5,
                             0.75
-                            );
+                    );
 
 INSERT INTO Vinho ( 
                         idProduto,
@@ -371,7 +371,7 @@ INSERT INTO Vinho (
                             2016,
                             19.5,
                             0.75
-                            );
+                    );
 
 INSERT INTO Vinho ( 
                         idProduto,
@@ -388,7 +388,7 @@ INSERT INTO Vinho (
                             1999,
                             19.5,
                             0.75
-                            );
+                    );
 
 -- Table Utensilio
 
@@ -448,7 +448,7 @@ INSERT INTO Prova (
                             77,
                             'queijo',
                             2
-                            );
+                    );
 
 INSERT INTO Prova (
                         idCliente,
@@ -461,7 +461,7 @@ INSERT INTO Prova (
                             94,
                             'presunto',
                             1
-                            );
+                    );
 
 INSERT INTO Prova (
                         idCliente,
@@ -474,7 +474,7 @@ INSERT INTO Prova (
                             53,
                             'presunto',
                             1
-                            );
+                    );
 
 INSERT INTO Prova (
                         idCliente,
@@ -487,7 +487,7 @@ INSERT INTO Prova (
                             62,
                             'presunto',
                             4
-                            );
+                    );
 
 INSERT INTO Prova (
                         idCliente,
@@ -500,7 +500,7 @@ INSERT INTO Prova (
                             34,
                             'queijo',
                             1
-                            );
+                    );
 
 INSERT INTO Prova (
                         idCliente,
@@ -513,7 +513,7 @@ INSERT INTO Prova (
                             62,
                             'presunto',
                             2
-                            );
+                    );
 
 INSERT INTO Prova (
                         idCliente,
@@ -526,7 +526,7 @@ INSERT INTO Prova (
                             72,
                             'queijo',
                             1
-                            );
+                    );
 
 INSERT INTO Prova (
                         idCliente,
@@ -539,7 +539,7 @@ INSERT INTO Prova (
                             53,
                             'queijo',
                             1
-                            );
+                    );
 
 INSERT INTO Prova (
                         idCliente,
@@ -552,7 +552,7 @@ INSERT INTO Prova (
                             71,
                             'presunto',
                             1
-                            );
+                    );
 
 -- Table Compra
 
@@ -571,7 +571,7 @@ INSERT INTO Compra (
                             2,
                             6,
                             0
-                            );
+                    );
 
 INSERT INTO Compra (
                         idCliente,
@@ -588,7 +588,7 @@ INSERT INTO Compra (
                             1,
                             50,
                             0
-                            );
+                    );
 
 INSERT INTO Compra (
                         idCliente,
@@ -605,7 +605,7 @@ INSERT INTO Compra (
                             3,
                             19.5,
                             0
-                            );
+                    );
 
 INSERT INTO Compra (
                         idCliente,
@@ -622,7 +622,7 @@ INSERT INTO Compra (
                             1,
                             10,
                             0
-                            );
+                    );
 
 INSERT INTO Compra (
                         idCliente,
@@ -639,7 +639,7 @@ INSERT INTO Compra (
                             2,
                             11.3,
                             0
-                            );
+                    );
 
 INSERT INTO Compra (
                         idCliente,
@@ -656,7 +656,7 @@ INSERT INTO Compra (
                             2,
                             100,
                             0
-                            );
+                    );
 
 INSERT INTO Compra (
                         idCliente,
@@ -673,7 +673,7 @@ INSERT INTO Compra (
                             3,
                             16.95,
                             0
-                            );
+                    );
 
 INSERT INTO Compra (
                         idCliente,
@@ -690,7 +690,7 @@ INSERT INTO Compra (
                             2,
                             13.3,
                             0
-                            );
+                    );
 
 INSERT INTO Compra (
                         idCliente,
@@ -707,7 +707,7 @@ INSERT INTO Compra (
                             1,
                             50,
                             0
-                            );
+                    );
 
 INSERT INTO Compra (
                         idCliente,
@@ -724,7 +724,7 @@ INSERT INTO Compra (
                             2,
                             11.3,
                             0
-                            );
+                    );
 
 INSERT INTO Compra (
                         idCliente,
@@ -741,6 +741,6 @@ INSERT INTO Compra (
                             1,
                             5.5,
                             0
-                            );
+                    );
 
 COMMIT TRANSACTION;
