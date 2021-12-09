@@ -179,8 +179,24 @@ INSERT INTO Gerente (
 
 -- Table Produto
 
-INSERT INTO Produto (idProduto, preco) VALUES (34, 12);
-INSERT INTO Produto (idProduto, preco) VALUES (62, 9);
+INSERT INTO Produto (
+                        idProduto, 
+                        preco
+                        ) 
+                        VALUES (
+                            34, 
+                            12
+                    );
+
+INSERT INTO Produto (
+                        idProduto, 
+                        preco
+                        ) 
+                        VALUES (
+                            62, 
+                            9
+                    );
+                    
 INSERT INTO Produto (idProduto, preco) VALUES (72, 34);
 INSERT INTO Produto (idProduto, preco) VALUES (53, 5);
 INSERT INTO Produto (idProduto, preco) VALUES (71, 2);
