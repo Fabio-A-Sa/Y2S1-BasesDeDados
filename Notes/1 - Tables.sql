@@ -34,8 +34,8 @@ CREATE TABLE Person (
 
 -- Add and remove columns/atributes
 
-ALTER TABLE Person ADD country VARCHAR(255);  -- Add atribute/collumn country
-ALTER TABLE Person DROP country;              -- Remove atribute/collumn country
+ALTER TABLE Person ADD country VARCHAR(255);    -- Add atribute/collumn country
+ALTER TABLE Person DROP country;                -- Remove atribute/collumn country
 
 -- Insert data tuples
 
