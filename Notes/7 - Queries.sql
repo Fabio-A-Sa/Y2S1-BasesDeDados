@@ -27,3 +27,7 @@ Union                                       -- Union without repetition (for def
 SELECT Professor.name from Professor
 ORDER BY age DESC;
 
+SELECT Student.name FROM Student
+Union all                                   -- Union with repetition
+SELECT Professor.name from Professor
+ORDER BY gender ASC;
