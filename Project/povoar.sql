@@ -227,10 +227,39 @@ INSERT INTO Produto (
 INSERT INTO Produto (
                         idProduto, 
                         preco
-                        ) VALUES (77, 31);
-INSERT INTO Produto (idProduto, preco) VALUES (94, 53);
-INSERT INTO Produto (idProduto, preco) VALUES (32, 42);
-INSERT INTO Produto (idProduto, preco) VALUES (75, 20);
+                        ) 
+                        VALUES (
+                            77, 
+                            31
+                    );
+
+INSERT INTO Produto (
+                        idProduto, 
+                        preco
+                        ) 
+                        VALUES (
+                            94, 
+                            53
+                    );
+
+INSERT INTO Produto (
+                        idProduto, 
+                        preco
+                        ) 
+                        VALUES (
+                            32, 
+                            42
+                    );
+
+INSERT INTO Produto (
+                        idProduto, 
+                        preco
+                        ) 
+                        VALUES (
+                            75, 
+                            20
+                    );
+                    
 INSERT INTO Produto (idProduto, preco) VALUES (78, 7);
 
 -- Table Vinho
