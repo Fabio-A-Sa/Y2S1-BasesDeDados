@@ -1,3 +1,11 @@
+-- To view all tables in current dataBase
+
+.tables
+
+-- To view all schema of certain table
+
+.schema Person
+
 -- To view all atributes of a table (continuation in topic 7)
 
 SELECT * FROM Person;                                    -- Show all atributes and tuples from current table Person
