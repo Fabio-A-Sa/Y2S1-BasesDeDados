@@ -136,8 +136,15 @@ INSERT INTO Funcionario (
                                 7823, 
                                 689
                         );
-                        
-INSERT INTO Funcionario (idPessoa, salario) VALUES (8594, 1129);
+
+INSERT INTO Funcionario (
+                            idPessoa, 
+                            salario
+                            ) 
+                            VALUES (
+                                8594, 
+                                1129
+                        );
 
 -- Table NaoGerente
 
