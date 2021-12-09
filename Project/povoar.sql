@@ -200,7 +200,8 @@ INSERT INTO Produto (
 INSERT INTO Produto (
                         idProduto, 
                         preco
-                        ) VALUES (
+                        ) 
+                        VALUES (
                             72, 
                             34
                     );
@@ -208,7 +209,8 @@ INSERT INTO Produto (
 INSERT INTO Produto (
                         idProduto, 
                         preco
-                        ) VALUES (
+                        ) 
+                        VALUES (
                             53, 
                             5
                     );
@@ -216,12 +218,16 @@ INSERT INTO Produto (
 INSERT INTO Produto (
                         idProduto, 
                         preco
-                        ) VALUES (
+                        ) 
+                        VALUES (
                             71, 
                             2
                     );
-                    
-INSERT INTO Produto (idProduto, preco) VALUES (77, 31);
+
+INSERT INTO Produto (
+                        idProduto, 
+                        preco
+                        ) VALUES (77, 31);
 INSERT INTO Produto (idProduto, preco) VALUES (94, 53);
 INSERT INTO Produto (idProduto, preco) VALUES (32, 42);
 INSERT INTO Produto (idProduto, preco) VALUES (75, 20);
