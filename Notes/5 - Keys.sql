@@ -21,10 +21,10 @@ INSERT INTO Person (id, name, birthDate) VALUES (325, "Fabio", '2002-07-10');
 INSERT INTO Person (id, name, birthDate) VALUES (23, "Gabriela", '2002-11-10');
 INSERT INTO Person (id, name, birthDate) VALUES (325, "Luis", '1987-05-23');        -- Gives an error, UNIQUE key violation
 
-INSERT INTO Faculty (name, city) VALUES ("FEUP", "Porto");                      -- id = 0
-INSERT INTO Faculty (name, city) VALUES ("UM", "Braga");                        -- id = 1
-INSERT INTO Faculty (name, city) VALUES ("FEUP", "Porto");                      -- id = 2
-INSERT INTO Faculty (id, name, city) VALUES (1, "IPCA", "Braga")                -- Gives an error, UNIQUE violation
+INSERT INTO Faculty (name, city) VALUES ("FEUP", "Porto");                      -- id = 1
+INSERT INTO Faculty (name, city) VALUES ("UM", "Braga");                        -- id = 2
+INSERT INTO Faculty (name, city) VALUES ("FEUP", "Porto");                      -- id = 3
+INSERT INTO Faculty (id, name, city) VALUES (2, "IPCA", "Braga")                -- Gives an error, UNIQUE violation
 
 -- Note
 -- If exists an integer ID, ID is an alias of ROWID (implicit primary key)
