@@ -9,3 +9,6 @@ SELECT name FROM Person WHERE gender = 'M';                 -- Select all male p
 SELECT name, address FROM Person WHERE birthDate-now < 20;  -- Select all persons which age < 20
 
 -- Sorting
+
+SELECT name FROM Person ORDER BY name;      -- Show all persons, sorting by names
+SELECT 
