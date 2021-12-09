@@ -259,8 +259,15 @@ INSERT INTO Produto (
                             75, 
                             20
                     );
-                    
-INSERT INTO Produto (idProduto, preco) VALUES (78, 7);
+
+INSERT INTO Produto (
+                        idProduto, 
+                        preco
+                        ) 
+                        VALUES (
+                            78, 
+                            7
+                    );
 
 -- Table Vinho
 
@@ -279,7 +286,7 @@ INSERT INTO Vinho (
                             2000,
                             12.5,
                             0.7
-                            );
+                    );
 
 INSERT INTO Vinho ( 
                         idProduto,
