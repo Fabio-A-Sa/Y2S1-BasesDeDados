@@ -10,7 +10,7 @@
 
 PRAGMA foreign_keys = ON;
 
--- 
+-- Drop table if exists
 
 DROP TABLE IF EXISTS Person;
 
