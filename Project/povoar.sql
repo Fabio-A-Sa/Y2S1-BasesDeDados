@@ -196,10 +196,31 @@ INSERT INTO Produto (
                             62, 
                             9
                     );
+
+INSERT INTO Produto (
+                        idProduto, 
+                        preco
+                        ) VALUES (
+                            72, 
+                            34
+                    );
+
+INSERT INTO Produto (
+                        idProduto, 
+                        preco
+                        ) VALUES (
+                            53, 
+                            5
+                    );
+
+INSERT INTO Produto (
+                        idProduto, 
+                        preco
+                        ) VALUES (
+                            71, 
+                            2
+                    );
                     
-INSERT INTO Produto (idProduto, preco) VALUES (72, 34);
-INSERT INTO Produto (idProduto, preco) VALUES (53, 5);
-INSERT INTO Produto (idProduto, preco) VALUES (71, 2);
 INSERT INTO Produto (idProduto, preco) VALUES (77, 31);
 INSERT INTO Produto (idProduto, preco) VALUES (94, 53);
 INSERT INTO Produto (idProduto, preco) VALUES (32, 42);
