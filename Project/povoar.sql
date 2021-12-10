@@ -609,7 +609,122 @@ INSERT INTO Utensilio (
 
 -- Table Horario
 
+INSERT INTO Horario (
+			idHorario,
+			diaSemana,
+			horaInicio,
+			horaFinal
+			)
+			VALUES (
+				54635,
+				'TERCA-FEIRA',
+				'8:00',
+				'18:00'
+				);
 
+INSERT INTO Horario (
+			idHorario,
+			diaSemana,
+			horaInicio,
+			horaFinal
+			)
+			VALUES (
+				34667,
+				'SEGUNDA-FEIRA',
+				'10:00',
+				'20:00'
+				);
+
+INSERT INTO Horario (
+			idHorario,
+			diaSemana,
+			horaInicio,
+			horaFinal
+			)
+			VALUES (
+				12324,
+				'QUINTA-FEIRA',
+				'10:00',
+				'20:00'
+				);
+
+INSERT INTO Horario (
+			idHorario,
+			diaSemana,
+			horaInicio,
+			horaFinal
+			)
+			VALUES (
+				46767,
+				'SEXTA-FEIRA',
+				'12:00',
+				'20:00'
+				);
+
+INSERT INTO Horario (
+			idHorario,
+			diaSemana,
+			horaInicio,
+			horaFinal
+			)
+			VALUES (
+				25647,
+				'SABADO',
+				'9:00',
+				'16:00'
+				);
+
+INSERT INTO Horario (
+			idHorario,
+			diaSemana,
+			horaInicio,
+			horaFinal
+			)
+			VALUES (
+				46883,
+				'QUARTA-FEIRA',
+				'8:00',
+				'18:00'
+				);
+				
+INSERT INTO Horario (
+			idHorario,
+			diaSemana,
+			horaInicio,
+			horaFinal
+			)
+			VALUES (
+				58973,
+				'QUINTA-FEIRA',
+				'10:00',
+				'19:00'
+				);
+
+INSERT INTO Horario (
+			idHorario,
+			diaSemana,
+			horaInicio,
+			horaFinal
+			)
+			VALUES (
+				22897,
+				'TERCA-FEIRA',
+				'8:00',
+				'17:00'
+				);
+
+INSERT INTO Horario (
+			idHorario,
+			diaSemana,
+			horaInicio,
+			horaFinal
+			)
+			VALUES (
+				36724,
+				'SEXTA-FEIRA',
+				'9:00',
+				'18:00'
+				);
 
 -- Table Armazem
 
@@ -622,7 +737,7 @@ INSERT INTO Armazem (
 				375,
 				919191919,
 				'Setubal, Avenida da República 10'
-				);
+			);
 
 INSERT INTO Armazem (
 			idArmazem,
@@ -633,7 +748,7 @@ INSERT INTO Armazem (
 				832,
 				919191919,
 				'Setubal, Avenida da República 11'
-				);
+			);
 
 INSERT INTO Armazem (
 			idArmazem,
@@ -644,15 +759,235 @@ INSERT INTO Armazem (
 				134,
 				919191919,
 				'Setubal, Avenida da República 12'
-				);
+			);
 
 -- Table Stock
 
+INSERT INTO Stock (
+			idArmazem,
+			idProduto,
+			quantidade
+			)
+			VALUES (
+				375,
+				72,
+				2
+				);
 
+INSERT INTO Stock (
+			idArmazem,
+			idProduto,
+			quantidade
+			)
+			VALUES (
+				375,
+				53,
+				4
+				);
+
+INSERT INTO Stock(
+			idArmazem,
+			idProduto,
+			quantidade
+			)
+			VALUES (
+				375,
+				71,
+				2
+				);
+
+INSERT INTO Stock (
+			idArmazem,
+			idProduto,
+			quantidade
+			)
+			VALUES (
+				375,
+				77,
+				2
+				);
+
+INSERT INTO Stock (
+			idArmazem,
+			idProduto,
+			quantidade
+			)
+			VALUES (
+				375,
+				94,
+				5
+				);
+
+INSERT INTO Stock (
+			idArmazem,
+			idProduto,
+			quantidade
+			)
+			VALUES (
+				134,
+				94,
+				2
+				);
+
+INSERT INTO Stock (
+			idArmazem,
+			idProduto,
+			quantidade
+			)
+			VALUES (
+				134,
+				32,
+				4
+				);
+
+INSERT INTO Stock (
+			idArmazem,
+			idProduto,
+			quantidade
+			)
+			VALUES (
+				134,
+				75,
+				1
+				);
+
+INSERT INTO Stock (
+			idArmazem,
+			idProduto,
+			quantidade
+			)
+			VALUES (
+				134,
+				78,
+				7
+				);
+
+INSERT INTO Stock (
+			idArmazem,
+			idProduto,
+			quantidade
+			)
+			VALUES (
+				832,
+				34,
+				2
+				);
+
+INSERT INTO Stock (
+			idArmazem,
+			idProduto,
+			quantidade
+			)
+			VALUES (
+				832,
+				62,
+				4
+				);
+
+INSERT INTO Stock (
+			idArmazem,
+			idProduto,
+			quantidade
+			)
+			VALUES (
+				832,
+				72,
+				2
+				);
+
+INSERT INTO Stock (
+			idArmazem,
+			idProduto,
+			quantidade
+			)
+			VALUES (
+				832,
+				53,
+				6
+				);
 
 -- Table HorarioFuncionario
 
+INSERT INTO HorarioFuncionario (
+				idHorario,
+				idFuncionario
+				)
+				VALUES (
+					9812,
+					54635
+					);
 
+INSERT INTO HorarioFuncionario (
+				idHorario,
+				idFuncionario
+				)
+				VALUES (
+					7823,
+					34667
+					);
+
+INSERT INTO HorarioFuncionario (
+				idHorario,
+				idFuncionario
+				)
+				VALUES (
+					8594,
+					12324
+					);
+					
+INSERT INTO HorarioFuncionario (
+				idHorario,
+				idFuncionario
+				)
+				VALUES (
+					9812,
+					46767
+					);
+
+INSERT INTO HorarioFuncionario (
+				idHorario,
+				idFuncionario
+				)
+				VALUES (
+					7823,
+					25647
+					);
+
+INSERT INTO HorarioFuncionario (
+				idHorario,
+				idFuncionario
+				)
+				VALUES (
+					8594,
+					46883
+					);
+
+INSERT INTO HorarioFuncionario (
+				idHorario,
+				idFuncionario
+				)
+				VALUES (
+					9812,
+					58973
+					);
+
+INSERT INTO HorarioFuncionario (
+				idHorario,
+				idFuncionario
+				)
+				VALUES (
+					7823,
+					22897
+					);
+
+INSERT INTO HorarioFuncionario (
+				idHorario,
+				idFuncionario
+				)
+				VALUES (
+					8594,
+					36724
+					);
 
 -- Table Prova
 
@@ -937,7 +1272,7 @@ INSERT INTO Compra (
                         desconto
                         )
                         VALUES (
-                            8566,
+                            2356,
                             77,
                             '2021-04-03',
                             2,
@@ -955,7 +1290,7 @@ INSERT INTO Compra (
                         )
                         VALUES (
                             6578,
-                            7,
+                            78,
                             '2021-12-09',
                             1,
                             5.5,
