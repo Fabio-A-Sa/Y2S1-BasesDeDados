@@ -3,7 +3,195 @@ BEGIN TRANSACTION;
 
 -- Table Pessoa
 
+INSERT INTO Pessoa ( 	
+			idPessoa,
+			nome,
+			dataNascimento,
+			morada,
+			telefone,
+			idade,
+			nif
+			)
+			VALUES (
+				3847,
+				'João Pedro',
+				'2002-01-25',
+				'Porto, Rua Santa Catarina 19',
+				914523697,
+				19,
+				250252748
+			);
 
+INSERT INTO Pessoa ( 	
+			idPessoa,
+			nome,
+			dataNascimento,
+			morada,
+			telefone,
+			idade,
+			nif
+			)
+			VALUES (
+				2356,
+				'Henrique Silva',
+				'2005-01-25',
+				'Lisboa, Rua de Alvalade 100',
+				935423697,
+				16,
+				250456748
+			);
+
+INSERT INTO Pessoa ( 	
+			idPessoa,
+			nome,
+			dataNascimento,
+			morada,
+			telefone,
+			idade,
+			nif
+			)
+			VALUES (
+				6578,
+				'Rui Costa',
+				'2000-05-13',
+				'Porto, Avenida dos Aliados 44',
+				917892637,
+				21,
+				125364748
+			);
+
+INSERT INTO Pessoa ( 	
+			idPessoa,
+			nome,
+			dataNascimento,
+			morada,
+			telefone,
+			idade,
+			nif
+			)
+			VALUES (
+				7657,
+				'Carolina Brandão',
+				'1990-01-05',
+				'Évora, Rua Torta 119',
+				914789457,
+				31,
+				256532748
+			);
+
+INSERT INTO Pessoa ( 	
+			idPessoa,
+			nome,
+			dataNascimento,
+			morada,
+			telefone,
+			idade,
+			nif
+			)
+			VALUES (
+				8566,
+				'Fabio Sá',
+				'1998-06-10',
+				'Castelo Branco, Travessa dos Pedregais 88',
+				914524563,
+				23,
+				250278451
+			);
+
+INSERT INTO Pessoa ( 	
+			idPessoa,
+			nome,
+			dataNascimento,
+			morada,
+			telefone,
+			idade,
+			nif
+			)
+			VALUES (
+				2354,
+				'João Silva',
+				'2000-02-14',
+				'Porto, Rua da Pasteleira 55',
+				978923697,
+				21,
+				245552748
+			);
+
+INSERT INTO Pessoa ( 	
+			idPessoa,
+			nome,
+			dataNascimento,
+			morada,
+			telefone,
+			idade,
+			nif
+			)
+			VALUES (
+				5477,
+				'Daniela Marques',
+				'2002-03-18',
+				'Espinho, Rua 19 478',
+				917893697,
+				19,
+				278942748
+			);
+
+INSERT INTO Pessoa ( 	
+			idPessoa,
+			nome,
+			dataNascimento,
+			morada,
+			telefone,
+			idade,
+			nif
+			)
+			VALUES (
+				9812,
+				'Tomás Marques',
+				'1968-09-19',
+				'Braga, Avenida Olímpica 109',
+				975623697,
+				53,
+				255621748
+			);
+
+INSERT INTO Pessoa ( 	
+			idPessoa,
+			nome,
+			dataNascimento,
+			morada,
+			telefone,
+			idade,
+			nif
+			)
+			VALUES (
+				7823,
+				'Rita Teixeira',
+				'2002-02-22',
+				'Porto, Rua Santa Catarina 129',
+				919293998,
+				19,
+				254552768
+			);
+
+INSERT INTO Pessoa ( 	
+			idPessoa,
+			nome,
+			dataNascimento,
+			morada,
+			telefone,
+			idade,
+			nif
+			)
+			VALUES (
+				8594,
+				'José Andrade',
+				'1995-12-25',
+				'Vila Nova de Gaia, Praça dos Descobrimentos 23',
+				914456397,
+				26,
+				251235748
+			);
 
 -- Table Cartao
 
@@ -425,7 +613,38 @@ INSERT INTO Utensilio (
 
 -- Table Armazem
 
+INSERT INTO Armazem (
+			idArmazem,
+			telefone,
+			local
+			)
+			VALUES (
+				375,
+				919191919,
+				'Setubal, Avenida da República 10'
+				);
 
+INSERT INTO Armazem (
+			idArmazem,
+			telefone,
+			local
+			)
+			VALUES (
+				832,
+				919191919,
+				'Setubal, Avenida da República 11'
+				);
+
+INSERT INTO Armazem (
+			idArmazem,
+			telefone,
+			local
+			)
+			VALUES (
+				134,
+				919191919,
+				'Setubal, Avenida da República 12'
+				);
 
 -- Table Stock
 
