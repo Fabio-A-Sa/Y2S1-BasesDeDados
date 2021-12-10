@@ -253,7 +253,7 @@ INSERT INTO Cliente (
                         VALUES (
                             2356, 
                             9, 
-                            1
+                            0
                     );
 
 INSERT INTO Cliente (
@@ -909,8 +909,8 @@ INSERT INTO Stock (
 -- Table HorarioFuncionario
 
 INSERT INTO HorarioFuncionario (
-				idHorario,
-				idFuncionario
+    			idFuncionario,
+				idHorario
 				)
 				VALUES (
 					9812,
@@ -918,8 +918,8 @@ INSERT INTO HorarioFuncionario (
 					);
 
 INSERT INTO HorarioFuncionario (
-				idHorario,
-				idFuncionario
+    			idFuncionario,
+				idHorario
 				)
 				VALUES (
 					7823,
@@ -927,8 +927,8 @@ INSERT INTO HorarioFuncionario (
 					);
 
 INSERT INTO HorarioFuncionario (
-				idHorario,
-				idFuncionario
+    			idFuncionario,
+				idHorario
 				)
 				VALUES (
 					8594,
@@ -936,8 +936,8 @@ INSERT INTO HorarioFuncionario (
 					);
 					
 INSERT INTO HorarioFuncionario (
-				idHorario,
-				idFuncionario
+    			idFuncionario,
+				idHorario
 				)
 				VALUES (
 					9812,
@@ -945,8 +945,8 @@ INSERT INTO HorarioFuncionario (
 					);
 
 INSERT INTO HorarioFuncionario (
-				idHorario,
-				idFuncionario
+    			idFuncionario,
+				idHorario
 				)
 				VALUES (
 					7823,
@@ -954,8 +954,8 @@ INSERT INTO HorarioFuncionario (
 					);
 
 INSERT INTO HorarioFuncionario (
-				idHorario,
-				idFuncionario
+    			idFuncionario,
+				idHorario
 				)
 				VALUES (
 					8594,
@@ -963,8 +963,8 @@ INSERT INTO HorarioFuncionario (
 					);
 
 INSERT INTO HorarioFuncionario (
-				idHorario,
-				idFuncionario
+    			idFuncionario,
+				idHorario
 				)
 				VALUES (
 					9812,
@@ -972,8 +972,8 @@ INSERT INTO HorarioFuncionario (
 					);
 
 INSERT INTO HorarioFuncionario (
-				idHorario,
-				idFuncionario
+    			idFuncionario,
+				idHorario
 				)
 				VALUES (
 					7823,
@@ -981,8 +981,8 @@ INSERT INTO HorarioFuncionario (
 					);
 
 INSERT INTO HorarioFuncionario (
-				idHorario,
-				idFuncionario
+    			idFuncionario,
+				idHorario
 				)
 				VALUES (
 					8594,
