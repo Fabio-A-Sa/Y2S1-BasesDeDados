@@ -21,7 +21,7 @@ CREATE TABLE Cliente (
     idade INTEGER CONSTRAINT IdadeCliente CHECK (idade >= 0),
     nif CHAR(9),
     maioridade BOOL CONSTRAINT MaioridadeCliente NOT NULL,
-    idCartao INTEGER CONSTRAINT IdCartaoCliente REFERENCES Cartao (idCartao) UNIQUE NOT NULL
+    idCartao INTEGER CONSTRAINT IdCartaoCliente REFERENCES Cartao (idCartao) UNIQUE DEFAULT NULL
 );
 
 DROP TABLE IF EXISTS NaoGerente;
@@ -69,6 +69,7 @@ DROP TABLE IF EXISTS Utensilio;
 
 CREATE TABLE Utensilio (
     idProduto INTEGER PRIMARY KEY CONSTRAINT IdUtensilio NOT NULL,
+    preco INTEGER CONSTRAINT PrecoUtensilio CHECK (preco >= 0),
     nome CHAR(30) CONSTRAINT NomeUtensilio NOT NULL
 );
 
@@ -101,8 +102,8 @@ DROP TABLE IF EXISTS Stock;
 
 CREATE TABLE Stock (
     idArmazem INTEGER CONSTRAINT IdArmazemStock NOT NULL REFERENCES Armazem (idArmazem),
-    idProduto INTEGER CONSTRAINT IdProdutoStock NOT NULL REFERENCES Vinho (idProduto)
-                        CONSTRAINT IdProdutoStock NOT NULL REFERENCES Utensilio (idProduto),
+    idProduto INTEGER, --CONSTRAINT IdProdutoStock --NOT NULL REFERENCES Produto,
+                        --CONSTRAINT IdProdutoStock NOT NULL REFERENCES Utensilio (idProduto),
     quantidade INTEGER CONSTRAINT QuantidadeStock CHECK (quantidade > 0),
     PRIMARY KEY (idArmazem, idProduto)
 );
