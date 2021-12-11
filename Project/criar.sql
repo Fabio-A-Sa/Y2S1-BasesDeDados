@@ -13,7 +13,7 @@ CREATE TABLE Cartao (
 DROP TABLE IF EXISTS Cliente;
 
 CREATE TABLE Cliente (
-    idPessoa INTEGER CONSTRAINT IdCliente PRIMARY KEY NOT NULL,
+    idPessoa INTEGER PRIMARY KEY CONSTRAINT IdCliente NOT NULL,
     nome CHAR(30) CONSTRAINT NomeCliente NOT NULL,
     dataNascimento DATE CONSTRAINT DataNascimentoCliente NOT NULL,
     morada TEXT,
