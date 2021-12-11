@@ -17,7 +17,7 @@ CREATE TABLE Cliente (
     nome CHAR(30) CONSTRAINT NomeCliente NOT NULL,
     dataNascimento DATE CONSTRAINT DataNascimentoCliente NOT NULL,
     morada TEXT,
-    telefone CHAR(9),
+    telefone INTEGER,
     idade INTEGER CONSTRAINT IdadeCliente CHECK (idade >= 0),
     nif CHAR(9),
     maioridade BOOL CONSTRAINT MaioridadeCliente NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE NaoGerente (
     nome CHAR(30) CONSTRAINT NomeNaoGerente NOT NULL,
     dataNascimento DATE CONSTRAINT DataNascimentoNaoGerente NOT NULL,
     morada TEXT,
-    telefone CHAR(9),
+    telefone INTEGER,
     idade INTEGER CONSTRAINT IdadeNaoGerente CHECK (idade >= 0),
     nif CHAR(9),
     salario INTEGER CONSTRAINT SalarioNaoGerente CHECK (salario >= 0),
@@ -45,7 +45,7 @@ CREATE TABLE Gerente (
     nome CHAR(30) CONSTRAINT NomeGerente NOT NULL,
     dataNascimento DATE CONSTRAINT DataNascimentoGerente NOT NULL,
     morada TEXT,
-    telefone CHAR(9),
+    telefone INTEGER,
     idade INTEGER CONSTRAINT IdadeGerente CHECK (idade >= 0),
     nif CHAR(9),
     salario INTEGER CONSTRAINT SalarioGerente CHECK (salario >= 0),
@@ -75,9 +75,6 @@ CREATE TABLE Utensilio (
 DROP TABLE IF EXISTS Horario;
 
 CREATE TABLE Horario (
-    idHorario INTEGER PRIMARY KEY CONSTRAINT IdHorario NOT NULL,
-    horaInicio TIME CONSTRAINT HoraInicioHorario NOT NULL,
-    horaFinal TIME CONSTRAINT HoraFinalHorario NOT NULL,
     diaSemana TEXT CONSTRAINT DiaSemanaHorario CHECK ( (    diaSemana = "SABADO" OR
                                                             diaSemana = "DOMINGO" OR
                                                             diaSemana = "SEGUNDA-FEIRA" OR 
@@ -85,15 +82,18 @@ CREATE TABLE Horario (
                                                             diaSemana = "QUARTA-FEIRA" OR 
                                                             diaSemana = "QUINTA-FEIRA" OR 
                                                             diaSemana = "SEXTA-FEIRA"       ) ),
+    idHorario INTEGER PRIMARY KEY CONSTRAINT IdHorario NOT NULL,
+    horaInicio TIME CONSTRAINT HoraInicioHorario NOT NULL,
+    horaFinal TIME CONSTRAINT HoraFinalHorario NOT NULL,
     UNIQUE (diaSemana, horaInicio, horaFinal)
 );
 
 DROP TABLE IF EXISTS Armazem;
 
 CREATE TABLE Armazem (
-    idArmazem INTEGER PRIMARY KEY NOT NULL,
-    telefone INTEGER CONSTRAINT ErroArmazemTelefone NOT NULL,
-    local TEXT CONSTRAINT ErroArmazemLocal NOT NULL,
+    idArmazem INTEGER PRIMARY KEY CONSTRAINT IdArmazem NOT NULL,
+    telefone INTEGER CONSTRAINT TelefoneArmazem NOT NULL,
+    local TEXT CONSTRAINT LocalArmazem NOT NULL,
     UNIQUE (telefone, local)
 );
 
