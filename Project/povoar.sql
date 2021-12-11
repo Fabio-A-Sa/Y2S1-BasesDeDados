@@ -1,65 +1,6 @@
 PRAGMA foreign_keys = ON;
 BEGIN TRANSACTION;
 
--- Table Pessoa
-
-INSERT INTO Pessoa ( 	
-			idPessoa,
-			nome,
-			dataNascimento,
-			morada,
-			telefone,
-			idade,
-			nif
-			)
-			VALUES (
-				3847,
-				'João Pedro',
-				'2002-01-25',
-				'Porto, Rua Santa Catarina 19',
-				914523697,
-				19,
-				250252748
-			);
-
-INSERT INTO Pessoa ( 	
-			idPessoa,
-			nome,
-			dataNascimento,
-			morada,
-			telefone,
-			idade,
-			nif
-			)
-			VALUES (
-				2356,
-				'Henrique Silva',
-				'2005-01-25',
-				'Lisboa, Rua de Alvalade 100',
-				935423697,
-				16,
-				250456748
-			);
-
-INSERT INTO Pessoa ( 	
-			idPessoa,
-			nome,
-			dataNascimento,
-			morada,
-			telefone,
-			idade,
-			nif
-			)
-			VALUES (
-				6578,
-				'Rui Costa',
-				'2000-05-13',
-				'Porto, Avenida dos Aliados 44',
-				917892637,
-				21,
-				125364748
-			);
-
 INSERT INTO Pessoa ( 	
 			idPessoa,
 			nome,
@@ -238,37 +179,73 @@ INSERT INTO Cartao (
 
 INSERT INTO Cliente (
                         idPessoa, 
+                        nome,
+                        dataNascimento,
+                        morada,
+                        telefone,
+                        idade,
+                        nif,
                         maiorIdade
                         ) 
                         VALUES (
                             3847, 
+                            'João Pedro',
+                            '2002-01-25',
+                            'Porto, Rua Santa Catarina 19',
+                            914523697,
+                            19,
+                            250252748,
                             1
                     );
 
 INSERT INTO Cliente (
                         idPessoa, 
-                        idCartao, 
-                        maiorIdade
+                        nome,
+                        dataNascimento,
+                        morada,
+                        telefone,
+                        idade,
+                        nif,
+                        maiorIdade,
+                        idCartao
                         ) 
                         VALUES (
                             2356, 
-                            9, 
-                            0
+                            'Henrique Silva',
+                            '2005-01-25',
+                            'Lisboa, Rua de Alvalade 100',
+                            935423697,
+                            16,
+                            250456748,
+                            0,
+                            9
                     );
 
 INSERT INTO Cliente (
                         idPessoa, 
+                        nome,
+                        dataNascimento,
+                        morada,
+                        telefone,
+                        idade,
+                        nif,
                         maiorIdade
                         ) 
                         VALUES (
-                            6578, 
+                            6578,
+                            'Rui Costa',
+                            '2000-05-13',
+                            'Porto, Avenida dos Aliados 44',
+                            917892637,
+                            21,
+                            125364748,
                             1
                     );
 
 INSERT INTO Cliente (
-                        idPessoa, 
-                        idCartao, 
-                        maiorIdade
+                        idPessoa,  
+                        maiorIdade,
+                        idCartao
                         ) 
                         VALUES (
                             7657, 
