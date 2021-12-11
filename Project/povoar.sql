@@ -11,44 +11,6 @@ INSERT INTO Pessoa (
 			nif
 			)
 			VALUES (
-				7657,
-				'Carolina Brandão',
-				'1990-01-05',
-				'Évora, Rua Torta 119',
-				914789457,
-				31,
-				256532748
-			);
-
-INSERT INTO Pessoa ( 	
-			idPessoa,
-			nome,
-			dataNascimento,
-			morada,
-			telefone,
-			idade,
-			nif
-			)
-			VALUES (
-				8566,
-				'Fabio Sá',
-				'1998-06-10',
-				'Castelo Branco, Travessa dos Pedregais 88',
-				914524563,
-				23,
-				250278451
-			);
-
-INSERT INTO Pessoa ( 	
-			idPessoa,
-			nome,
-			dataNascimento,
-			morada,
-			telefone,
-			idade,
-			nif
-			)
-			VALUES (
 				2354,
 				'João Silva',
 				'2000-02-14',
@@ -243,34 +205,70 @@ INSERT INTO Cliente (
                     );
 
 INSERT INTO Cliente (
-                        idPessoa,  
+                        idPessoa, 
+                        nome,
+                        dataNascimento,
+                        morada,
+                        telefone,
+                        idade,
+                        nif,
                         maiorIdade,
                         idCartao
                         ) 
                         VALUES (
                             7657, 
-                            3, 
-                            1
+                            'Carolina Brandão',
+                            '1990-01-05',
+                            'Évora, Rua Torta 119',
+                            914789457,
+                            31,
+                            256532748
+                            1, 
+                            3
                     );
 
 INSERT INTO Cliente (
-                        idPessoa, 
+                        idPessoa,
+                        nome,
+                        dataNascimento,
+                        morada,
+                        telefone,
+                        idade,
+                        nif 
                         maiorIdade
                         ) 
                         VALUES (
                             8566, 
+                            'Fabio Sá',
+                            '1998-06-10',
+                            'Castelo Branco, Travessa dos Pedregais 88',
+                            914524563,
+                            23,
+                            250278451,
                             1
                     );
                     
 INSERT INTO Cliente (
                         idPessoa, 
-                        idCartao, 
-                        maiorIdade
+                        nome,
+                        dataNascimento,
+                        morada,
+                        telefone,
+                        idade,
+                        nif,
+                        maiorIdade,
+                        idCartao
                         ) 
                         VALUES (
                             2354, 
-                            7, 
-                            1
+                            'João Silva',
+                            '2000-02-14',
+                            'Porto, Rua da Pasteleira 55',
+                            978923697,
+                            21,
+                            245552748,
+                            1, 
+                            7
                     );
 
 INSERT INTO Cliente (
