@@ -5,9 +5,9 @@ DROP TABLE IF EXISTS Cartao;
 
 CREATE TABLE Cartao (
     idCartao INTEGER PRIMARY KEY NOT NULL,
-    dataAdesao DATE CONSTRAINT CartaoDataAdesao NOT NULL,
-    saldo INTEGER CONSTRAINT CartaoSaldo CHECK (saldo >= 0),
-    numero INTEGER CONSTRAINT CartaoNumero CHECK (numero > 0)
+    dataAdesao DATE CONSTRAINT DataAdesaoCartao NOT NULL,
+    saldo INTEGER CONSTRAINT SaldoCartao CHECK (saldo >= 0),
+    numero INTEGER CONSTRAINT NumeroCartao CHECK (numero > 0)
 );
 
 DROP TABLE IF EXISTS Cliente;
@@ -18,8 +18,9 @@ CREATE TABLE Cliente (
     dataNascimento DATE CONSTRAINT DataNascimentoCliente NOT NULL,
     morada TEXT,
     telefone CHAR(9),
-    idade INT CONSTRAINT IdadeCliente CHECK (idade >= 0),
-    maioridade BOOL CONSTRAINT ClienteMaioridade NOT NULL;
+    idade INTEGER CONSTRAINT IdadeCliente CHECK (idade >= 0),
+    nif CHAR(9),
+    maioridade BOOL CONSTRAINT MaioridadeCliente NOT NULL;
     idCartao INTEGER UNIQUE CONSTRAINT ErroClienteIdCartao REFERENCES Cartao (idCartao) ON DELETE SET NULL ON UPDATE CASCADE DEFAULT NULL,
 );
 
