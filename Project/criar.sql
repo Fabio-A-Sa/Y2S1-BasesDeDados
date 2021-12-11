@@ -21,7 +21,7 @@ CREATE TABLE Cliente (
     idade INTEGER CONSTRAINT IdadeCliente CHECK (idade >= 0),
     nif CHAR(9),
     maioridade BOOL CONSTRAINT MaioridadeCliente NOT NULL,
-    idCartao UNIQUE INTEGER CONSTRAINT IdCartaoCliente REFERENCES Cartao (idCartao)
+    idCartao UNIQUE INTEGER FOREIGN KEY CONSTRAINT IdCartaoCliente REFERENCES Cartao (idCartao)
 );
 
 DROP TABLE IF EXISTS NaoGerente;
@@ -101,17 +101,26 @@ DROP TABLE IF EXISTS Stock;
 
 CREATE TABLE Stock (
     idArmazem INTEGER CONSTRAINT IdArmazemStock NOT NULL REFERENCES Armazem (idArmazem),
-    idProduto INTEGER CONSTRAINT IdProdutoStock NOT NULL REFERENCES Produto (idProduto),
+    idProduto INTEGER CONSTRAINT IdProdutoStock NOT NULL REFERENCES Vinho (idProduto)
+                        CONSTRAINT IdProdutoStock NOT NULL REFERENCES Utensilio (idProduto),
     quantidade INTEGER CONSTRAINT QuantidadeStock CHECK (quantidade > 0),
     PRIMARY KEY (idArmazem, idProduto)
 );
 
-DROP TABLE IF EXISTS HorarioFuncionario;
+DROP TABLE IF EXISTS HorarioGerente;
 
 CREATE TABLE HorarioFuncionario (
-    idFuncionario INTEGER CONSTRAINT ErroHorarioFuncionarioIdFuncionario NOT NULL REFERENCES Funcionario (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
+    idPessoa INTEGER CONSTRAINT HorarioFuncionario NOT NULL REFERENCES idGerente (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
     idHorario INTEGER CONSTRAINT ErroHorarioFuncionarioIdHorario NOT NULL REFERENCES Horario (idHorario) ON UPDATE CASCADE ON DELETE CASCADE,
-    PRIMARY KEY (idFuncionario, idHorario)
+    PRIMARY KEY (idPessoa, idHorario)
+);
+
+DROP TABLE IF EXISTS HorarioNaoGerente;
+
+CREATE TABLE HorarioFuncionario (
+    idPessoa INTEGER CONSTRAINT HorarioNaoFuncionario NOT NULL REFERENCES idGerente (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
+    idHorario INTEGER CONSTRAINT ErroHorarioFuncionarioIdHorario NOT NULL REFERENCES Horario (idHorario) ON UPDATE CASCADE ON DELETE CASCADE,
+    PRIMARY KEY (idPessoa, idHorario)
 );
 
 DROP TABLE IF EXISTS Prova;
