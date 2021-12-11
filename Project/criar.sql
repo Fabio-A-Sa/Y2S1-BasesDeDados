@@ -102,10 +102,11 @@ DROP TABLE IF EXISTS Stock;
 
 CREATE TABLE Stock (
     idArmazem INTEGER CONSTRAINT IdArmazemStock NOT NULL REFERENCES Armazem (idArmazem),
-    idProduto INTEGER, --CONSTRAINT IdProdutoStock --NOT NULL REFERENCES Produto,
-                        --CONSTRAINT IdProdutoStock NOT NULL REFERENCES Utensilio (idProduto),
+    idProduto INTEGER CONSTRAINT IdProdutoStock NOT NULL,
     quantidade INTEGER CONSTRAINT QuantidadeStock CHECK (quantidade > 0),
     PRIMARY KEY (idArmazem, idProduto)
 );
+
+
 
 COMMIT TRANSACTION;
