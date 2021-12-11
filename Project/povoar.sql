@@ -1,101 +1,6 @@
 PRAGMA foreign_keys = ON;
 BEGIN TRANSACTION;
 
-INSERT INTO Pessoa ( 	
-			idPessoa,
-			nome,
-			dataNascimento,
-			morada,
-			telefone,
-			idade,
-			nif
-			)
-			VALUES (
-				2354,
-				'João Silva',
-				'2000-02-14',
-				'Porto, Rua da Pasteleira 55',
-				978923697,
-				21,
-				245552748
-			);
-
-INSERT INTO Pessoa ( 	
-			idPessoa,
-			nome,
-			dataNascimento,
-			morada,
-			telefone,
-			idade,
-			nif
-			)
-			VALUES (
-				5477,
-				'Daniela Marques',
-				'2002-03-18',
-				'Espinho, Rua 19 478',
-				917893697,
-				19,
-				278942748
-			);
-
-INSERT INTO Pessoa ( 	
-			idPessoa,
-			nome,
-			dataNascimento,
-			morada,
-			telefone,
-			idade,
-			nif
-			)
-			VALUES (
-				9812,
-				'Tomás Marques',
-				'1968-09-19',
-				'Braga, Avenida Olímpica 109',
-				975623697,
-				53,
-				255621748
-			);
-
-INSERT INTO Pessoa ( 	
-			idPessoa,
-			nome,
-			dataNascimento,
-			morada,
-			telefone,
-			idade,
-			nif
-			)
-			VALUES (
-				7823,
-				'Rita Teixeira',
-				'2002-02-22',
-				'Porto, Rua Santa Catarina 129',
-				919293998,
-				19,
-				254552768
-			);
-
-INSERT INTO Pessoa ( 	
-			idPessoa,
-			nome,
-			dataNascimento,
-			morada,
-			telefone,
-			idade,
-			nif
-			)
-			VALUES (
-				8594,
-				'José Andrade',
-				'1995-12-25',
-				'Vila Nova de Gaia, Praça dos Descobrimentos 23',
-				914456397,
-				26,
-				251235748
-			);
-
 -- Table Cartao
 
 INSERT INTO Cartao (
@@ -273,70 +178,95 @@ INSERT INTO Cliente (
 
 INSERT INTO Cliente (
                         idPessoa, 
+                        nome,
+                        dataNascimento,
+                        morada,
+                        telefone,
+                        idade,
+                        nif,
                         maiorIdade
                         ) 
                         VALUES (
                             5477, 
+                            'Daniela Marques',
+                            '2002-03-18',
+                            'Espinho, Rua 19 478',
+                            917893697,
+                            19,
+                            278942748,
                             1
                     );
-
--- Table Funcionario
-
-INSERT INTO Funcionario (
-                            idPessoa, 
-                            salario
-                            ) 
-                            VALUES (
-                                9812, 
-                                872
-                        );
-
-INSERT INTO Funcionario (
-                            idPessoa, 
-                            salario
-                            ) 
-                            VALUES (
-                                7823, 
-                                689
-                        );
-
-INSERT INTO Funcionario (
-                            idPessoa, 
-                            salario
-                            ) 
-                            VALUES (
-                                8594, 
-                                1129
-                        );
 
 -- Table NaoGerente
 
 INSERT INTO NaoGerente (
-                            idFuncionario, 
+                            idPessoa, 
+                            nome,
+                            dataNascimento,
+                            morada,
+                            telefone,
+                            idade,
+                            nif,
+                            salario,
                             funcao
                             ) 
                             VALUES (
-                                9812, 
+                                9812,
+                                'Tomás Marques',
+                                '1968-09-19',
+                                'Braga, Avenida Olímpica 109',
+                                975623697,
+                                53,
+                                255621748,
+                                872,
                                 "limpeza"
                         );
 
 INSERT INTO NaoGerente (
-                            idFuncionario, 
+                            idPessoa, 
+                            nome,
+                            dataNascimento,
+                            morada,
+                            telefone,
+                            idade,
+                            nif,
+                            salario,
                             funcao
                             ) 
                             VALUES (
-                                7823, 
+                                7823,
+                                'Rita Teixeira',
+                                '2002-02-22',
+                                'Porto, Rua Santa Catarina 129',
+                                919293998,
+                                19,
+                                254552768,
+                                689, 
                                 "armazem"
                         );
 
 -- Table Gerente
 
 INSERT INTO Gerente (
-                        idFuncionario, 
+                        idPessoa, 
+                        nome,
+                        dataNascimento,
+                        morada,
+                        telefone,
+                        idade,
+                        nif,
+                        salario,
                         anosServico
                         ) 
                         VALUES (
-                            8594, 
+                            8594,
+                            'José Andrade',
+                            '1995-12-25',
+                            'Vila Nova de Gaia, Praça dos Descobrimentos 23',
+                            914456397,
+                            26,
+                            251235748,
+                            1129, 
                             6
                     );
 
