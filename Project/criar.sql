@@ -118,11 +118,11 @@ CREATE TABLE HorarioFuncionario (
 DROP TABLE IF EXISTS Prova;
 
 CREATE TABLE Prova (
-    idCliente INTEGER CONSTRAINT ClienteProva NOT NULL REFERENCES Cliente (idPessoa),
-    idProduto INTEGER CONSTRAINT VinhoProva NOT NULL,
+    idCliente INTEGER CONSTRAINT IdClienteProva NOT NULL REFERENCES Cliente (idPessoa),
+    idVinho INTEGER CONSTRAINT IdVinhoProva NOT NULL REFERENCES Vinho (idProduto),
     acompanhamento TEXT DEFAULT NULL,
     quantidade INTEGER CONSTRAINT QuantidadeProva CHECK (quantidade <= 5),
-    PRIMARY KEY (idCliente, idProduto)
+    PRIMARY KEY (idCliente, idVinho)
 );
 
 DROP TABLE IF EXISTS Compra;

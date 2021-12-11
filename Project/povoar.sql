@@ -822,4 +822,123 @@ INSERT INTO HorarioFuncionario (
 					36724
 					);
 
+-- Table Prova
+
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            8566,
+                            77,
+                            'queijo',
+                            2
+                    );
+
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            8566,
+                            94,
+                            'presunto',
+                            1
+                    );
+
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            8566,
+                            53,
+                            'presunto',
+                            1
+                    );
+
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            2354,
+                            62,
+                            'presunto',
+                            4
+                    );
+
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            2354,
+                            34,
+                            'queijo',
+                            1
+                    );
+
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            5477,
+                            62,
+                            'presunto',
+                            2
+                    );
+
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            5477,
+                            72,
+                            'queijo',
+                            1
+                    );
+
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            5477,
+                            53,
+                            'queijo',
+                            1
+                    );
+
+INSERT INTO Prova (
+                        idCliente,
+                        idVinho,
+                        acompanhamento,
+                        quantidade
+                        )
+                        VALUES (
+                            5477,
+                            71,
+                            'presunto',
+                            1
+                    );
+
 COMMIT TRANSACTION;
