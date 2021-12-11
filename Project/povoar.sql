@@ -408,156 +408,156 @@ INSERT INTO Vinho (
 -- Table Utensilio
 
 INSERT INTO Utensilio (
-                        idProduto,
-                        preco,
-                        nome
-                        )
-                        VALUES (
-                            32,
-                            42,
-                            'Decantador'
+                            idProduto,
+                            preco,
+                            nome
+                            )
+                            VALUES (
+                                32,
+                                42,
+                                'Decantador'
                         );
 
 INSERT INTO Utensilio (
-                        idProduto,
-                        preco,
-                        nome
-                        )
-                        VALUES (
-                            75,
-                            20,
-                            'Saca-rolhas'
+                            idProduto,
+                            preco,
+                            nome
+                            )
+                            VALUES (
+                                75,
+                                20,
+                                'Saca-rolhas'
                         );
 
 INSERT INTO Utensilio (
-                        idProduto,
-                        preco,
-                        nome
-                        )
-                        VALUES (
-                            78,
-                            7,
-                            'Bomba de vácuo'
+                            idProduto,
+                            preco,
+                            nome
+                            )
+                            VALUES (
+                                78,
+                                7,
+                                'Bomba de vácuo'
                         );
 
 -- Table Horario
 
 INSERT INTO Horario (
-			idHorario,
-			diaSemana,
-			horaInicio,
-			horaFinal
-			)
-			VALUES (
-				54635,
-				'TERCA-FEIRA',
-				'8:00',
-				'18:00'
-				);
+                        idHorario,
+                        diaSemana,
+                        horaInicio,
+                        horaFinal
+                        )
+                        VALUES (
+                            54635,
+                            'TERCA-FEIRA',
+                            '8:00',
+                            '18:00'
+				    );
 
 INSERT INTO Horario (
-			idHorario,
-			diaSemana,
-			horaInicio,
-			horaFinal
-			)
-			VALUES (
-				34667,
-				'SEGUNDA-FEIRA',
-				'10:00',
-				'20:00'
-				);
+                        idHorario,
+                        diaSemana,
+                        horaInicio,
+                        horaFinal
+                        )
+                        VALUES (
+                            34667,
+                            'SEGUNDA-FEIRA',
+                            '10:00',
+                            '20:00'
+                    );
 
 INSERT INTO Horario (
-			idHorario,
-			diaSemana,
-			horaInicio,
-			horaFinal
-			)
-			VALUES (
-				12324,
-				'QUINTA-FEIRA',
-				'10:00',
-				'20:00'
-				);
+                        idHorario,
+                        diaSemana,
+                        horaInicio,
+                        horaFinal
+                        )
+                        VALUES (
+                            12324,
+                            'QUINTA-FEIRA',
+                            '10:00',
+                            '20:00'
+				    );
 
 INSERT INTO Horario (
-			idHorario,
-			diaSemana,
-			horaInicio,
-			horaFinal
-			)
-			VALUES (
-				46767,
-				'SEXTA-FEIRA',
-				'12:00',
-				'20:00'
-				);
+                        idHorario,
+                        diaSemana,
+                        horaInicio,
+                        horaFinal
+                        )
+                        VALUES (
+                            46767,
+                            'SEXTA-FEIRA',
+                            '12:00',
+                            '20:00'
+				    );
 
 INSERT INTO Horario (
-			idHorario,
-			diaSemana,
-			horaInicio,
-			horaFinal
-			)
-			VALUES (
-				25647,
-				'SABADO',
-				'9:00',
-				'16:00'
-				);
+                        idHorario,
+                        diaSemana,
+                        horaInicio,
+                        horaFinal
+                        )
+                        VALUES (
+                            25647,
+                            'SABADO',
+                            '9:00',
+                            '16:00'
+				    );
 
 INSERT INTO Horario (
-			idHorario,
-			diaSemana,
-			horaInicio,
-			horaFinal
-			)
-			VALUES (
-				46883,
-				'QUARTA-FEIRA',
-				'8:00',
-				'18:00'
-				);
+                        idHorario,
+                        diaSemana,
+                        horaInicio,
+                        horaFinal
+                        )
+                        VALUES (
+                            46883,
+                            'QUARTA-FEIRA',
+                            '8:00',
+                            '18:00'
+				    );
 				
 INSERT INTO Horario (
-			idHorario,
-			diaSemana,
-			horaInicio,
-			horaFinal
-			)
-			VALUES (
-				58973,
-				'QUINTA-FEIRA',
-				'10:00',
-				'19:00'
-				);
+                        idHorario,
+                        diaSemana,
+                        horaInicio,
+                        horaFinal
+                        )
+                        VALUES (
+                            58973,
+                            'QUINTA-FEIRA',
+                            '10:00',
+                            '19:00'
+				    );
 
 INSERT INTO Horario (
-			idHorario,
-			diaSemana,
-			horaInicio,
-			horaFinal
-			)
-			VALUES (
-				22897,
-				'TERCA-FEIRA',
-				'8:00',
-				'17:00'
-				);
+                        idHorario,
+                        diaSemana,
+                        horaInicio,
+                        horaFinal
+                        )
+                        VALUES (
+                            22897,
+                            'TERCA-FEIRA',
+                            '8:00',
+                            '17:00'
+                    );
 
 INSERT INTO Horario (
-			idHorario,
-			diaSemana,
-			horaInicio,
-			horaFinal
-			)
-			VALUES (
-				36724,
-				'SEXTA-FEIRA',
-				'9:00',
-				'18:00'
-				);
+                        idHorario,
+                        diaSemana,
+                        horaInicio,
+                        horaFinal
+                        )
+                        VALUES (
+                            36724,
+                            'SEXTA-FEIRA',
+                            '9:00',
+                            '18:00'
+                    );
 
 -- Table Armazem
 
