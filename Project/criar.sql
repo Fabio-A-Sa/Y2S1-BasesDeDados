@@ -107,6 +107,35 @@ CREATE TABLE Stock (
     PRIMARY KEY (idArmazem, idProduto)
 );
 
+DROP TABLE IF EXISTS HorarioGerente;
 
+CREATE TABLE HorarioFuncionario (
+    idPessoa INTEGER CONSTRAINT HorarioFuncionario NOT NULL REFERENCES idGerente (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
+    idHorario INTEGER CONSTRAINT ErroHorarioFuncionarioIdHorario NOT NULL REFERENCES Horario (idHorario) ON UPDATE CASCADE ON DELETE CASCADE,
+    PRIMARY KEY (idPessoa, idHorario)
+);
+
+
+DROP TABLE IF EXISTS Prova;
+
+CREATE TABLE Prova (
+    idCliente INTEGER CONSTRAINT ErroProvaIdCliente NOT NULL REFERENCES Cliente (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
+    idVinho INTEGER CONSTRAINT ErroProvaIdVinho NOT NULL REFERENCES Vinho (idProduto) ON UPDATE CASCADE ON DELETE CASCADE,
+    acompanhamento TEXT DEFAULT NULL,
+    quantidade INTEGER CONSTRAINT ErroProvaQuantidade CHECK (quantidade <= 5),
+    PRIMARY KEY (idCliente, idVinho)
+);
+
+DROP TABLE IF EXISTS Compra;
+
+CREATE TABLE Compra (
+    idCliente INTEGER CONSTRAINT ErroCompraIdCliente NOT NULL REFERENCES Cliente (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
+    idProduto INTEGER CONSTRAINT ErroCompraIdProduto NOT NULL REFERENCES Produto (idProduto) ON UPDATE CASCADE ON DELETE CASCADE,
+    data DATE CONSTRAINT ErroCompraData NOT NULL,
+    quantidade INTEGER CONSTRAINT ErroComparaQuantidade CHECK (quantidade > 0),
+    desconto INTEGER,
+    preco INTEGER CONSTRAINT ErroCompraPreco CHECK (preco > 0),
+    PRIMARY KEY (idCliente, idProduto)
+);
 
 COMMIT TRANSACTION;
