@@ -75,6 +75,7 @@ CREATE TABLE Utensilio (
 DROP TABLE IF EXISTS Horario;
 
 CREATE TABLE Horario (
+    idHorario INTEGER PRIMARY KEY CONSTRAINT IdHorario NOT NULL,
     diaSemana TEXT CONSTRAINT DiaSemanaHorario CHECK ( (    diaSemana = "SABADO" OR
                                                             diaSemana = "DOMINGO" OR
                                                             diaSemana = "SEGUNDA-FEIRA" OR 
@@ -82,7 +83,6 @@ CREATE TABLE Horario (
                                                             diaSemana = "QUARTA-FEIRA" OR 
                                                             diaSemana = "QUINTA-FEIRA" OR 
                                                             diaSemana = "SEXTA-FEIRA"       ) ),
-    idHorario INTEGER PRIMARY KEY CONSTRAINT IdHorario NOT NULL,
     horaInicio TIME CONSTRAINT HoraInicioHorario NOT NULL,
     horaFinal TIME CONSTRAINT HoraFinalHorario NOT NULL,
     UNIQUE (diaSemana, horaInicio, horaFinal)
@@ -100,9 +100,9 @@ CREATE TABLE Armazem (
 DROP TABLE IF EXISTS Stock;
 
 CREATE TABLE Stock (
-    idArmazem INTEGER CONSTRAINT ErroStockIdArmazem NOT NULL REFERENCES Armazem (idArmazem) ON DELETE CASCADE ON UPDATE CASCADE,
-    idProduto INTEGER CONSTRAINT ErroStockIdProduto NOT NULL REFERENCES Produto (idProduto) ON DELETE CASCADE ON UPDATE CASCADE,
-    quantidade INTEGER CONSTRAINT ErroStockQuantidade CHECK (quantidade > 0),
+    idArmazem INTEGER CONSTRAINT IdArmazemStock NOT NULL REFERENCES Armazem (idArmazem),
+    idProduto INTEGER CONSTRAINT IdProdutoStock NOT NULL REFERENCES Produto (idProduto),
+    quantidade INTEGER CONSTRAINT QuantidadeStock CHECK (quantidade > 0),
     PRIMARY KEY (idArmazem, idProduto)
 );
 
