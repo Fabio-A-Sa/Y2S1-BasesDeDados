@@ -20,8 +20,8 @@ CREATE TABLE Cliente (
     telefone CHAR(9),
     idade INTEGER CONSTRAINT IdadeCliente CHECK (idade >= 0),
     nif CHAR(9),
-    maioridade BOOL CONSTRAINT MaioridadeCliente NOT NULL;
-    idCartao INTEGER UNIQUE CONSTRAINT ErroClienteIdCartao REFERENCES Cartao (idCartao) ON DELETE SET NULL ON UPDATE CASCADE DEFAULT NULL,
+    maioridade BOOL CONSTRAINT MaioridadeCliente NOT NULL,
+    idCartao UNIQUE INTEGER CONSTRAINT IdCartaoCliente REFERENCES Cartao (idCartao)
 );
 
 DROP TABLE IF EXISTS NaoGerente;
