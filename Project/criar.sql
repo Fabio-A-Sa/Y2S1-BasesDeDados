@@ -4,7 +4,7 @@ BEGIN TRANSACTION;
 DROP TABLE IF EXISTS Cartao;
 
 CREATE TABLE Cartao (
-    idCartao INTEGER PRIMARY KEY NOT NULL,
+    idCartao INTEGER PRIMARY KEY CONSTRAINT IdCartao NOT NULL,
     dataAdesao DATE CONSTRAINT DataAdesaoCartao NOT NULL,
     saldo INTEGER CONSTRAINT SaldoCartao CHECK (saldo >= 0),
     numero INTEGER CONSTRAINT NumeroCartao CHECK (numero > 0)
