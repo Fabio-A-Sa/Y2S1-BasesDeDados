@@ -739,5 +739,87 @@ INSERT INTO Stock (
 				6
 				);
 
+-- Table HorarioFuncionario
+
+INSERT INTO HorarioFuncionario (
+    			idPessoa,
+				idHorario
+				)
+				VALUES (
+					9812,
+					54635
+					);
+
+INSERT INTO HorarioFuncionario (
+    			idPessoa,
+				idHorario
+				)
+				VALUES (
+					7823,
+					34667
+					);
+
+INSERT INTO HorarioFuncionario (
+    			idPessoa,
+				idHorario
+				)
+				VALUES (
+					8594,
+					12324
+					);
+					
+INSERT INTO HorarioFuncionario (
+    			idPessoa,
+				idHorario
+				)
+				VALUES (
+					9812,
+					46767
+					);
+
+INSERT INTO HorarioFuncionario (
+    			idPessoa,
+				idHorario
+				)
+				VALUES (
+					7823,
+					25647
+					);
+
+INSERT INTO HorarioFuncionario (
+    			idPessoa,
+				idHorario
+				)
+				VALUES (
+					8594,
+					46883
+					);
+
+INSERT INTO HorarioFuncionario (
+    			idPessoa,
+				idHorario
+				)
+				VALUES (
+					9812,
+					58973
+					);
+
+INSERT INTO HorarioFuncionario (
+    			idPessoa,
+				idHorario
+				)
+				VALUES (
+					7823,
+					22897
+					);
+
+INSERT INTO HorarioFuncionario (
+    			idPessoa,
+				idHorario
+				)
+				VALUES (
+					8594,
+					36724
+					);
 
 COMMIT TRANSACTION;
