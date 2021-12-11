@@ -1,40 +1,22 @@
 PRAGMA foreign_keys = ON;
 BEGIN TRANSACTION;
 
-DROP TABLE IF EXISTS Pessoa;
-
-CREATE TABLE Pessoa (
-    idPessoa INTEGER PRIMARY KEY NOT NULL,
-    nome CHAR(30) CONSTRAINT ErroPessoaNome NOT NULL,
-    dataNascimento DATE CONSTRAINT ErroPessoaData NOT NULL,
-    morada TEXT,
-    telefone INTEGER,
-    idade INTEGER CONSTRAINT ErroPessoaIdade CHECK (idade >= 0),
-    nif INTEGER
-);
-
 DROP TABLE IF EXISTS Cartao;
 
 CREATE TABLE Cartao (
     idCartao INTEGER PRIMARY KEY NOT NULL,
-    dataAdesao DATE CONSTRAINT ErroCartaoDataAdesao NOT NULL,
-    saldo INTEGER CONSTRAINT ErroCartaoSaldo CHECK (saldo >= 0),
-    numero INTEGER CONSTRAINT ErroCartaoNumero CHECK (numero > 0)
+    dataAdesao DATE CONSTRAINT CartaoDataAdesao NOT NULL,
+    saldo INTEGER CONSTRAINT CartaoSaldo CHECK (saldo >= 0),
+    numero INTEGER CONSTRAINT CartaoNumero CHECK (numero > 0)
 );
 
 DROP TABLE IF EXISTS Cliente;
 
 CREATE TABLE Cliente (
-    idPessoa INTEGER CONSTRAINT ErroClienteIdPessoa PRIMARY KEY NOT NULL;
+    idPessoa INTEGER CONSTRAINT IdCliente PRIMARY KEY NOT NULL;
+    nome CHAR(30) CONSTRAINT NomeCliente NOT NULL;
+    maioridade BOOL CONSTRAINT ClienteMaioridade NOT NULL;
     idCartao INTEGER UNIQUE CONSTRAINT ErroClienteIdCartao REFERENCES Cartao (idCartao) ON DELETE SET NULL ON UPDATE CASCADE DEFAULT NULL,
-    maioridade BOOL CONSTRAINT ErroClienteMaioridade NOT NULL
-);
-
-DROP TABLE IF EXISTS Funcionario;
-
-CREATE TABLE Funcionario (
-    idPessoa INTEGER CONSTRAINT ErroFuncionarioIdPessoa PRIMARY KEY NOT NULL REFERENCES Pessoa (idPessoa) ON DELETE CASCADE ON UPDATE CASCADE,
-    salario INTEGER CONSTRAINT ErroFuncionarioSalario CHECK (salario >= 0)
 );
 
 DROP TABLE IF EXISTS NaoGerente;
