@@ -129,7 +129,7 @@ DROP TABLE IF EXISTS Compra;
 
 CREATE TABLE Compra (
     idCliente INTEGER CONSTRAINT IdClienteCompra NOT NULL REFERENCES Cliente (idPessoa),
-    idProduto INTEGER CONSTRAINT IdProdutoCompra NOT NULL REFERENCES Vinho (idProduto) REFERENCES Utensilio (idProduto),
+    idProduto INTEGER CONSTRAINT IdProdutoCompra NOT NULL,
     data DATE CONSTRAINT DataCompra NOT NULL,
     quantidade INTEGER CONSTRAINT QuantidadeCompra CHECK (quantidade > 0),
     preco INTEGER CONSTRAINT PrecoCompra CHECK (preco > 0),

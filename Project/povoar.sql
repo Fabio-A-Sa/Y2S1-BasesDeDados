@@ -941,4 +941,193 @@ INSERT INTO Prova (
                             1
                     );
 
+-- Table Compra
+
+INSERT INTO Compra (
+                        idCliente,
+                        idProduto,
+                        data,
+                        quantidade,
+                        preco,
+                        desconto
+                        )
+                        VALUES (
+                            3847,
+                            75,
+                            '2021-12-05',
+                            2,
+                            6,
+                            0.2
+                    );
+
+INSERT INTO Compra (
+                        idCliente,
+                        idProduto,
+                        data,
+                        quantidade,
+                        preco,
+                        desconto
+                        )
+                        VALUES (
+                            2356,
+                            32,
+                            '2021-11-24',
+                            1,
+                            50,
+                            0.7
+                    );
+
+INSERT INTO Compra (
+                        idCliente,
+                        idProduto,
+                        data,
+                        quantidade,
+                        preco,
+                        desconto
+                        )
+                        VALUES (
+                            2354,
+                            53,
+                            '2021-08-20',
+                            3,
+                            19.5,
+                            0.1
+                    );
+
+INSERT INTO Compra (
+                        idCliente,
+                        idProduto,
+                        data,
+                        quantidade,
+                        preco,
+                        desconto
+                        )
+                        VALUES (
+                            5477,
+                            71,
+                            '2020-10-02',
+                            1,
+                            10,
+                            0.1
+                    );
+
+INSERT INTO Compra (
+                        idCliente,
+                        idProduto,
+                        data,
+                        quantidade,
+                        preco,
+                        desconto
+                        )
+                        VALUES (
+                            6578,
+                            77,
+                            '2020-12-19',
+                            2,
+                            11.3,
+                            0.56
+                    );
+
+INSERT INTO Compra (
+                        idCliente,
+                        idProduto,
+                        data,
+                        quantidade,
+                        preco,
+                        desconto
+                        )
+                        VALUES (
+                            7657,
+                            32,
+                            '2021-01-25',
+                            2,
+                            100,
+                            0.09
+                    );
+
+INSERT INTO Compra (
+                        idCliente,
+                        idProduto,
+                        data,
+                        quantidade,
+                        preco,
+                        desconto
+                        )
+                        VALUES (
+                            8566,
+                            77,
+                            '2021-01-23',
+                            3,
+                            16.95,
+                            0.4
+                    );
+
+INSERT INTO Compra (
+                        idCliente,
+                        idProduto,
+                        data,
+                        quantidade,
+                        preco,
+                        desconto
+                        )
+                        VALUES (
+                            2354,
+                            94,
+                            '2021-07-10',
+                            2,
+                            13.3,
+                            0.32
+                    );
+
+INSERT INTO Compra (
+                        idCliente,
+                        idProduto,
+                        data,
+                        quantidade,
+                        preco,
+                        desconto
+                        )
+                        VALUES (
+                            5477,
+                            32,
+                            '2021-09-27',
+                            1,
+                            50,
+                            0.21
+                    );
+
+INSERT INTO Compra (
+                        idCliente,
+                        idProduto,
+                        data,
+                        quantidade,
+                        preco,
+                        desconto
+                        )
+                        VALUES (
+                            2356,
+                            77,
+                            '2021-04-03',
+                            2,
+                            11.3,
+                            0.3
+                    );
+
+INSERT INTO Compra (
+                        idCliente,
+                        idProduto,
+                        data,
+                        quantidade,
+                        preco,
+                        desconto
+                        )
+                        VALUES (
+                            6578,
+                            78,
+                            '2021-12-09',
+                            1,
+                            5.5,
+                            0.9
+                    );
+
 COMMIT TRANSACTION;
