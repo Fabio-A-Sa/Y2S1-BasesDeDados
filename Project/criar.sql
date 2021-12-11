@@ -5,9 +5,9 @@ DROP TABLE IF EXISTS Cartao;
 
 CREATE TABLE Cartao (
     idCartao INTEGER PRIMARY KEY CONSTRAINT IdCartao NOT NULL,
-    dataAdesao DATE CONSTRAINT DataAdesaoCartao NOT NULL,
+    numero INTEGER CONSTRAINT NumeroCartao CHECK (numero > 0),
     saldo INTEGER CONSTRAINT SaldoCartao CHECK (saldo >= 0),
-    numero INTEGER CONSTRAINT NumeroCartao CHECK (numero > 0)
+    dataAdesao DATE CONSTRAINT DataAdesaoCartao NOT NULL
 );
 
 DROP TABLE IF EXISTS Cliente;
@@ -27,28 +27,35 @@ CREATE TABLE Cliente (
 DROP TABLE IF EXISTS NaoGerente;
 
 CREATE TABLE NaoGerente (
-    idFuncionario INTEGER CONSTRAINT ErroNaoGerenteIdFuncionario PRIMARY KEY NOT NULL REFERENCES Pessoa (idPessoa) ON UPDATE CASCADE ON DELETE CASCADE,
+    idPessoa INTEGER PRIMARY KEY CONSTRAINT IdNaoGerente NOT NULL,
+    nome CHAR(30) CONSTRAINT NomeNaoGerente NOT NULL,
+    dataNascimento DATE CONSTRAINT DataNascimentoNaoGerente NOT NULL,
+    morada TEXT,
+    telefone CHAR(9),
+    idade INTEGER CONSTRAINT IdadeNaoGerente CHECK (idade >= 0),
+    nif CHAR(9),
+    salario INTEGER CONSTRAINT SalarioNaoGerente CHECK (salario >= 0),
     funcao TEXT
 );
 
 DROP TABLE IF EXISTS Gerente;
 
 CREATE TABLE Gerente (
-    idFuncionario INTEGER CONSTRAINT ErroGerenteIdFuncionario PRIMARY KEY NOT NULL REFERENCES Pessoa (idPessoa) ON DELETE CASCADE ON UPDATE CASCADE,
-    anosServico INTEGER CONSTRAINT ErroGerenteIdAnosServico CHECK (anosServico > 4)
-);
-
-DROP TABLE IF EXISTS Produto;
-
-CREATE TABLE Produto (
-    idProduto INTEGER PRIMARY KEY NOT NULL,
-    preco INTEGER CONSTRAINT ErroProdutoPreco CHECK (preco >= 0)
+    idPessoa INTEGER PRIMARY KEY CONSTRAINT IdGerente NOT NULL,
+    nome CHAR(30) CONSTRAINT NomeGerente NOT NULL,
+    dataNascimento DATE CONSTRAINT DataNascimentoGerente NOT NULL,
+    morada TEXT,
+    telefone CHAR(9),
+    idade INTEGER CONSTRAINT IdadeGerente CHECK (idade >= 0),
+    nif CHAR(9),
+    salario INTEGER CONSTRAINT SalarioGerente CHECK (salario >= 0),
+    anosServico INTEGER CONSTRAINT AnosServicoGerente CHECK (anosServico > 4)
 );
 
 DROP TABLE IF EXISTS Vinho;
 
 CREATE TABLE Vinho (
-    idProduto INTEGER CONSTRAINT ErroVinhoIdProduto PRIMARY KEY NOT NULL REFERENCES Produto (idProduto) ON UPDATE CASCADE ON DELETE CASCADE,
+    idProduto INTEGER PRIMARY KEY CONSTRAINT 
     tipo TEXT CONSTRAINT ErroVinhoTipo NOT NULL,
     regiao TEXT CONSTRAINT ErroVinhoRegiao NOT NULL,
     anoProducao INTEGER CONSTRAINT ErroVinhoAnoProducao NOT NULL,
