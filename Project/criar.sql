@@ -55,35 +55,36 @@ CREATE TABLE Gerente (
 DROP TABLE IF EXISTS Vinho;
 
 CREATE TABLE Vinho (
-    idProduto INTEGER PRIMARY KEY CONSTRAINT 
-    tipo TEXT CONSTRAINT ErroVinhoTipo NOT NULL,
-    regiao TEXT CONSTRAINT ErroVinhoRegiao NOT NULL,
-    anoProducao INTEGER CONSTRAINT ErroVinhoAnoProducao NOT NULL,
-    teorAlcool FLOAT CONSTRAINT ErroVinhoTeorAlcool NOT NULL,
-    capacidadeGarrafa FLOAT CONSTRAINT ErroVinhoCapacidadeGarrafa NOT NULL, 
+    idProduto INTEGER PRIMARY KEY CONSTRAINT IdVinho NOT NULL,
+    preco INTEGER CONSTRAINT PrecoVinho CHECK (preco >= 0),
+    tipo TEXT CONSTRAINT TipoVinho NOT NULL,
+    regiao TEXT CONSTRAINT RegiaoVinho NOT NULL,
+    anoProducao INTEGER CONSTRAINT AnoProducaoVinho NOT NULL,
+    teorAlcool FLOAT CONSTRAINT TeorAlcoolVinho NOT NULL,
+    capacidadeGarrafa FLOAT CONSTRAINT CapacidadeGarrafaVinho NOT NULL, 
     UNIQUE (tipo, regiao, anoProducao, teorAlcool, capacidadeGarrafa)
 );
 
 DROP TABLE IF EXISTS Utensilio;
 
 CREATE TABLE Utensilio (
-    idProduto INTEGER CONSTRAINT ErroUtensilioIdProduto PRIMARY KEY NOT NULL REFERENCES Produto (idProduto) ON UPDATE CASCADE ON DELETE CASCADE,
-    nome CHAR(30) CONSTRAINT ErroUtensilioNome NOT NULL 
+    idProduto INTEGER PRIMARY KEY CONSTRAINT IdUtensilio NOT NULL,
+    nome CHAR(30) CONSTRAINT NomeUtensilio NOT NULL
 );
 
 DROP TABLE IF EXISTS Horario;
 
 CREATE TABLE Horario (
-    idHorario INTEGER PRIMARY KEY NOT NULL,
-    horaInicio TIME CONSTRAINT ErroHorarioInicio NOT NULL,
-    horaFinal TIME CONSTRAINT ErroHorarioFinal NOT NULL,
-    diaSemana TEXT CONSTRAINT ErroHorarioDia CHECK ( (  diaSemana = "SABADO" OR
-                                                        diaSemana = "DOMINGO" OR
-                                                        diaSemana = "SEGUNDA-FEIRA" OR 
-                                                        diaSemana = "TERCA-FEIRA" OR 
-                                                        diaSemana = "QUARTA-FEIRA" OR 
-                                                        diaSemana = "QUINTA-FEIRA" OR 
-                                                        diaSemana = "SEXTA-FEIRA"   ) ),
+    idHorario INTEGER PRIMARY KEY CONSTRAINT IdHorario NOT NULL,
+    horaInicio TIME CONSTRAINT HoraInicioHorario NOT NULL,
+    horaFinal TIME CONSTRAINT HoraFinalHorario NOT NULL,
+    diaSemana TEXT CONSTRAINT DiaSemanaHorario CHECK ( (    diaSemana = "SABADO" OR
+                                                            diaSemana = "DOMINGO" OR
+                                                            diaSemana = "SEGUNDA-FEIRA" OR 
+                                                            diaSemana = "TERCA-FEIRA" OR 
+                                                            diaSemana = "QUARTA-FEIRA" OR 
+                                                            diaSemana = "QUINTA-FEIRA" OR 
+                                                            diaSemana = "SEXTA-FEIRA"       ) ),
     UNIQUE (diaSemana, horaInicio, horaFinal)
 );
 
