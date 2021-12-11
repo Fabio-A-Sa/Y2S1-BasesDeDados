@@ -562,265 +562,265 @@ INSERT INTO Horario (
 -- Table Armazem
 
 INSERT INTO Armazem (
-			idArmazem,
-			telefone,
-			local
-			)
-			VALUES (
-				375,
-				919191919,
-				'Setubal, Avenida da República 10'
-			);
+                        idArmazem,
+                        telefone,
+                        local
+                        )
+                        VALUES (
+                            375,
+                            919191919,
+                            'Setubal, Avenida da República 10'
+                    );
 
 INSERT INTO Armazem (
-			idArmazem,
-			telefone,
-			local
-			)
-			VALUES (
-				832,
-				919191919,
-				'Setubal, Avenida da República 11'
-			);
+                        idArmazem,
+                        telefone,
+                        local
+                        )
+                        VALUES (
+                            832,
+                            919191919,
+                            'Setubal, Avenida da República 11'
+                    );
 
 INSERT INTO Armazem (
-			idArmazem,
-			telefone,
-			local
-			)
-			VALUES (
-				134,
-				919191919,
-				'Setubal, Avenida da República 12'
-			);
+                        idArmazem,
+                        telefone,
+                        local
+                        )
+                        VALUES (
+                            134,
+                            919191919,
+                            'Setubal, Avenida da República 12'
+                    );
 
 -- Table Stock
 
 INSERT INTO Stock (
-			idArmazem,
-			idProduto,
-			quantidade
-			)
-			VALUES (
-				375,
-				72,
-				2
-				);
+                        idArmazem,
+                        idProduto,
+                        quantidade
+                        )
+                        VALUES (
+                            375,
+                            72,
+                            2
+                    );
 
 INSERT INTO Stock (
-			idArmazem,
-			idProduto,
-			quantidade
-			)
-			VALUES (
-				375,
-				53,
-				4
-				);
+                        idArmazem,
+                        idProduto,
+                        quantidade
+                        )
+                        VALUES (
+                            375,
+                            53,
+                            4
+                    );
 
 INSERT INTO Stock(
-			idArmazem,
-			idProduto,
-			quantidade
-			)
-			VALUES (
-				375,
-				71,
-				2
-				);
+                        idArmazem,
+                        idProduto,
+                        quantidade
+                        )
+                        VALUES (
+                            375,
+                            71,
+                            2
+                    );
 
 INSERT INTO Stock (
-			idArmazem,
-			idProduto,
-			quantidade
-			)
-			VALUES (
-				375,
-				77,
-				2
-				);
+                        idArmazem,
+                        idProduto,
+                        quantidade
+                        )
+                        VALUES (
+                            375,
+                            77,
+                            2
+                    );
 
 INSERT INTO Stock (
-			idArmazem,
-			idProduto,
-			quantidade
-			)
-			VALUES (
-				375,
-				94,
-				5
-				);
+                        idArmazem,
+                        idProduto,
+                        quantidade
+                        )
+                        VALUES (
+                            375,
+                            94,
+                            5
+				    );
 
 INSERT INTO Stock (
-			idArmazem,
-			idProduto,
-			quantidade
-			)
-			VALUES (
-				134,
-				94,
-				2
-				);
+                        idArmazem,
+                        idProduto,
+                        quantidade
+                        )
+                        VALUES (
+                            134,
+                            94,
+                            2
+				    );
 
 INSERT INTO Stock (
-			idArmazem,
-			idProduto,
-			quantidade
-			)
-			VALUES (
-				134,
-				32,
-				4
-				);
+                        idArmazem,
+                        idProduto,
+                        quantidade
+                        )
+                        VALUES (
+                            134,
+                            32,
+                            4
+				    );
 
 INSERT INTO Stock (
-			idArmazem,
-			idProduto,
-			quantidade
-			)
-			VALUES (
-				134,
-				75,
-				1
-				);
+                        idArmazem,
+                        idProduto,
+                        quantidade
+                        )
+                        VALUES (
+                            134,
+                            75,
+                            1
+				    );
 
 INSERT INTO Stock (
-			idArmazem,
-			idProduto,
-			quantidade
-			)
-			VALUES (
-				134,
-				78,
-				7
-				);
+                        idArmazem,
+                        idProduto,
+                        quantidade
+                        )
+                        VALUES (
+                            134,
+                            78,
+                            7
+				    );
 
 INSERT INTO Stock (
-			idArmazem,
-			idProduto,
-			quantidade
-			)
-			VALUES (
-				832,
-				34,
-				2
-				);
+                        idArmazem,
+                        idProduto,
+                        quantidade
+                        )
+                        VALUES (
+                            832,
+                            34,
+                            2
+				    );
 
 INSERT INTO Stock (
-			idArmazem,
-			idProduto,
-			quantidade
-			)
-			VALUES (
-				832,
-				62,
-				4
-				);
+                        idArmazem,
+                        idProduto,
+                        quantidade
+                        )
+                        VALUES (
+                            832,
+                            62,
+                            4
+				    );
 
 INSERT INTO Stock (
-			idArmazem,
-			idProduto,
-			quantidade
-			)
-			VALUES (
-				832,
-				72,
-				2
-				);
+                        idArmazem,
+                        idProduto,
+                        quantidade
+                        )
+                        VALUES (
+                            832,
+                            72,
+                            2
+				    );
 
 INSERT INTO Stock (
-			idArmazem,
-			idProduto,
-			quantidade
-			)
-			VALUES (
-				832,
-				53,
-				6
-				);
+                        idArmazem,
+                        idProduto,
+                        quantidade
+                        )
+                        VALUES (
+                            832,
+                            53,
+                            6
+				    );
 
 -- Table HorarioFuncionario
 
 INSERT INTO HorarioFuncionario (
-    			idPessoa,
-				idHorario
-				)
-				VALUES (
-					9812,
-					54635
-					);
+                                    idPessoa,
+                                    idHorario
+                                    )
+                                    VALUES (
+                                        9812,
+                                        54635
+					            );
 
 INSERT INTO HorarioFuncionario (
-    			idPessoa,
-				idHorario
-				)
-				VALUES (
-					7823,
-					34667
-					);
+                                    idPessoa,
+                                    idHorario
+                                    )
+                                    VALUES (
+                                        7823,
+                                        34667
+                                );
 
 INSERT INTO HorarioFuncionario (
-    			idPessoa,
-				idHorario
-				)
-				VALUES (
-					8594,
-					12324
-					);
+                                    idPessoa,
+                                    idHorario
+                                    )
+                                    VALUES (
+                                        8594,
+                                        12324
+                                );
 					
 INSERT INTO HorarioFuncionario (
-    			idPessoa,
-				idHorario
-				)
-				VALUES (
-					9812,
-					46767
-					);
+                                    idPessoa,
+                                    idHorario
+                                    )
+                                    VALUES (
+                                        9812,
+                                        46767
+					            );
 
 INSERT INTO HorarioFuncionario (
-    			idPessoa,
-				idHorario
-				)
-				VALUES (
-					7823,
-					25647
-					);
+                                    idPessoa,
+                                    idHorario
+                                    )
+                                    VALUES (
+                                        7823,
+                                        25647
+					            );
 
 INSERT INTO HorarioFuncionario (
-    			idPessoa,
-				idHorario
-				)
-				VALUES (
-					8594,
-					46883
-					);
+                                    idPessoa,
+                                    idHorario
+                                    )
+                                    VALUES (
+                                        8594,
+                                        46883
+					            );
 
 INSERT INTO HorarioFuncionario (
-    			idPessoa,
-				idHorario
-				)
-				VALUES (
-					9812,
-					58973
-					);
+                                    idPessoa,
+                                    idHorario
+                                    )
+                                    VALUES (
+                                        9812,
+                                        58973
+					            );
 
 INSERT INTO HorarioFuncionario (
-    			idPessoa,
-				idHorario
-				)
-				VALUES (
-					7823,
-					22897
-					);
+                                    idPessoa,
+                                    idHorario
+                                    )
+                                    VALUES (
+                                        7823,
+                                        22897
+					            );
 
 INSERT INTO HorarioFuncionario (
-    			idPessoa,
-				idHorario
-				)
-				VALUES (
-					8594,
-					36724
-					);
+                                    idPessoa,
+                                    idHorario
+                                    )
+                                    VALUES (
+                                        8594,
+                                        36724
+					            );
 
 -- Table Prova
 
