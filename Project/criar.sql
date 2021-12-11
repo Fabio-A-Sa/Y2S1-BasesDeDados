@@ -13,8 +13,12 @@ CREATE TABLE Cartao (
 DROP TABLE IF EXISTS Cliente;
 
 CREATE TABLE Cliente (
-    idPessoa INTEGER CONSTRAINT IdCliente PRIMARY KEY NOT NULL;
-    nome CHAR(30) CONSTRAINT NomeCliente NOT NULL;
+    idPessoa INTEGER CONSTRAINT IdCliente PRIMARY KEY NOT NULL,
+    nome CHAR(30) CONSTRAINT NomeCliente NOT NULL,
+    dataNascimento DATE CONSTRAINT DataNascimentoCliente NOT NULL,
+    morada TEXT,
+    telefone CHAR(9),
+    idade INT CONSTRAINT IdadeCliente CHECK (idade >= 0),
     maioridade BOOL CONSTRAINT ClienteMaioridade NOT NULL;
     idCartao INTEGER UNIQUE CONSTRAINT ErroClienteIdCartao REFERENCES Cartao (idCartao) ON DELETE SET NULL ON UPDATE CASCADE DEFAULT NULL,
 );
