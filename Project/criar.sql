@@ -1,7 +1,18 @@
 PRAGMA foreign_keys = ON;
 BEGIN TRANSACTION;
 
+DROP TABLE IF EXISTS Stock;
+DROP TABLE IF EXISTS HorarioFuncionario;
+DROP TABLE IF EXISTS Prova;
+DROP TABLE IF EXISTS Compra;
+DROP TABLE IF EXISTS Cliente;
 DROP TABLE IF EXISTS Cartao;
+DROP TABLE IF EXISTS NaoGerente;
+DROP TABLE IF EXISTS Gerente;
+DROP TABLE IF EXISTS Vinho;
+DROP TABLE IF EXISTS Utensilio;
+DROP TABLE IF EXISTS Horario;
+DROP TABLE IF EXISTS Armazem;
 
 CREATE TABLE Cartao (
     idCartao INTEGER PRIMARY KEY CONSTRAINT IdCartao NOT NULL,
@@ -9,8 +20,6 @@ CREATE TABLE Cartao (
     saldo INTEGER CONSTRAINT SaldoCartao CHECK (saldo >= 0),
     dataAdesao DATE CONSTRAINT DataAdesaoCartao NOT NULL
 );
-
-DROP TABLE IF EXISTS Cliente;
 
 CREATE TABLE Cliente (
     idPessoa INTEGER PRIMARY KEY CONSTRAINT IdCliente NOT NULL,
@@ -24,8 +33,6 @@ CREATE TABLE Cliente (
     idCartao INTEGER CONSTRAINT IdCartaoCliente REFERENCES Cartao (idCartao) UNIQUE DEFAULT NULL
 );
 
-DROP TABLE IF EXISTS NaoGerente;
-
 CREATE TABLE NaoGerente (
     idPessoa INTEGER PRIMARY KEY CONSTRAINT IdNaoGerente NOT NULL,
     nome CHAR(30) CONSTRAINT NomeNaoGerente NOT NULL,
@@ -37,8 +44,6 @@ CREATE TABLE NaoGerente (
     salario INTEGER CONSTRAINT SalarioNaoGerente CHECK (salario >= 0),
     funcao TEXT
 );
-
-DROP TABLE IF EXISTS Gerente;
 
 CREATE TABLE Gerente (
     idPessoa INTEGER PRIMARY KEY CONSTRAINT IdGerente NOT NULL,
@@ -52,8 +57,6 @@ CREATE TABLE Gerente (
     anosServico INTEGER CONSTRAINT AnosServicoGerente CHECK (anosServico > 4)
 );
 
-DROP TABLE IF EXISTS Vinho;
-
 CREATE TABLE Vinho (
     idProduto INTEGER PRIMARY KEY CONSTRAINT IdVinho NOT NULL,
     preco INTEGER CONSTRAINT PrecoVinho CHECK (preco >= 0),
@@ -65,15 +68,11 @@ CREATE TABLE Vinho (
     UNIQUE (tipo, regiao, anoProducao, teorAlcool, capacidadeGarrafa)
 );
 
-DROP TABLE IF EXISTS Utensilio;
-
 CREATE TABLE Utensilio (
     idProduto INTEGER PRIMARY KEY CONSTRAINT IdUtensilio NOT NULL,
     preco INTEGER CONSTRAINT PrecoUtensilio CHECK (preco >= 0),
     nome CHAR(30) CONSTRAINT NomeUtensilio NOT NULL
 );
-
-DROP TABLE IF EXISTS Horario;
 
 CREATE TABLE Horario (
     idHorario INTEGER PRIMARY KEY CONSTRAINT IdHorario NOT NULL,
@@ -89,16 +88,12 @@ CREATE TABLE Horario (
     UNIQUE (diaSemana, horaInicio, horaFinal)
 );
 
-DROP TABLE IF EXISTS Armazem;
-
 CREATE TABLE Armazem (
     idArmazem INTEGER PRIMARY KEY CONSTRAINT IdArmazem NOT NULL,
     telefone INTEGER CONSTRAINT TelefoneArmazem NOT NULL,
     local TEXT CONSTRAINT LocalArmazem NOT NULL,
     UNIQUE (telefone, local)
 );
-
-DROP TABLE IF EXISTS Stock;
 
 CREATE TABLE Stock (
     idArmazem INTEGER CONSTRAINT IdArmazemStock NOT NULL REFERENCES Armazem (idArmazem),
@@ -107,15 +102,11 @@ CREATE TABLE Stock (
     PRIMARY KEY (idArmazem, idProduto)
 );
 
-DROP TABLE IF EXISTS HorarioFuncionario;
-
 CREATE TABLE HorarioFuncionario (
     idHorario INTEGER CONSTRAINT IdHorarioHorarioFuncionario NOT NULL REFERENCES Horario (idHorario),
     idPessoa INTEGER CONSTRAINT IdPessoaHorarioFuncionario NOT NULL,
     PRIMARY KEY (idHorario, idPessoa)
 );
-
-DROP TABLE IF EXISTS Prova;
 
 CREATE TABLE Prova (
     idCliente INTEGER CONSTRAINT IdClienteProva NOT NULL REFERENCES Cliente (idPessoa),
@@ -124,8 +115,6 @@ CREATE TABLE Prova (
     quantidade INTEGER CONSTRAINT QuantidadeProva CHECK (quantidade <= 5),
     PRIMARY KEY (idCliente, idVinho)
 );
-
-DROP TABLE IF EXISTS Compra;
 
 CREATE TABLE Compra (
     idCliente INTEGER CONSTRAINT IdClienteCompra NOT NULL REFERENCES Cliente (idPessoa),
