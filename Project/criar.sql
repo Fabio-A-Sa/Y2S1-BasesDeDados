@@ -110,9 +110,9 @@ CREATE TABLE Stock (
 DROP TABLE IF EXISTS HorarioFuncionario;
 
 CREATE TABLE HorarioFuncionario (
-    idPessoa INTEGER CONSTRAINT IdPessoaHorarioFuncionario NOT NULL,
     idHorario INTEGER CONSTRAINT IdHorarioHorarioFuncionario NOT NULL REFERENCES Horario (idHorario),
-    PRIMARY KEY (idPessoa, idHorario)
+    idPessoa INTEGER CONSTRAINT IdPessoaHorarioFuncionario NOT NULL,
+    PRIMARY KEY (idHorario, idPessoa)
 );
 
 DROP TABLE IF EXISTS Prova;
