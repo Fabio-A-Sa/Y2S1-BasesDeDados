@@ -323,7 +323,7 @@ INSERT INTO Vinho (
                             72,
                             34,
                             'Verde Tinto',
-                            'Bião',
+                            'Baião',
                             1999,
                             13,
                             0.75
