@@ -204,3 +204,15 @@ SELECT Student.name FROM Student
 Union all                                   -- Union with repetition
 SELECT Professor.name from Professor
 ORDER BY gender ASC;
+
+-- Intersection
+
+SELECT student.ID from Student WHERE major = 'AED'
+INTERSECT                                               -- Select all students that are enrolled in AED and BD
+SELECT student.ID from Student WHERE major = 'BD'
+
+-- Except
+
+SELECT student.ID from Student WHERE major = 'AED'
+EXCEPT                                                  -- Select all students that are enrolled in AED and not in BD
+SELECT student.ID from Studnt WHERE major = 'BD'
