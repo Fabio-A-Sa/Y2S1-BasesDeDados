@@ -234,3 +234,25 @@ SELECT name FROM Student WHERE id EXISTS IN (
 SELECT name FROM Student S1 WHERE not exists (
     SELECT * FROM Student S2 WHERE S2.GPA > S1.GPA   -- Returns all students that have the same maximum GPA
 );
+
+-- All operator
+
+SELECT name FROM Student S1 WHERE S1.GPA >= ALL (
+    SELECT GPA FROM Student S2                       -- Same of above
+);
+
+-- Any operator
+
+SELECT name FROM Student S1 WHERE S1.GPA < ANY (
+    SELECT GPA FROM Student S2                       -- Same of above
+);
+
+-- Existencial quantifier
+
+SELECT DISTINCT name FROM Apply, Student WHERE Apply.SID = Student.SID AND GPA >= 3.8; 
+
+-- Subqueries in the FROM clause
+-- Note: só pode retornar um tuplo / um atributo na subquerie do from
+
+SELECT * FROM (SELECT id, Name, GPA, GPA*(HS/1000) AS scaledGPA FROM Student) G
+         WHERE abs(scaledGPA - GPA) > 1.0;
