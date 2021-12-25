@@ -21,3 +21,9 @@ SELECT name FROM Student S1 WHERE not exists (
 SELECT name FROM Student S1 WHERE S1.GPA >= ALL (
     SELECT GPA FROM Student S2                       -- Same of above
 );
+
+-- Any operator
+
+SELECT name FROM Student S1 WHERE S1.GPA < ANY (
+    SELECT GPA FROM Student S2                       -- Same of above
+);
