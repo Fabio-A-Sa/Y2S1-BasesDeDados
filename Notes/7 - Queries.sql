@@ -43,5 +43,3 @@ SELECT student.ID from Student WHERE major = 'BD'
 SELECT student.ID from Student WHERE major = 'AED'
 EXCEPT                                                  -- Select all students that are enrolled in AED and not in BD
 SELECT student.ID from Studnt WHERE major = 'BD'
-
-SELECR student.ID s1 from s
