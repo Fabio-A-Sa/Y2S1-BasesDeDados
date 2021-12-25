@@ -27,3 +27,9 @@ SELECT name FROM Student S1 WHERE S1.GPA >= ALL (
 SELECT name FROM Student S1 WHERE S1.GPA < ANY (
     SELECT GPA FROM Student S2                       -- Same of above
 );
+
+-- Existencial quantifier
+
+SELECT DISTINCT name FROM Apply, Student WHERE Apply.SID = Student.SID AND GPA >= 3.8; 
+
+ß
