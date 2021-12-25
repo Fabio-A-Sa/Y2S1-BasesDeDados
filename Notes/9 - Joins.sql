@@ -6,5 +6,8 @@ WHERE HS < 1000 AND major = 'CS' AND cNAME = 'Stanford';
 
 -- Natural Join
 
-SELECT DISTINCT sName, major                -- Desde que tenham um atributo em comum, para fazer a devida junção
+SELECT DISTINCT sName, major                  -- Desde que tenham um atributo em comum, para fazer a devida junção
 FROM Student NATURAL JOIN Apply;
+
+SELECT DISTINCT nName, major
+FROM Student NATURAL JOIN Apply USING (sID)   -- Desde que se selecione um atributo em comum
