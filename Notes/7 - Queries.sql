@@ -34,3 +34,6 @@ ORDER BY gender ASC;
 
 -- Intersection
 
+SELECT student.ID from Student WHERE major = 'AED'
+INTERSECT                                               -- Select all students that are enrolled in AED and BD
+SELECT student.ID from Student WHERE major = 'BD'
