@@ -33,6 +33,7 @@ SELECT name FROM Student S1 WHERE S1.GPA < ANY (
 SELECT DISTINCT name FROM Apply, Student WHERE Apply.SID = Student.SID AND GPA >= 3.8; 
 
 -- Subqueries in the FROM clause
+-- Note: só pode retornar um tuplo / um atributo na subquerie do from
 
-SELECT * FROM (SELECT id, Name, GPA, GPA*(HS/1000) AS scaledGPA FROM Student) G 
+SELECT * FROM (SELECT id, Name, GPA, GPA*(HS/1000) AS scaledGPA FROM Student) G
          WHERE abs(scaledGPA - GPA) > 1.0;
