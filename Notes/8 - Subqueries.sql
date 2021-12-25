@@ -5,5 +5,7 @@ SELECT name FROM Student WHERE id IN            -- Returns student's name that a
 
 -- Exists operator
 
-SELECT name FROM Students WHERE id EXISTS IN 
-                         (SELECT id from Student WHERE )
+SELECT name FROM Students WHERE id EXISTS IN    -- Returns student's name that has degree more than 16.0
+                         (SELECT id from Student WHERE degree > 16.0)
+
+                        
