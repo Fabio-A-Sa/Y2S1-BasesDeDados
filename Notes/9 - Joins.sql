@@ -12,7 +12,17 @@ FROM Student JOIN Apply USING (sID)           -- Desde que se selecione um atrib
 SELECT DISTINCT sName, major                  -- Desde que tenham um atributo em comum, para fazer a devida junção
 FROM Student NATURAL JOIN Apply;
 
--- Left outer join
+-- Left outer join / left join
 
-SELECT sName, sID, cName, major                     -- Todos os estudantes são ligados aos applies, e se não houver 
-FROM Student LEFT OUTER JOIN Apply using (sID)      -- ligação, cName e major ficam NULL
+SELECT sName, sID, cName, major                      -- Todos os estudantes são ligados aos applies, e se não houver 
+FROM Student LEFT OUTER JOIN Apply using (sID)       -- ligação, cName e major ficam NULL
+
+-- Right outer join / right join
+
+SELECT sName, sID, cName, major                      -- Todos os applies são ligados aos estudantes, e se não houver 
+FROM Student RIGHT OUTER JOIN Apply using (sID)      -- ligação, sName e sID ficam NULL
+
+-- Full outer join / full join
+
+SELECT sName, sID, cName, major                      -- Todos os applies são ligados aos estudantes e todos os estudantes, e se não houver 
+FROM Student FULL OUTER JOIN Apply using (sID)       -- ligados aos applies, se não houver ligação ligação, ficam a NULL
