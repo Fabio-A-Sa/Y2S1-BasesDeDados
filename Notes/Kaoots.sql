@@ -24,10 +24,12 @@ INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-11-22", 3, 4, 
 INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-11-25", 4, 4, 2970);
 INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-11-29", 3, 4, 2135);
 INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-12-02", 3, 4, 1935);
-INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-11-06", 1, 4, 842);
-INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-11-09", 2, 4, 1172);
-INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-11-13", 3, 4, 2190);
-INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-11-16", 2, 4, 1231);
+INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-12-06", 1, 4, 842);
+INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-12-09", 2, 4, 1172);
+INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-12-13", 3, 4, 2190);
+INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2021-12-16", 2, 4, 1231);
+INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2022-01-03", 3, 4, 2390);
+INSERT INTO Kaoots (Data, Acertadas, Total, Pontos) VALUES ("2022-01-06", 1, 4, 923);
 
 .shell cls
 
