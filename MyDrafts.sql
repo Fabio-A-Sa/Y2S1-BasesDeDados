@@ -285,3 +285,134 @@ FROM Student RIGHT OUTER JOIN Apply using (sID)      -- ligação, sName e sID f
 
 SELECT sName, sID, cName, major                      -- Todos os applies são ligados aos estudantes e todos os estudantes, e se não houver 
 FROM Student FULL OUTER JOIN Apply using (sID)       -- ligados aos applies, se não houver ligação ligação, ficam a NULL
+
+
+PRAGMA foreign_keys = ON;
+BEGIN TRANSACTION;
+
+DROP TABLE IF EXISTS Stock;
+DROP TABLE IF EXISTS HorarioFuncionario;
+DROP TABLE IF EXISTS Prova;
+DROP TABLE IF EXISTS Compra;
+DROP TABLE IF EXISTS Cliente;
+DROP TABLE IF EXISTS Cartao;
+DROP TABLE IF EXISTS NaoGerente;
+DROP TABLE IF EXISTS Gerente;
+DROP TABLE IF EXISTS Vinho;
+DROP TABLE IF EXISTS Utensilio;
+DROP TABLE IF EXISTS Horario;
+DROP TABLE IF EXISTS Armazem;
+
+CREATE TABLE Cartao (
+    idCartao INTEGER PRIMARY KEY CONSTRAINT IdCartao NOT NULL,
+    numero INTEGER CONSTRAINT NumeroCartao CHECK (numero > 0),
+    saldo INTEGER CONSTRAINT SaldoCartao CHECK (saldo >= 0),
+    dataAdesao DATE CONSTRAINT DataAdesaoCartao NOT NULL
+);
+
+CREATE TABLE Cliente (
+    idPessoa INTEGER PRIMARY KEY CONSTRAINT IdCliente NOT NULL,
+    nome CHAR(30) CONSTRAINT NomeCliente NOT NULL,
+    dataNascimento DATE CONSTRAINT DataNascimentoCliente NOT NULL,
+    morada TEXT,
+    telefone INTEGER,
+    idade INTEGER CONSTRAINT IdadeCliente CHECK (idade >= 0),
+    nif CHAR(9),
+    maioridade BOOL CONSTRAINT MaioridadeCliente NOT NULL,
+    idCartao INTEGER CONSTRAINT IdCartaoCliente REFERENCES Cartao (idCartao) UNIQUE DEFAULT NULL
+);
+
+CREATE TABLE NaoGerente (
+    idPessoa INTEGER PRIMARY KEY CONSTRAINT IdNaoGerente NOT NULL,
+    nome CHAR(30) CONSTRAINT NomeNaoGerente NOT NULL,
+    dataNascimento DATE CONSTRAINT DataNascimentoNaoGerente NOT NULL,
+    morada TEXT,
+    telefone INTEGER,
+    idade INTEGER CONSTRAINT IdadeNaoGerente CHECK (idade >= 0),
+    nif CHAR(9),
+    salario INTEGER CONSTRAINT SalarioNaoGerente CHECK (salario >= 0),
+    funcao TEXT
+);
+
+CREATE TABLE Gerente (
+    idPessoa INTEGER PRIMARY KEY CONSTRAINT IdGerente NOT NULL,
+    nome CHAR(30) CONSTRAINT NomeGerente NOT NULL,
+    dataNascimento DATE CONSTRAINT DataNascimentoGerente NOT NULL,
+    morada TEXT,
+    telefone INTEGER,
+    idade INTEGER CONSTRAINT IdadeGerente CHECK (idade >= 0),
+    nif CHAR(9),
+    salario INTEGER CONSTRAINT SalarioGerente CHECK (salario >= 0),
+    anosServico INTEGER CONSTRAINT AnosServicoGerente CHECK (anosServico > 4)
+);
+
+CREATE TABLE Vinho (
+    idProduto INTEGER PRIMARY KEY CONSTRAINT IdVinho NOT NULL,
+    preco INTEGER CONSTRAINT PrecoVinho CHECK (preco >= 0),
+    tipo TEXT CONSTRAINT TipoVinho NOT NULL,
+    regiao TEXT CONSTRAINT RegiaoVinho NOT NULL,
+    anoProducao INTEGER CONSTRAINT AnoProducaoVinho NOT NULL,
+    teorAlcool FLOAT CONSTRAINT TeorAlcoolVinho NOT NULL,
+    capacidadeGarrafa FLOAT CONSTRAINT CapacidadeGarrafaVinho NOT NULL, 
+    UNIQUE (tipo, regiao, anoProducao, teorAlcool, capacidadeGarrafa)
+);
+
+CREATE TABLE Utensilio (
+    idProduto INTEGER PRIMARY KEY CONSTRAINT IdUtensilio NOT NULL,
+    preco INTEGER CONSTRAINT PrecoUtensilio CHECK (preco >= 0),
+    nome CHAR(30) CONSTRAINT NomeUtensilio NOT NULL
+);
+
+CREATE TABLE Horario (
+    idHorario INTEGER PRIMARY KEY CONSTRAINT IdHorario NOT NULL,
+    diaSemana TEXT CONSTRAINT DiaSemanaHorario CHECK ( (    diaSemana = "SABADO" OR
+                                                            diaSemana = "DOMINGO" OR
+                                                            diaSemana = "SEGUNDA-FEIRA" OR 
+                                                            diaSemana = "TERCA-FEIRA" OR 
+                                                            diaSemana = "QUARTA-FEIRA" OR 
+                                                            diaSemana = "QUINTA-FEIRA" OR 
+                                                            diaSemana = "SEXTA-FEIRA"       ) ),
+    horaInicio TIME CONSTRAINT HoraInicioHorario NOT NULL,
+    horaFinal TIME CONSTRAINT HoraFinalHorario NOT NULL,
+    UNIQUE (diaSemana, horaInicio, horaFinal)
+);
+
+CREATE TABLE Armazem (
+    idArmazem INTEGER PRIMARY KEY CONSTRAINT IdArmazem NOT NULL,
+    telefone INTEGER CONSTRAINT TelefoneArmazem NOT NULL,
+    local TEXT CONSTRAINT LocalArmazem NOT NULL,
+    UNIQUE (telefone, local)
+);
+
+CREATE TABLE Stock (
+    idArmazem INTEGER CONSTRAINT IdArmazemStock NOT NULL REFERENCES Armazem (idArmazem),
+    idProduto INTEGER CONSTRAINT IdProdutoStock NOT NULL,
+    quantidade INTEGER CONSTRAINT QuantidadeStock CHECK (quantidade > 0),
+    PRIMARY KEY (idArmazem, idProduto)
+);
+
+CREATE TABLE HorarioFuncionario (
+    idHorario INTEGER CONSTRAINT IdHorarioHorarioFuncionario NOT NULL REFERENCES Horario (idHorario),
+    idPessoa INTEGER CONSTRAINT IdPessoaHorarioFuncionario NOT NULL,
+    PRIMARY KEY (idHorario, idPessoa)
+);
+
+CREATE TABLE Prova (
+    idCliente INTEGER CONSTRAINT IdClienteProva NOT NULL REFERENCES Cliente (idPessoa),
+    idVinho INTEGER CONSTRAINT IdVinhoProva NOT NULL REFERENCES Vinho (idProduto),
+    acompanhamento TEXT DEFAULT NULL,
+    quantidade INTEGER CONSTRAINT QuantidadeProva CHECK (quantidade <= 5),
+    PRIMARY KEY (idCliente, idVinho)
+);
+
+CREATE TABLE Compra (
+    idCliente INTEGER CONSTRAINT IdClienteCompra NOT NULL REFERENCES Cliente (idPessoa),
+    idProduto INTEGER CONSTRAINT IdProdutoCompra NOT NULL,
+    data DATE CONSTRAINT DataCompra NOT NULL,
+    quantidade INTEGER CONSTRAINT QuantidadeCompra CHECK (quantidade > 0),
+    preco INTEGER CONSTRAINT PrecoCompra CHECK (preco > 0),
+    desconto INTEGER,
+    PRIMARY KEY (idCliente, idProduto)
+);
+
+COMMIT TRANSACTION;
