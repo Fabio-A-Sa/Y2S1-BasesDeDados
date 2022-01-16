@@ -31,3 +31,4 @@ INSERT INTO Faculty (id, name, city) VALUES (2, "IPCA", "Braga")                
 
 -- Note
 -- If exists an integer ID, ID is an alias of ROWID (implicit primary key)
+-- SELECT ROWID FROM Person -> gives a column with tuple index
