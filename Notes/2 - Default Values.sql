@@ -1,3 +1,6 @@
+-- Created on January, 2022
+-- @author: Fábio Araújo de Sá
+
 -- Create a table with default values
 
 DROP TABLE IF EXISTS Person;
