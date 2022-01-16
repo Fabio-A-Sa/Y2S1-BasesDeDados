@@ -1,3 +1,6 @@
+-- Created on January, 2022
+-- @author: Fábio Araújo de Sá
+
 -- To view all collumns name in header's table
 
 .header on
