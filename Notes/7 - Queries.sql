@@ -16,7 +16,7 @@ SELECT name FROM Person ORDER BY name ASC, gender DESC;     -- Sorting by name a
 
 -- Like operator
 
-SELECT * FROM PERSON WHERE name LIKE "%bi%";        -- Ex: Fabio
+SELECT * FROM PERSON WHERE name LIKE "%bi%";        -- Ex: Fabio, biology
 SELECT * FROM PERSON WHERE name LIKE "%na";         -- Ex: Joana, Catarina
 SELECT * FROM PERSON WHERE name LIKE "Na%";         -- Ex: Nadia
 
