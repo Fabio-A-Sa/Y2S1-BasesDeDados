@@ -1668,3 +1668,7 @@ UNION
 SELECT Prof.name FROM Prof
 ORDER BY name ASC;
 
+SELECT Student.name FROM Student WHERE Student.nr IN (
+    SELECT DISTINCT Exam.student_nr FROM Exam WHERE Exam.course_code = 'TS1'
+)
+ORDER BY name ASC;
