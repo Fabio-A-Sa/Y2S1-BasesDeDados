@@ -1699,3 +1699,6 @@ SELECT round(avg(grade), 2)
 FROM Exam
 WHERE course_code = 'BD';
 
+SELECT count(*) as num_students
+FROM Student;
+
