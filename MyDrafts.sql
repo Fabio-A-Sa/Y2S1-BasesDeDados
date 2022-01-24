@@ -1663,3 +1663,8 @@ SELECT DISTINCT Student.name FROM Student, Prof WHERE Student.name = Prof.name O
 
 SELECT DISTINCT Student.name FROM Student, Prof WHERE Student.name = Prof.name ORDER BY Student.name ASC;
 
+SELECT Student.name FROM Student
+UNION
+SELECT Prof.name FROM Prof
+ORDER BY name ASC;
+
