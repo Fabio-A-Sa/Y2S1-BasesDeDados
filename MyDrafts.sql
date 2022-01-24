@@ -1679,3 +1679,16 @@ SELECT Student.name FROM Student WHERE Student.nr IN (
     )
 )
 ORDER BY name ASC;
+
+--SELECT DISTINCT Student.name FROM Student WHERE Student.nr in (
+--    SELECT DISTINCT Exam.student_nr FROM Exam WHERE Exam.grade >= 10 AND Exam.course_code IN (
+--        SELECT Course.code FROM Course WHERE Course.program = 'IS'
+--    )
+--) ORDER BY Student.name ASC;
+
+SELECT name FROM Student WHERE NOT EXISTS (
+    SELECT * FROM Course WHERE program = 'IS' AND NOT EXISTS (
+        SELECT * FROM Exam WHERE student_nr = nr AND course_code = code AND grade >= 10
+    )    
+) ORDER BY name ASC;
+
