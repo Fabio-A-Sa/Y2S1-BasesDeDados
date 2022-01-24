@@ -1,3 +1,6 @@
+-- Created on January, 2022
+-- @author: Fábio Araújo de Sá
+
 -- A simple query
 
 SELECT * FROM Person;                               -- Show all data in Person's table
