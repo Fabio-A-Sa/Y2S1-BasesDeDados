@@ -1692,3 +1692,6 @@ SELECT name FROM Student WHERE NOT EXISTS (
     )    
 ) ORDER BY name ASC;
 
+SELECT max(grade)
+FROM Exam;
+
