@@ -1579,3 +1579,20 @@ FROM Student RIGHT OUTER JOIN Apply using (sID)      -- ligação, sName e sID f
 
 SELECT sName, sID, cName, major                      -- Todos os applies são ligados aos estudantes e todos os estudantes, e se não houver 
 FROM Student FULL OUTER JOIN Apply using (sID)       -- ligados aos applies, se não houver ligação ligação, ficam a NULL
+
+SELECT min(GPA)
+FROM Student
+WHERE Student.sID = Apply.sID AND major = 'CS';
+
+SELECT max(abs(maximum - minimum)) as difference
+FROM (
+    SELECT cName, major, min(GPA) as minimum, max(GPA) as maximum
+    FROM Student, Apply
+    WHERE Student.id = Apply.id
+    GROUP BY cName, major
+);
+
+SELECT cName
+FROM Apply
+GROUP BY cName
+HAVING count(DISTINCT sID) < 5; -- excluem valores nulos
