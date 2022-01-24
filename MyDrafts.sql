@@ -1737,3 +1737,18 @@ FROM (
 GROUP BY name
 ORDER BY name;
 
+CREATE VIEW Some AS
+SELECT DISTINCT course_code, max(grade) as max_grade
+FROM Exam
+WHERE course_code IN (
+    SELECT code
+    FROM Course
+)
+GROUP BY course_code;
+        
+SELECT DISTINCT Some.course_code, Student.name, Some.max_grade
+FROM Some, Exam, Student
+WHERE Student.nr = Exam.student_nr AND Exam.course_code = Some.course_code AND
+        Exam.grade = Some.max_grade
+ORDER BY Some.course_code ASC;
+
