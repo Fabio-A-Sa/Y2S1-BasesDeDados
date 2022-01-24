@@ -1,3 +1,6 @@
+-- Created on January, 2022
+-- @author: Fábio Araújo de Sá
+
 -- Inner Join / Join for default
 
 SELECT sName, GPA 
