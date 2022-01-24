@@ -1707,3 +1707,7 @@ FROM Course
 GROUP BY program
 ORDER BY program ASC;
 
+SELECT student_nr, count(*) as num_exams
+FROM Exam
+GROUP BY student_nr;
+
