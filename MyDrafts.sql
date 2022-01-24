@@ -1718,3 +1718,22 @@ SELECT round(avg(num_exams), 2) as avg_num_exams FROM (
     GROUP BY student_nr
 );
 
+--SELECT name, avg_grade
+--FROM (
+--    SELECT DISTINCT student_nr
+--    FROM Exam
+--)
+--WHERE avg_grade >= 10
+--ORDER BY name ASC;
+
+SELECT name, round(avg(max_grade), 2) as avg_grade
+FROM (
+    SELECT name, course_code, max(grade) as max_grade
+    FROM Exam, Student
+    WHERE Exam.student_nr = Student.nr
+    AND grade >= 10
+    GROUP BY name, course_code
+)
+GROUP BY name
+ORDER BY name;
+
