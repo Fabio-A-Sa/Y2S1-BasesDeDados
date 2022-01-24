@@ -16,4 +16,4 @@ FROM (
 SELECT cName
 FROM Apply
 GROUP BY cName
-HAVING count(DISTINCT sID) < 5;
+HAVING count(DISTINCT sID) < 5; -- excluem valores nulos
