@@ -1695,3 +1695,7 @@ SELECT name FROM Student WHERE NOT EXISTS (
 SELECT max(grade)
 FROM Exam;
 
+SELECT round(avg(grade), 2)
+FROM Exam
+WHERE course_code = 'BD';
+
