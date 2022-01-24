@@ -1652,3 +1652,8 @@ CREATE INDEX courseIDX on Exam(course_code); --> cria um index, para melhorar a 
 -- Notes:
 -- Index baseado em igualdade -> usa HashTables
 -- Index baseado em comparações -> usa B-Trees
+
+-- Solutions of Code Runner (Moodle)
+
+SELECT nr FROM Student ASC;
+
