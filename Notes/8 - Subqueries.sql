@@ -1,3 +1,6 @@
+-- Created on January, 2022
+-- @author: Fábio Araújo de Sá
+
 -- A simple subquerie
 
 SELECT name FROM Student WHERE id IN (
