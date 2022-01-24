@@ -1657,3 +1657,5 @@ CREATE INDEX courseIDX on Exam(course_code); --> cria um index, para melhorar a 
 
 SELECT nr FROM Student ASC;
 
+SELECT code, name FROM Course WHERE department = 'AC' ORDER BY code ASC;
+
