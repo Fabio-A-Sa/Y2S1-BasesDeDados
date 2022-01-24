@@ -1711,3 +1711,10 @@ SELECT student_nr, count(*) as num_exams
 FROM Exam
 GROUP BY student_nr;
 
+SELECT round(avg(num_exams), 2) as avg_num_exams FROM (
+
+    SELECT DISTINCT student_nr, count(*) as num_exams
+    FROM Exam
+    GROUP BY student_nr
+);
+
