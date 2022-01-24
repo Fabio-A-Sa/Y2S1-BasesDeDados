@@ -1702,3 +1702,8 @@ WHERE course_code = 'BD';
 SELECT count(*) as num_students
 FROM Student;
 
+SELECT program, count(*) as num_courses
+FROM Course
+GROUP BY program
+ORDER BY program ASC;
+
