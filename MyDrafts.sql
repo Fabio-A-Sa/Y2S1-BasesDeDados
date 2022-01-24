@@ -1659,3 +1659,5 @@ SELECT nr FROM Student ASC;
 
 SELECT code, name FROM Course WHERE department = 'AC' ORDER BY code ASC;
 
+SELECT DISTINCT Student.name FROM Student, Prof WHERE Student.name = Prof.name ORDER BY Student.name ASC;
+
