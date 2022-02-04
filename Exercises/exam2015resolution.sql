@@ -53,3 +53,8 @@ WHERE Photo.id NOT IN (
 
 -- 8.6
 
+CREATE TRIGGER Trigger1
+AFTER INSERT ON AppearsIn
+BEGIN
+	INSERT INTO Likes VALUES (NEW.user, NEW.photo);
+END
