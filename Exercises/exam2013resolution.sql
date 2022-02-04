@@ -40,3 +40,19 @@ LIMIT 1;
 
 -- 8.5
 
+CREATE TRIGGER Trigger1
+AFTER INSERT ON AplicacaoServidor
+WHEN
+    EXISTS (
+        SELECT *
+        FROM Bug
+        WHERE New.idAplicacao = Bug.idAplicacao AND vulnerabilidade LIKE 'sim'
+    )
+BEGIN
+    UPDATE Servidor
+    SET vulneravel = 'sim'
+    WHERE New.idServidor = Servidor.idServidor;
+END
+
+-- 8.6
+
