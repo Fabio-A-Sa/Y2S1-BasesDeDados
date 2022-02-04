@@ -8,3 +8,13 @@ WHERE 	Photo.user = User.id AND
 
 -- 8.2
 
+SELECT name
+FROM User
+WHERE User.id NOT IN (
+	SELECT User.id
+	FROM User, Photo
+	WHERE User.id = Photo.user
+);
+
+-- 8.3
+
