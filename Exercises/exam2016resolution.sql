@@ -64,3 +64,17 @@ HAVING count(Amizade.ID2) > 3;
 
 -- 5.6
 
+SELECT DISTINCT ID2 AS ID 
+FROM AMIZADE
+WHERE ID1 IN (
+    SELECT ID2 AS ID
+    FROM AMIZADE WHERE ID1 IN (
+        SELECT ID2 AS ID 
+        FROM AMIZADE 
+        WHERE ID1 IN (
+            SELECT ID
+            FROM Estudante
+            WHERE nome LIKE 'Miguel Sampaio'
+        )
+    )
+);
