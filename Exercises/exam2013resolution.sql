@@ -31,3 +31,12 @@ WHERE hostname LIKE 'alu%' AND
 
 -- 8.4
 
+SELECT Aplicacao.nome
+FROM Aplicacao, Bug
+WHERE Aplicacao.idAplicacao = Bug.idAplicacao
+GROUP BY Aplicacao.nome
+ORDER BY count(*) DESC
+LIMIT 1;
+
+-- 8.5
+
