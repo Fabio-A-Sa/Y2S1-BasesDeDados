@@ -34,3 +34,11 @@ FROM (
 
 -- 8.4
 
+SELECT Photo.caption
+FROM User, AppearsIn, Photo
+WHERE 	AppearsIn.photo = Photo.id AND 
+	    AppearsIn.user = User.id AND
+	    User.name LIKE 'Daniel Ramos';
+
+-- 8.5
+
