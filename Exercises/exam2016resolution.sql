@@ -35,3 +35,24 @@ BEGIN
 		e1.ID != e2.ID;
 END
 
+-- 5.4
+
+SELECT e1.nome, e1.anoCurricular
+FROM Estudante AS e1
+WHERE EXISTS (
+	SELECT Amizade.ID2
+	FROM Estudante AS e2, Amizade
+	WHERE 	Amizade.ID1 = e1.ID AND
+		e2.ID = Amizade.ID2 AND 
+		e2.anoCurricular = e1.anoCurricular
+) AND NOT EXISTS (
+	SELECT Amizade.ID2
+	FROM Estudante AS e2, Amizade
+	WHERE 	Amizade.ID1 = e1.ID AND
+		e2.ID = Amizade.ID2 AND 
+		e2.anoCurricular != e1.anoCurricular
+)
+ORDER BY e1.anoCurricular, e1.nome;
+
+-- 5.5
+
