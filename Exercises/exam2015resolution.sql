@@ -42,3 +42,14 @@ WHERE 	AppearsIn.photo = Photo.id AND
 
 -- 8.5
 
+DELETE FROM Photo
+WHERE Photo.id NOT IN (
+	SELECT Photo.id
+	FROM Photo, AppearsIn
+	WHERE 	Photo.id = AppearsIn.photo
+	GROUP BY Photo.id
+	HAVING count(AppearsIn.photo) >= 2	
+) AND julianday('2010-01-01') < julianday(Photo.creationDate);
+
+-- 8.6
+
