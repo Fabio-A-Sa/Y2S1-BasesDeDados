@@ -56,3 +56,11 @@ ORDER BY e1.anoCurricular, e1.nome;
 
 -- 5.5
 
+SELECT Estudante.nome
+FROM Estudante, Amizade
+WHERE Estudante.ID = Amizade.ID1
+GROUP BY Estudante.ID
+HAVING count(Amizade.ID2) > 3;
+
+-- 5.6
+
