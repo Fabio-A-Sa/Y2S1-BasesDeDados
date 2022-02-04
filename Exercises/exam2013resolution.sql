@@ -46,13 +46,29 @@ WHEN
     EXISTS (
         SELECT *
         FROM Bug
-        WHERE New.idAplicacao = Bug.idAplicacao AND vulnerabilidade LIKE 'sim'
+        WHERE NEW.idAplicacao = Bug.idAplicacao AND vulnerabilidade LIKE 'sim'
     )
 BEGIN
     UPDATE Servidor
     SET vulneravel = 'sim'
-    WHERE New.idServidor = Servidor.idServidor;
+    WHERE NEW.idServidor = Servidor.idServidor;
 END
 
 -- 8.6
 
+CREATE TRIGGER Trigger2
+AFTER INSERT ON Bug
+WHEN
+    NEW.vulnerabilidade LIKE 'sim'
+BEGIN
+    UPDATE Servidor
+    SET vulneravel = 'sim'
+    WHERE Servidor.idServidor = (
+        SELECT idServidor 
+        FROM AplicacaoServidor
+        WHERE NEW.idAplicacao = AplicacaoServidor.idAplicacao
+    )
+    UPDATE Bug
+    SET prioridade = 1
+    WHERE Bug.idBug = NEW.idBug;
+END
