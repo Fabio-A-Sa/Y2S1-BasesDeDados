@@ -18,3 +18,19 @@ WHERE User.id NOT IN (
 
 -- 8.3
 
+SELECT  avg(qtd) AS Média 
+FROM (
+    SELECT count(AppearsIn.photo) AS qtd
+    FROM AppearsIn JOIN (
+    SELECT Photo.id AS id
+    FROM Photo, Likes
+    WHERE Photo.id = Likes.photo
+    GROUP BY Photo.id
+    HAVING count(Likes.photo) > 3
+    ) P
+    WHERE AppearsIn.photo = P.id
+    GROUP BY P.id
+);
+
+-- 8.4
+
