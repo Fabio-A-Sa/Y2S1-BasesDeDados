@@ -14,3 +14,20 @@ WHERE   Servidor.idServidor = AplicacaoServidor.idServidor AND
         Servidor.idResponsavel = Pessoa.idPessoa AND
         Bug.vulnerabilidade LIKE 'sim'
 ORDER BY hostname;
+
+-- 8.3
+
+SELECT hostname
+FROM Servidor JOIN  Pessoa
+WHERE hostname LIKE 'alu%' AND
+	  mail LIKE 'joao.almeida@cica.pt' AND
+	  Servidor.idResponsavel = Pessoa.idPessoa AND
+	  EXISTS (
+		  SELECT *
+		  FROM Servidor, AplicacaoServidor, Bug
+		  WHERE Servidor.idServidor = AplicacaoServidor.idServidor AND
+			    AplicacaoServidor.idAplicacao = Bug.idAplicacao
+	  );
+
+-- 8.4
+
