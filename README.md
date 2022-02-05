@@ -2,15 +2,6 @@
 
 This repository contains all the exercises and assessments of the UC Data Bases, taught by [Michel Ferreira](https://sigarra.up.pt/fcup/pt/func_geral.formview?p_codigo=241603) and [Carla Lopes](https://sigarra.up.pt/feup/pt/func_geral.formview?p_codigo=467117) at [Integrated Master in Informatics and Computing Engineering](https://sigarra.up.pt/feup/pt/cur_geral.cur_view?pv_curso_id=742) [MIEIC] at the [Faculty of Engineering of the University of Porto](https://sigarra.up.pt/feup/pt/web_page.Inicial) [FEUP]. <br/>
 
-<br/>
-<p align = "center" >
-  <img 
-       title = "FEUP logo"
-       src = "Images//FEUP_Logo.png" 
-       alt = "FEUP Logo" 
-       />
-</p>
-
 ## Here are several documents, namely:
 
 ### My Drafts <br/>
@@ -24,11 +15,17 @@ Varied exercises of easy, medium and difficult level, about the subject taught i
 
 ### Project
 
-Soon <br>
+Project done during the semester with [Carolina Brandão](https://github.com/CarolBrandak) and [João Felix](https://github.com/joao12520), using SQL statements in SQLite3. A wine store was recreated, with sales, products, purchases, customers, employees and their relationships and attributes. Implementations:
 
-***Bibliography:*** 
+  - [x] Primary keys and candidate keys
+  - [x] Foreign keys 
+  - [x] Constraints
+  - [x] Queries
+  - [x] Triggers
 
-Soon <br>
+Project Grade: 15/20
+
+<br>
 
 **@ Fábio Araújo de Sá** <br/>
 **2021/2022**
